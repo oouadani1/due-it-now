@@ -1,0 +1,53 @@
+{
+  "items": [
+    {
+      "title": "Renew Cambridge Parking Permit",
+      "date": "2026-03-31",
+      "display_date": "Tuesday, March 31, 2026",
+      "time": null,
+      "location": "Cambridge",
+      "description": "Resident and visitor parking permits should be renewed online or in person before the city deadline.",
+      "action_label": "Renew Parking Permit",
+      "url": "https://www.cambridgema.gov/en/iwantto/applyforaparkingpermit",
+      "cost": "Varies by permit type",
+      "pathways": [
+        "renewals"
+      ]
+    },
+    {
+      "title": "Apply for Cambridge Personal Tax Exemptions",
+      "date": "2026-04-01",
+      "display_date": "Wednesday, April 1, 2026",
+      "time": null,
+      "location": "Assessing Office",
+      "description": "Eligible residents can apply for Cambridge personal tax exemptions by the annual filing deadline.",
+      "action_label": "Open Tax Exemptions",
+      "url": "https://www.cambridgema.gov/Services/taxpayerexemptions",
+      "cost": "Free",
+      "pathways": [
+        "renewals",
+        "older_adult_support"
+      ]
+    },
+    {
+      "title": "Return Your Cambridge Annual City Census",
+      "date": null,
+      "display_date": "Return as soon as possible",
+      "time": null,
+      "location": "Online, mail, or drop box",
+      "description": "Cambridge residents should return the annual city census to protect voting rights and support municipal services.",
+      "action_label": "Open Census Form",
+      "url": "https://www.cambridgema.gov/census",
+      "cost": "Free",
+      "pathways": [
+        "voting_help",
+        "renewals",
+        "just_browsing"
+      ]
+    }
+  ],
+  "metadata": {
+    "updated_at": "2026-03-29T00:02:02",
+    "source_errors": []
+  }
+}
