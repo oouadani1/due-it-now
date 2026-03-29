@@ -5,25 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Due It Now</title>
   <style>
-    @font-face {
-      font-family: "Brand Sans";
-      src: url("./assets/fonts/DegularDemo-Regular.otf") format("opentype");
-      font-style: normal;
-      font-weight: 400;
-      font-display: swap;
-    }
-
-    @font-face {
-      font-family: "Brand Sans";
-      src: url("./assets/fonts/DegularDemo-Bold.otf") format("opentype");
-      font-style: normal;
-      font-weight: 700;
-      font-display: swap;
-    }
-
     :root {
-      --font-body: "Brand Sans", "Aptos", "Segoe UI", sans-serif;
-      --font-heading: "Brand Sans", "Aptos Display", "Segoe UI", sans-serif;
+      --font-body: "Aptos", "Segoe UI", "Helvetica Neue", sans-serif;
+      --font-heading: "Aptos Display", "Aptos", "Segoe UI", "Helvetica Neue", sans-serif;
       --bg-top: #ffffff;
       --bg-mid: #ffe3dc;
       --bg-bottom: #f49c88;
@@ -304,6 +288,14 @@
       -webkit-backdrop-filter: blur(24px);
     }
 
+    .site-note {
+      margin-top: 24px;
+      font-size: 0.95rem;
+      line-height: 1.45;
+      color: var(--text);
+      max-width: 48rem;
+    }
+
     @media (max-width: 640px) {
       body {
         padding: 16px;
@@ -318,7 +310,7 @@
 <body>
   <div class="app">
     <h1>Due It Now</h1>
-    <p class="intro">An easy way to stay on top of important civic deadlines and time-sensitive city programs in Cambridge.</p>
+    <p class="intro">An easy way to stay on top of time-sensitive civic deadlines and programs in Cambridge.</p>
 
     <div class="controls">
       <div class="control-group">
@@ -340,6 +332,9 @@
       </div>
     </div>
     <div class="cards" id="cards"></div>
+    <p class="site-note">
+      This site is a passion project and for information use only. While a daily script scans the web for relevant deadlines and events, information may be wrong or outdated. Please verify all information using official government sources. For feedback or ideas, contact me at oouadani1@gmail.com.
+    </p>
   </div>
 
   <script>
@@ -354,7 +349,7 @@
     ];
 
     const urgencyOptions = [
-      { id: "all", label: "All Timing" },
+      { id: "all", label: "All" },
       { id: "urgent", label: "Urgent" },
       { id: "soon", label: "Soon" },
       { id: "ongoing", label: "Ongoing" },

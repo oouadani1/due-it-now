@@ -32,6 +32,7 @@ HOUSING_APPLICANTS_URL = "https://www.cambridgema.gov/CDD/housing/forapplicants"
 RENTAL_POOL_URL = "https://www.cambridgema.gov/CDD/housing/forapplicants/rentalapplicantpool"
 RESALE_POOL_URL = "https://www.cambridgema.gov/CDD/housing/forapplicants/resalepool"
 MIDDLE_INCOME_URL = "https://www.cambridgema.gov/CDD/housing/forapplicants/middleincomerentalprogram"
+HOUSING_TRUST_URL = "https://www.cambridgema.gov/CDD/housing/housingtrust"
 
 
 @dataclass
@@ -218,21 +219,6 @@ def title_case(value: str) -> str:
         else:
             output.append(word[:1].upper() + word[1:])
     return " ".join(output)
-
-
-def slugify(value: str) -> str:
-    return re.sub(r"[^a-z0-9]+", "-", value.lower()).strip("-")
-
-
-def parse_library_month_label(text: str) -> tuple[int, int] | None:
-    cleaned = clean_whitespace(text)
-    for fmt in ("%B %Y", "%B (%Y)"):
-        try:
-            parsed = datetime.strptime(cleaned, fmt)
-            return parsed.year, parsed.month
-        except ValueError:
-            continue
-    return None
 
 
 def strip_tags(value: str) -> str:
@@ -676,6 +662,47 @@ def parse_housing_opportunities() -> list[FeedItem]:
     return items
 
 
+def parse_housing_trust_meetings(limit: int = 3) -> list[FeedItem]:
+    html = fetch_html(HOUSING_TRUST_URL)
+    parser = SimpleHTML()
+    parser.feed(html)
+    text = "\n".join(parser.text_lines())
+
+    items: list[FeedItem] = []
+    pattern = re.compile(
+        r"([A-Z][a-z]+ \d{1,2}, \d{4}) Register here to watch\.",
+        re.IGNORECASE,
+    )
+
+    for match in pattern.finditer(text):
+        meeting_date = parse_month_day_year(match.group(1))
+        if meeting_date is None or meeting_date.date() < TODAY.date():
+            continue
+        if not should_keep_dated_item(meeting_date):
+            continue
+
+        items.append(
+            FeedItem(
+                title="Cambridge Affordable Housing Trust Meeting",
+                date=iso_date(meeting_date),
+                display_date=display_date(meeting_date),
+                time="4:00 PM",
+                location="Ackermann Room at City Hall or webinar",
+                description="Monthly Affordable Housing Trust meeting covering affordable housing policy, funding, and development in Cambridge.",
+                action_label="Open Housing Trust Page",
+                url=HOUSING_TRUST_URL,
+                cost="Free",
+                pathways=["housing", "just_browsing"],
+                source="Cambridge Housing Department",
+            )
+        )
+
+        if len(items) >= limit:
+            break
+
+    return items
+
+
 def classify_library_pathways(title: str, description: str) -> list[str]:
     haystack = f"{title} {description}".lower()
     pathways = ["just_browsing"]
@@ -868,6 +895,7 @@ def build_feed() -> dict:
         ("tax exemptions", parse_tax_exemptions),
         ("annual census", parse_census_notice),
         ("housing opportunities", parse_housing_opportunities),
+        ("housing trust meetings", parse_housing_trust_meetings),
         ("school committee", parse_school_committee_meetings),
         ("crls calendar", parse_crls_calendar),
         ("crls calendar fallback", parse_crls_calendar_fallback),
