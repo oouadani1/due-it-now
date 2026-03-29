@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Due It Now</title>
+  <style>
+    @font-face {
+      font-family: "Brand Sans";
+      src: url("./assets/fonts/DegularDemo-Regular.otf") format("opentype");
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Brand Sans";
+      src: url("./assets/fonts/DegularDemo-Bold.otf") format("opentype");
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+    }
+
+    :root {
+      --font-body: "Brand Sans", "Aptos", "Segoe UI", sans-serif;
+      --font-heading: "Brand Sans", "Aptos Display", "Segoe UI", sans-serif;
+      --bg-top: #ffffff;
+      --bg-mid: #ffe3dc;
+      --bg-bottom: #f49c88;
+      --panel: rgba(255, 255, 255, 0.28);
+      --panel-strong: rgba(255, 255, 255, 0.34);
+      --text: #111111;
+      --subtle: #111111;
+      --border: rgba(255, 255, 255, 0.42);
+      --shadow: rgba(95, 43, 24, 0.16);
+      --button: #0ac8f5;
+      --button-hover: #08b7df;
+      --button-text: #03242d;
+      --accent: #000000;
+      --accent-soft: rgba(247, 50, 8, 0.16);
+      --urgent: #991b1b;
+      --urgent-soft: rgba(153, 27, 27, 0.14);
+      --soon: #166534;
+      --soon-soft: rgba(22, 101, 52, 0.14);
+      --ongoing: #1e40af;
+      --ongoing-soft: rgba(30, 64, 175, 0.14);
+    }
+
+    body {
+      font-family: var(--font-body);
+      margin: 0;
+      padding: 24px;
+      min-height: 100vh;
+      background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-mid) 42%, var(--bg-bottom) 100%);
+      color: var(--text);
+    }
+
+    .app {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 8px;
+      font-size: 2.3rem;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+    }
+
+    .intro {
+      color: var(--text);
+      margin-top: 0;
+      margin-bottom: 20px;
+      max-width: 42rem;
+    }
+
+    .controls {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 18px;
+      margin-bottom: 18px;
+      box-shadow: 0 14px 36px var(--shadow);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .controls::before,
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.04));
+      pointer-events: none;
+    }
+
+    .controls p {
+      margin: 6px 0 0;
+      color: var(--text);
+    }
+
+    .control-group {
+      margin-top: 16px;
+    }
+
+    .control-label {
+      display: block;
+      font-weight: 700;
+      font-size: 1.45rem;
+      margin-bottom: 8px;
+      color: var(--accent);
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip {
+      border: 1px solid rgba(255, 255, 255, 0.46);
+      background: rgba(255, 255, 255, 0.36);
+      border-radius: 999px;
+      padding: 9px 14px;
+      cursor: pointer;
+      color: var(--text);
+      transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .chip.active {
+      background: var(--accent-soft);
+      border-color: var(--accent);
+      font-weight: bold;
+    }
+
+    .chip:hover {
+      transform: translateY(-1px);
+    }
+
+    .summary {
+      display: none;
+    }
+
+    .toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+
+    .sort-control {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text);
+      font-size: 0.875rem;
+      font-weight: 700;
+    }
+
+    .sort-toggle {
+      font: inherit;
+      font-size: 1.125rem;
+      line-height: 1;
+      width: 42px;
+      height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255, 255, 255, 0.56);
+      border-radius: 999px;
+      padding: 0;
+      background: rgba(255, 255, 255, 0.58);
+      color: var(--text);
+      cursor: pointer;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .sort-toggle:hover {
+      transform: translateY(-1px);
+    }
+
+    .cards {
+      display: grid;
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--panel-strong);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 18px;
+      box-shadow: 0 14px 36px var(--shadow);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin: 0 0 8px;
+      padding: 0;
+    }
+
+    .card h3 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      margin: 0;
+      font-size: 1.45rem;
+      line-height: 1.18;
+      color: var(--accent);
+      position: relative;
+      z-index: 1;
+    }
+
+    .meta {
+      color: var(--text);
+      font-size: 1.26rem;
+      margin: 0 0 8px;
+      text-transform: none;
+      position: relative;
+      z-index: 1;
+    }
+
+    .description {
+      margin: 0;
+      line-height: 1.45;
+      position: relative;
+      z-index: 1;
+    }
+
+    .countdown {
+      display: inline-block;
+      font-size: 0.875rem;
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-weight: bold;
+      white-space: nowrap;
+      position: relative;
+      z-index: 1;
+      border: 1px solid currentColor;
+      background: rgba(255, 255, 255, 0.62);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .countdown.urgent {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(255, 235, 235, 0.88));
+      color: var(--urgent);
+    }
+
+    .countdown.soon {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(235, 255, 241, 0.88));
+      color: var(--soon);
+    }
+
+    .countdown.ongoing {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(236, 243, 255, 0.9));
+      color: var(--ongoing);
+    }
+
+    .action-link {
+      display: inline-block;
+      text-decoration: none;
+      color: var(--button-text);
+      background: linear-gradient(180deg, rgba(10, 200, 245, 0.92), rgba(124, 232, 255, 0.88));
+      border-radius: 999px;
+      padding: 11px 16px;
+      font-weight: bold;
+      margin-top: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.58);
+      box-shadow: 0 8px 20px rgba(10, 200, 245, 0.18);
+      transition: background 0.2s ease, transform 0.2s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    .action-link:hover {
+      background: linear-gradient(180deg, var(--button-hover), rgba(117, 232, 251, 0.94));
+      transform: translateY(-1px);
+    }
+
+    .empty-card {
+      background: var(--panel-strong);
+      border: 1px dashed var(--border);
+      border-radius: 22px;
+      padding: 16px;
+      color: var(--text);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 16px;
+      }
+
+      .card-header {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <h1>Due It Now</h1>
+    <p class="intro">An easy way to stay on top of important civic deadlines and time-sensitive city programs in Cambridge.</p>
+
+    <div class="controls">
+      <div class="control-group">
+        <strong class="control-label">What do you need help with?</strong>
+        <div class="chips" id="chips"></div>
+      </div>
+
+      <div class="control-group">
+        <strong class="control-label">Filter by timing</strong>
+        <div class="chips" id="urgency-filters"></div>
+      </div>
+    </div>
+
+    <div class="toolbar">
+      <p class="summary" id="summary"></p>
+      <div class="sort-control">
+        <span>Sort by Date</span>
+        <button class="sort-toggle" id="sort-toggle" type="button" aria-label="Sort latest first" title="Sort latest first">↓</button>
+      </div>
+    </div>
+    <div class="cards" id="cards"></div>
+  </div>
+
+  <script>
+    const pathways = [
+      { id: "renewals", label: "Renew Something" },
+      { id: "housing", label: "Housing" },
+      { id: "education_work", label: "Education & Work" },
+      { id: "students_families", label: "Students & Families" },
+      { id: "voting_civics", label: "Voting & Civics" },
+      { id: "older_adults", label: "Older Adults" },
+      { id: "just_browsing", label: "Just Browsing" }
+    ];
+
+    const urgencyOptions = [
+      { id: "all", label: "All Timing" },
+      { id: "urgent", label: "Urgent" },
+      { id: "soon", label: "Soon" },
+      { id: "ongoing", label: "Ongoing" },
+      { id: "passed", label: "Passed" }
+    ];
+
+    const DAY_IN_MS = 1000 * 60 * 60 * 24;
+    let items = [];
+
+    let selected = "renewals";
+    let selectedUrgency = "all";
+    let selectedSort = "soonest";
+
+    const chipsEl = document.getElementById("chips");
+    const urgencyFiltersEl = document.getElementById("urgency-filters");
+    const cardsEl = document.getElementById("cards");
+    const summaryEl = document.getElementById("summary");
+    const sortToggleEl = document.getElementById("sort-toggle");
+
+    function startOfToday() {
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      return today;
+    }
+
+    function formatCountdown(itemDate) {
+      if (!itemDate) {
+        return { group: "ongoing", label: "Ongoing" };
+      }
+
+      const today = startOfToday();
+      const target = new Date(itemDate);
+      target.setHours(0, 0, 0, 0);
+
+      const diffDays = Math.round((target - today) / DAY_IN_MS);
+
+      if (diffDays < -7) {
+        return { group: "passed", label: Math.abs(diffDays) + " days past" };
+      }
+
+      if (diffDays < 0) {
+        if (diffDays === -1) {
+          return { group: "recent_passed", label: "1 day past" };
+        }
+
+        return { group: "recent_passed", label: Math.abs(diffDays) + " days past" };
+      }
+
+      if (diffDays <= 7) {
+        if (diffDays === 0) {
+          return { group: "urgent", label: "Today" };
+        }
+
+        if (diffDays === 1) {
+          return { group: "urgent", label: "1 day left" };
+        }
+
+        return { group: "urgent", label: diffDays + " days left" };
+      }
+
+      if (diffDays <= 30) {
+        return { group: "soon", label: diffDays + " days left" };
+      }
+
+      return { group: "ongoing", label: "30+ days away" };
+    }
+
+    function getDeadlineLine(item) {
+      if (!item.date) {
+        return item.display_date;
+      }
+
+      if (item.time) {
+        return item.display_date + " at " + item.time;
+      }
+
+      return item.display_date;
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#39;");
+    }
+
+    function renderCard(item) {
+      const countdown = formatCountdown(item.date);
+
+      return `
+        <article class="card">
+          <div class="card-header">
+            <h3>${escapeHtml(item.title)}</h3>
+            <span class="countdown ${countdown.group}">${escapeHtml(countdown.label)}</span>
+          </div>
+          <div class="meta">${escapeHtml(getDeadlineLine(item))}</div>
+          <p class="description">${escapeHtml(item.description)}</p>
+          <a class="action-link" href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer">
+            ${escapeHtml(item.action_label)}
+          </a>
+        </article>
+      `;
+    }
+
+    function renderChips() {
+      chipsEl.innerHTML = "";
+      pathways.forEach(pathway => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "chip" + (selected === pathway.id ? " active" : "");
+        btn.textContent = pathway.label;
+        btn.setAttribute("aria-pressed", selected === pathway.id ? "true" : "false");
+        btn.onclick = () => {
+          selected = pathway.id;
+          renderChips();
+          renderCards();
+        };
+        chipsEl.appendChild(btn);
+      });
+    }
+
+    function renderUrgencyFilters() {
+      urgencyFiltersEl.innerHTML = "";
+      urgencyOptions.forEach(option => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "chip" + (selectedUrgency === option.id ? " active" : "");
+        btn.textContent = option.label;
+        btn.setAttribute("aria-pressed", selectedUrgency === option.id ? "true" : "false");
+        btn.onclick = () => {
+          selectedUrgency = option.id;
+          renderUrgencyFilters();
+          renderCards();
+        };
+        urgencyFiltersEl.appendChild(btn);
+      });
+    }
+
+    function getSortableTime(item) {
+      if (!item.date) {
+        return Number.POSITIVE_INFINITY;
+      }
+
+      return new Date(item.date).getTime();
+    }
+
+    function sortItems(list) {
+      const sorted = [...list];
+
+      if (selectedSort === "latest") {
+        sorted.sort((a, b) => getSortableTime(b) - getSortableTime(a));
+        return sorted;
+      }
+
+      sorted.sort((a, b) => getSortableTime(a) - getSortableTime(b));
+      return sorted;
+    }
+
+    function renderCards() {
+      const filtered = items.filter(item => {
+        const timingGroup = formatCountdown(item.date).group;
+
+        if (selectedUrgency === "passed") {
+          return timingGroup === "passed";
+        }
+
+        if (selected !== "just_browsing" && !item.pathways.includes(selected)) {
+          return false;
+        }
+
+        if (selectedUrgency === "all") {
+          return selected === "just_browsing" ? true : timingGroup !== "passed";
+        }
+
+        if (selectedUrgency === "ongoing") {
+          return timingGroup === "ongoing";
+        }
+
+        return timingGroup === selectedUrgency;
+      });
+
+      if (filtered.length === 0) {
+        summaryEl.textContent = "No items match this view yet.";
+        cardsEl.innerHTML = `
+          <div class="empty-card">
+            Nothing to see here (yet)! If you believe an important deadline is missing, please let me know at dueitnow@gmail.com.
+          </div>
+        `;
+        return;
+      }
+
+      const pathway = pathways.find(pathway => pathway.id === selected);
+      const timingText = urgencyOptions.find(option => option.id === selectedUrgency).label.toLowerCase();
+      const labelText = selectedUrgency === "passed"
+        ? "Showing passed items from across the feed."
+        : "Showing " + filtered.length + " item" + (filtered.length === 1 ? "" : "s") + " for " + pathway.label + " in " + timingText + ".";
+
+      summaryEl.textContent = labelText;
+      cardsEl.innerHTML = sortItems(filtered).map(renderCard).join("");
+    }
+
+    async function loadFeed() {
+      summaryEl.textContent = "Loading local feed...";
+      cardsEl.innerHTML = `
+        <div class="empty-card">
+          Looking up current Cambridge items.
+        </div>
+      `;
+
+      try {
+        const response = await fetch("./feed.json");
+
+        if (!response.ok) {
+          throw new Error("Could not load feed.json");
+        }
+
+        const data = await response.json();
+        items = Array.isArray(data.items) ? data.items : [];
+        renderCards();
+      } catch (error) {
+        summaryEl.textContent = "The feed could not be loaded.";
+        cardsEl.innerHTML = `
+          <div class="empty-card">
+            Check whether <code>feed.json</code> is valid and being served by the local server.
+          </div>
+        `;
+        console.error(error);
+      }
+    }
+
+    function updateSortToggle() {
+      if (selectedSort === "soonest") {
+        sortToggleEl.textContent = "\u2193";
+        sortToggleEl.setAttribute("aria-label", "Sort latest first");
+        sortToggleEl.setAttribute("title", "Sort latest first");
+        return;
+      }
+
+      sortToggleEl.textContent = "\u2191";
+      sortToggleEl.setAttribute("aria-label", "Sort soonest first");
+      sortToggleEl.setAttribute("title", "Sort soonest first");
+    }
+
+    sortToggleEl.addEventListener("click", () => {
+      selectedSort = selectedSort === "soonest" ? "latest" : "soonest";
+      updateSortToggle();
+      renderCards();
+    });
+
+    updateSortToggle();
+    renderChips();
+    renderUrgencyFilters();
+    loadFeed();
+  </script>
+</body>
+</html>
