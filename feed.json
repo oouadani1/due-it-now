@@ -1,0 +1,200 @@
+{
+  "items": [
+    {
+      "title": "Renew Cambridge Parking Permit",
+      "date": "2026-03-31",
+      "display_date": "Tuesday, March 31, 2026",
+      "time": null,
+      "location": "Cambridge",
+      "description": "Resident and visitor parking permits should be renewed online or in person before the city deadline.",
+      "action_label": "Renew Parking Permit",
+      "url": "https://www.cambridgema.gov/en/iwantto/applyforaparkingpermit",
+      "cost": "Varies by permit type",
+      "pathways": [
+        "renewals"
+      ],
+      "source": "Cambridge Parking Permits"
+    },
+    {
+      "title": "Apply for Cambridge Personal Tax Exemptions",
+      "date": "2026-04-01",
+      "display_date": "Wednesday, April 1, 2026",
+      "time": null,
+      "location": "Assessing Office",
+      "description": "Eligible residents can apply for Cambridge personal tax exemptions by the annual filing deadline.",
+      "action_label": "Open Tax Exemptions",
+      "url": "https://www.cambridgema.gov/Services/taxpayerexemptions",
+      "cost": "Free",
+      "pathways": [
+        "renewals",
+        "older_adults"
+      ],
+      "source": "Cambridge Taxpayer Exemptions"
+    },
+    {
+      "title": "Beginner ESOL (Central Square)",
+      "date": "2026-04-01",
+      "display_date": "Wednesday, April 1, 2026",
+      "time": "10:30 AM",
+      "location": "Central Square Branch, 45 Pearl St., Cambridge, MA 02139",
+      "description": "Join us for an English for Speakers of Other Languages (ESOL) class.",
+      "action_label": "View Program Details",
+      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=39b6bbbe610b4d11b31ff86b273d93af",
+      "cost": "Free",
+      "pathways": [
+        "education_work",
+        "just_browsing"
+      ],
+      "source": "Cambridge Public Library"
+    },
+    {
+      "title": "High Beginner ESOL (Central Square)",
+      "date": "2026-04-01",
+      "display_date": "Wednesday, April 1, 2026",
+      "time": "10:30 AM",
+      "location": "Central Square Branch, 45 Pearl St., Cambridge, MA 02139",
+      "description": "Join us for an English for Speakers of Other Languages (ESOL) Class.",
+      "action_label": "View Program Details",
+      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=7e21ee76b2ab426b928028d08f3fec62",
+      "cost": "Free",
+      "pathways": [
+        "education_work",
+        "just_browsing"
+      ],
+      "source": "Cambridge Public Library"
+    },
+    {
+      "title": "English Conversation Practice, Intermediate (O'Neill)",
+      "date": "2026-04-01",
+      "display_date": "Wednesday, April 1, 2026",
+      "time": "1:00 PM",
+      "location": "O'Neill Branch, 70 Rindge Ave., Cambridge, MA 02140",
+      "description": "Join us for an English for Speakers of Other Languages (ESOL) Conversation Practice.",
+      "action_label": "View Program Details",
+      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=a679358a9c824bb4903ebdbf61a95aba",
+      "cost": "Free",
+      "pathways": [
+        "education_work",
+        "just_browsing"
+      ],
+      "source": "Cambridge Public Library"
+    },
+    {
+      "title": "Resume and Job Application Support (Central Square)",
+      "date": "2026-04-01",
+      "display_date": "Wednesday, April 1, 2026",
+      "time": "1:00 PM",
+      "location": "Central Square Branch, 45 Pearl St., Cambridge, MA 02139",
+      "description": "Looking for assistance creating a resume or looking for jobs?",
+      "action_label": "View Program Details",
+      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=d2eb553e522747a3b9693f93578f904d",
+      "cost": "Free",
+      "pathways": [
+        "education_work",
+        "just_browsing"
+      ],
+      "source": "Cambridge Public Library"
+    },
+    {
+      "title": "Apply to Cambridge Homeownership Resale Pool",
+      "date": null,
+      "display_date": "Applications accepted on a rolling basis",
+      "time": null,
+      "location": "Cambridge Housing Department",
+      "description": "Cambridge accepts rolling applications for affordable homeownership units offered through the Homeownership Resale Pool.",
+      "action_label": "Open Resale Pool",
+      "url": "https://www.cambridgema.gov/CDD/housing/forapplicants/resalepool",
+      "cost": "Free",
+      "pathways": [
+        "housing",
+        "just_browsing"
+      ],
+      "source": "Cambridge Housing Department"
+    },
+    {
+      "title": "Apply to Cambridge Rental Applicant Pool",
+      "date": null,
+      "display_date": "Applications accepted on a rolling basis",
+      "time": null,
+      "location": "Cambridge Housing Department",
+      "description": "Cambridge is accepting new preliminary applications for affordable inclusionary rental housing through the Rental Applicant Pool.",
+      "action_label": "Open Rental Applicant Pool",
+      "url": "https://www.cambridgema.gov/CDD/housing/forapplicants/rentalapplicantpool",
+      "cost": "Free",
+      "pathways": [
+        "housing",
+        "just_browsing"
+      ],
+      "source": "Cambridge Housing Department"
+    },
+    {
+      "title": "Check Current and Upcoming Cambridge Public Meetings",
+      "date": null,
+      "display_date": "Ongoing",
+      "time": null,
+      "location": "Online",
+      "description": "PrimeGov lists current and upcoming Cambridge public meetings, agendas, and documents.",
+      "action_label": "Open Public Meetings Portal",
+      "url": "https://cambridgema.primegov.com/public/portal",
+      "cost": "Free",
+      "pathways": [
+        "voting_civics",
+        "just_browsing"
+      ],
+      "source": "PrimeGov Public Portal"
+    },
+    {
+      "title": "Join Cambridge Middle-Income Rental Waiting Pool",
+      "date": null,
+      "display_date": "Applications accepted on a rolling basis",
+      "time": null,
+      "location": "Cambridge Housing Department",
+      "description": "Cambridge is accepting applications for its Middle-Income Rental Program waiting pool for affordable apartments.",
+      "action_label": "Open Middle-Income Rental Program",
+      "url": "https://www.cambridgema.gov/CDD/housing/forapplicants/middleincomerentalprogram",
+      "cost": "Free",
+      "pathways": [
+        "housing",
+        "just_browsing"
+      ],
+      "source": "Cambridge Housing Department"
+    },
+    {
+      "title": "Return Your Cambridge Annual City Census",
+      "date": null,
+      "display_date": "Return as soon as possible",
+      "time": null,
+      "location": "Online, mail, or drop box",
+      "description": "Cambridge residents should return the annual city census to protect voting rights and support municipal services.",
+      "action_label": "Open Census Form",
+      "url": "https://www.cambridgema.gov/census",
+      "cost": "Free",
+      "pathways": [
+        "voting_civics",
+        "renewals",
+        "just_browsing"
+      ],
+      "source": "Cambridge Election Commission"
+    },
+    {
+      "title": "Track Cambridge Affordable Homeownership Lotteries",
+      "date": null,
+      "display_date": "Sign up for future lottery notices",
+      "time": null,
+      "location": "Cambridge Housing Department",
+      "description": "New affordable homeownership units are sold through separate application processes and lotteries when they become available.",
+      "action_label": "Open Housing Applicant Information",
+      "url": "https://www.cambridgema.gov/CDD/housing/forapplicants",
+      "cost": "Free",
+      "pathways": [
+        "housing",
+        "just_browsing"
+      ],
+      "source": "Cambridge Housing Department"
+    }
+  ],
+  "metadata": {
+    "updated_at": "2026-03-29T02:35:11",
+    "source_errors": []
+  }
+}
