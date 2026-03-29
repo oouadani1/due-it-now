@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 import re
 from dataclasses import dataclass
-from datetime import datetime
+from datetime import datetime, timedelta
 from html import unescape
 from html.parser import HTMLParser
 from pathlib import Path
@@ -16,12 +16,18 @@ PROJECT_ROOT = Path(__file__).resolve().parent
 FEED_PATH = PROJECT_ROOT / "feed.json"
 TODAY = datetime.now()
 CURRENT_YEAR = TODAY.year
+LOOKAHEAD_DAYS = 365
+PASSED_ARCHIVE_DAYS = 60
 
 
 PARKING_URL = "https://www.cambridgema.gov/en/iwantto/applyforaparkingpermit"
 EXEMPTIONS_URL = "https://www.cambridgema.gov/Services/taxpayerexemptions"
 CENSUS_URL = "https://www.cambridgema.gov/Departments/electioncommission/news/2026/03/2026annualcitycensus"
 LIBRARY_URL = "https://www.cambridgema.gov/en/Departments/cambridgepubliclibrary/"
+LIBRARY_CALENDAR_URL = "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar?department=cpl&view=Month&page=1&resultsperpage=15"
+CRLS_CALENDAR_URL = "https://crls.cpsd.us/calendar-link"
+SCHOOL_COMMITTEE_URL = "https://secure1.cpsd.us/school_committee/"
+PRIMEGOV_URL = "https://cambridgema.primegov.com/public/portal"
 
 
 @dataclass
@@ -36,6 +42,7 @@ class FeedItem:
     url: str
     cost: str
     pathways: list[str]
+    source: str
 
     def to_dict(self) -> dict:
         return {
@@ -49,6 +56,7 @@ class FeedItem:
             "url": self.url,
             "cost": self.cost,
             "pathways": self.pathways,
+            "source": self.source,
         }
 
 
@@ -174,7 +182,31 @@ def display_date(value: datetime | None) -> str:
 def should_keep_dated_item(value: datetime | None) -> bool:
     if value is None:
         return True
-    return value.date() >= TODAY.date()
+    earliest = TODAY.date() - timedelta(days=PASSED_ARCHIVE_DAYS)
+    latest = TODAY.date() + timedelta(days=LOOKAHEAD_DAYS)
+    return earliest <= value.date() <= latest
+
+
+def parse_numeric_date(text: str) -> datetime | None:
+    cleaned = clean_whitespace(text)
+    for fmt in ("%m/%d/%Y", "%m/%d/%y"):
+        try:
+            return datetime.strptime(cleaned, fmt)
+        except ValueError:
+            continue
+    return None
+
+
+def title_case(value: str) -> str:
+    small_words = {"and", "or", "for", "of", "the", "to", "a", "an", "in", "on", "with"}
+    words = clean_whitespace(value).split(" ")
+    output: list[str] = []
+    for index, word in enumerate(words):
+        if index > 0 and word.lower() in small_words:
+            output.append(word.lower())
+        else:
+            output.append(word[:1].upper() + word[1:])
+    return " ".join(output)
 
 
 def dedupe_items(items: Iterable[FeedItem]) -> list[FeedItem]:
@@ -227,6 +259,7 @@ def parse_parking_deadline() -> list[FeedItem]:
             url=PARKING_URL,
             cost="Varies by permit type",
             pathways=["renewals"],
+            source="Cambridge Parking Permits",
         )
     ]
 
@@ -261,6 +294,7 @@ def parse_tax_exemptions() -> list[FeedItem]:
             url=EXEMPTIONS_URL,
             cost="Free",
             pathways=["renewals", "older_adult_support"],
+            source="Cambridge Taxpayer Exemptions",
         )
     ]
 
@@ -286,6 +320,323 @@ def parse_census_notice() -> list[FeedItem]:
             url="https://www.cambridgema.gov/census",
             cost="Free",
             pathways=["voting_help", "renewals", "just_browsing"],
+            source="Cambridge Election Commission",
+        )
+    ]
+
+
+def parse_school_committee_meetings(limit: int = 6) -> list[FeedItem]:
+    html = fetch_html(SCHOOL_COMMITTEE_URL)
+    parser = SimpleHTML()
+    parser.feed(html)
+    lines = parser.text_lines()
+    text = "\n".join(lines)
+
+    pattern = re.compile(
+        r"(\d{4}-\d{2}-\d{2})\s+(\d{2}/\d{2}/\d{4})\s+(.+?)\s+(\d{2}:\d{2}\s+[ap]m)(?:\s+\d{2}:\d{2}\s+[ap]m)?\s+(.+?)\s+(?:Discussing|For the purpose of|Continuation of|Joint meeting)(.+?)(?=(?:\d{4}-\d{2}-\d{2}\s+\d{2}/\d{2}/\d{4})|$)",
+        re.IGNORECASE | re.DOTALL,
+    )
+
+    items: list[FeedItem] = []
+    for match in pattern.finditer(text):
+        meeting_date = parse_numeric_date(match.group(2))
+        if not should_keep_dated_item(meeting_date):
+            continue
+
+        title = clean_whitespace(match.group(3))
+        location = clean_whitespace(match.group(5))
+        description = first_sentence(match.group(6))
+
+        if "cancel" in title.lower():
+            continue
+
+        items.append(
+            FeedItem(
+                title=title_case(title),
+                date=iso_date(meeting_date),
+                display_date=display_date(meeting_date),
+                time=match.group(4).upper(),
+                location=location,
+                description=description or "Upcoming Cambridge School Committee meeting.",
+                action_label="View Meeting Details",
+                url=SCHOOL_COMMITTEE_URL,
+                cost="Free",
+                pathways=["kids_teens", "just_browsing"],
+                source="CPSD School Committee",
+            )
+        )
+
+        if len(items) >= limit:
+            break
+
+    return items
+
+
+def parse_crls_calendar(limit: int = 5) -> list[FeedItem]:
+    html = fetch_html(CRLS_CALENDAR_URL)
+    parser = SimpleHTML()
+    parser.feed(html)
+    lines = parser.text_lines()
+    links_by_text = {
+        clean_whitespace(link["text"]): urljoin(CRLS_CALENDAR_URL, link["href"])
+        for link in parser.links
+        if clean_whitespace(link["text"])
+    }
+
+    try:
+        start = lines.index("Calendar RSS Feeds") + 1
+    except ValueError as exc:
+        raise ValueError("Could not find CRLS event list.") from exc
+
+    event_lines: list[str] = []
+    for line in lines[start:]:
+        if line == "Load More Events":
+            break
+        event_lines.append(line)
+
+    items: list[FeedItem] = []
+    month_day_year = None
+    date_pattern = re.compile(r"^[A-Z][a-z]{2} \d{1,2} \d{4}$")
+    time_pattern = re.compile(r"^(all day|\d{1,2}:\d{2}\s*[AP]M\s*-\s*\d{1,2}:\d{2}\s*[AP]M)$", re.IGNORECASE)
+    useful_keywords = (
+        "deadline",
+        "committee",
+        "conference",
+        "caregiver",
+        "coffee",
+        "mcas",
+        "exam",
+        "yearbook",
+        "college",
+        "financial aid",
+        "subcommittee",
+    )
+
+    i = 0
+    while i < len(event_lines):
+        line = event_lines[i]
+
+        if date_pattern.match(line):
+            month_day_year = line
+            i += 1
+            continue
+
+        if month_day_year and i + 1 < len(event_lines) and time_pattern.match(event_lines[i + 1]):
+            title = clean_whitespace(line)
+            time_range = clean_whitespace(event_lines[i + 1])
+            j = i + 2
+            location_parts: list[str] = []
+
+            while j < len(event_lines) and not event_lines[j].startswith("Read More about"):
+                if date_pattern.match(event_lines[j]):
+                    break
+                location_parts.append(event_lines[j])
+                j += 1
+
+            read_more_line = event_lines[j] if j < len(event_lines) else ""
+            i = j + 1
+
+            haystack = " ".join([title, " ".join(location_parts)]).lower()
+            if not any(keyword in haystack for keyword in useful_keywords):
+                continue
+
+            event_date = datetime.strptime(month_day_year, "%b %d %Y")
+            if not should_keep_dated_item(event_date):
+                continue
+
+            time_text = None if time_range.lower() == "all day" else time_range.split(" - ")[0].upper()
+            location = "Cambridge Rindge and Latin School"
+            if location_parts:
+                candidate_location = clean_whitespace(" ".join(location_parts))
+                if "Read More" not in candidate_location:
+                    location = candidate_location
+
+            read_more_text = clean_whitespace(read_more_line)
+            url = CRLS_CALENDAR_URL
+            if read_more_text:
+                url = links_by_text.get(read_more_text, CRLS_CALENDAR_URL)
+
+            description = first_sentence(title)
+            if "deadline" in title.lower():
+                description = first_sentence(title + " for Cambridge Rindge and Latin students.")
+            elif "committee" in title.lower():
+                description = "Upcoming Cambridge Public Schools committee meeting."
+
+            items.append(
+                FeedItem(
+                    title=title_case(title.replace("Cambridge Rindge and Latin ", "").replace("Cambridge Public Schools ", "")),
+                    date=event_date.strftime("%Y-%m-%dT00:00:00"),
+                    display_date=display_date(event_date),
+                    time=time_text,
+                    location=location,
+                    description=description or "Upcoming CRLS event or deadline.",
+                    action_label="Open CRLS Calendar",
+                    url=url,
+                    cost="Free",
+                    pathways=["kids_teens", "just_browsing"],
+                    source="CRLS Calendar",
+                )
+            )
+
+            if len(items) >= limit:
+                break
+            continue
+
+        i += 1
+
+    return items
+
+
+def parse_crls_calendar_fallback(limit: int = 6) -> list[FeedItem]:
+    html = fetch_html(CRLS_CALENDAR_URL)
+    parser = SimpleHTML()
+    parser.feed(html)
+    lines = parser.text_lines()
+
+    items: list[FeedItem] = []
+    date_pattern = re.compile(r"^[A-Z][a-z]{2} \d{1,2} \d{4}$")
+    time_pattern = re.compile(r"^(all day|\d{1,2}:\d{2}\s*[AP]M\s*-\s*\d{1,2}:\d{2}\s*[AP]M)$", re.IGNORECASE)
+    useful_keywords = (
+        "deadline",
+        "committee",
+        "subcommittee",
+        "yearbook",
+        "mcas",
+        "principal",
+        "caregiver",
+        "conference",
+    )
+
+    current_date: datetime | None = None
+    i = 0
+    while i < len(lines):
+        line = lines[i]
+
+        if date_pattern.match(line):
+            current_date = datetime.strptime(line, "%b %d %Y")
+            i += 1
+            continue
+
+        if current_date and i + 1 < len(lines) and time_pattern.match(lines[i + 1]):
+            title = clean_whitespace(line)
+            time_line = clean_whitespace(lines[i + 1])
+            location = "Cambridge Rindge and Latin School"
+
+            j = i + 2
+            while j < len(lines) and not date_pattern.match(lines[j]):
+                next_line = lines[j]
+                if next_line.startswith("Read More about"):
+                    break
+                if next_line and not time_pattern.match(next_line):
+                    location = next_line
+                j += 1
+
+            i = j + 1
+
+            if not should_keep_dated_item(current_date):
+                continue
+
+            if not any(keyword in title.lower() for keyword in useful_keywords):
+                continue
+
+            items.append(
+                FeedItem(
+                    title=title_case(title.replace("Cambridge Rindge and Latin ", "").replace("Cambridge Public Schools ", "")),
+                    date=current_date.strftime("%Y-%m-%dT00:00:00"),
+                    display_date=display_date(current_date),
+                    time=None if time_line.lower() == "all day" else time_line.split(" - ")[0].upper(),
+                    location=location,
+                    description=first_sentence(title + "."),
+                    action_label="Open CRLS Calendar",
+                    url=CRLS_CALENDAR_URL,
+                    cost="Free",
+                    pathways=["kids_teens", "just_browsing"],
+                    source="CRLS Calendar",
+                )
+            )
+
+            if len(items) >= limit:
+                break
+            continue
+
+        i += 1
+
+    return items
+
+
+def parse_rwinters_entries(url: str, title_prefix: str, limit: int = 5) -> list[FeedItem]:
+    html = fetch_html(url)
+    parser = SimpleHTML()
+    parser.feed(html)
+    lines = parser.text_lines()
+
+    items: list[FeedItem] = []
+    date_pattern = re.compile(r"(\d{1,2}/\d{1,2}/\d{4})")
+    time_pattern = re.compile(r"(\d{1,2}:\d{2}\s*[AP]M)", re.IGNORECASE)
+
+    for line in lines:
+        date_match = date_pattern.search(line)
+        if not date_match:
+            continue
+
+        event_date = parse_numeric_date(date_match.group(1))
+        if not should_keep_dated_item(event_date):
+            continue
+
+        title = clean_whitespace(date_pattern.sub("", line))
+        time_text = None
+        time_match = time_pattern.search(title)
+        if time_match:
+            time_text = time_match.group(1).upper()
+            title = clean_whitespace(time_pattern.sub("", title))
+
+        if len(title) < 8:
+            continue
+
+        items.append(
+            FeedItem(
+                title=title_case(f"{title_prefix} {title}".strip()),
+                date=iso_date(event_date),
+                display_date=display_date(event_date),
+                time=time_text,
+                location="Cambridge",
+                description=first_sentence(title) or "Upcoming civic meeting or deadline.",
+                action_label="Open Source Page",
+                url=url,
+                cost="Free",
+                pathways=["voting_help", "just_browsing"],
+                source="Robert Winters",
+            )
+        )
+
+        if len(items) >= limit:
+            break
+
+    return items
+
+
+def parse_primegov_portal() -> list[FeedItem]:
+    html = fetch_html(PRIMEGOV_URL)
+    parser = SimpleHTML()
+    parser.feed(html)
+    text = "\n".join(parser.text_lines())
+
+    if "Current And Upcoming Meetings" not in text and "Current and Upcoming Meetings" not in text:
+        return []
+
+    return [
+        FeedItem(
+            title="Check Current and Upcoming Cambridge Public Meetings",
+            date=None,
+            display_date="Ongoing",
+            time=None,
+            location="Online",
+            description="PrimeGov lists current and upcoming Cambridge public meetings, agendas, and documents.",
+            action_label="Open Public Meetings Portal",
+            url=PRIMEGOV_URL,
+            cost="Free",
+            pathways=["voting_help", "just_browsing"],
+            source="PrimeGov Public Portal",
         )
     ]
 
@@ -404,6 +755,7 @@ def parse_library_programs(limit: int = 4) -> list[FeedItem]:
                     url=title_url,
                     cost="Free",
                     pathways=classify_library_pathways(title, description),
+                    source="Cambridge Public Library",
                 )
             )
             continue
@@ -418,6 +770,10 @@ def build_feed() -> dict:
         ("parking permits", parse_parking_deadline),
         ("tax exemptions", parse_tax_exemptions),
         ("annual census", parse_census_notice),
+        ("school committee", parse_school_committee_meetings),
+        ("crls calendar", parse_crls_calendar),
+        ("crls calendar fallback", parse_crls_calendar_fallback),
+        ("primegov portal", parse_primegov_portal),
         ("library programs", parse_library_programs),
     ]
 

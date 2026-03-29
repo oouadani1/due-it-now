@@ -12,7 +12,8 @@
       "cost": "Varies by permit type",
       "pathways": [
         "renewals"
-      ]
+      ],
+      "source": "Cambridge Parking Permits"
     },
     {
       "title": "Apply for Cambridge Personal Tax Exemptions",
@@ -27,7 +28,24 @@
       "pathways": [
         "renewals",
         "older_adult_support"
-      ]
+      ],
+      "source": "Cambridge Taxpayer Exemptions"
+    },
+    {
+      "title": "Check Current and Upcoming Cambridge Public Meetings",
+      "date": null,
+      "display_date": "Ongoing",
+      "time": null,
+      "location": "Online",
+      "description": "PrimeGov lists current and upcoming Cambridge public meetings, agendas, and documents.",
+      "action_label": "Open Public Meetings Portal",
+      "url": "https://cambridgema.primegov.com/public/portal",
+      "cost": "Free",
+      "pathways": [
+        "voting_help",
+        "just_browsing"
+      ],
+      "source": "PrimeGov Public Portal"
     },
     {
       "title": "Return Your Cambridge Annual City Census",
@@ -43,11 +61,12 @@
         "voting_help",
         "renewals",
         "just_browsing"
-      ]
+      ],
+      "source": "Cambridge Election Commission"
     }
   ],
   "metadata": {
-    "updated_at": "2026-03-29T00:02:02",
+    "updated_at": "2026-03-29T01:10:47",
     "source_errors": []
   }
 }

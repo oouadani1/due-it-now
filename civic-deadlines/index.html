@@ -160,13 +160,13 @@
       align-items: center;
       gap: 8px;
       color: var(--text);
-      font-size: 14px;
+      font-size: 0.875rem;
       font-weight: 700;
     }
 
     .sort-toggle {
       font: inherit;
-      font-size: 18px;
+      font-size: 1.125rem;
       line-height: 1;
       width: 42px;
       height: 42px;
@@ -210,7 +210,7 @@
       justify-content: space-between;
       align-items: flex-start;
       gap: 12px;
-      margin: 0 0 14px;
+      margin: 0 0 8px;
       padding: 0;
     }
 
@@ -218,7 +218,7 @@
       font-family: var(--font-heading);
       font-weight: 700;
       margin: 0;
-      font-size: 1.28rem;
+      font-size: 1.45rem;
       line-height: 1.18;
       color: var(--accent);
       position: relative;
@@ -227,8 +227,8 @@
 
     .meta {
       color: var(--text);
-      font-size: 14px;
-      margin: 0 0 12px;
+      font-size: 1.26rem;
+      margin: 0 0 8px;
       text-transform: none;
       position: relative;
       z-index: 1;
@@ -243,7 +243,7 @@
 
     .countdown {
       display: inline-block;
-      font-size: 14px;
+      font-size: 0.875rem;
       border-radius: 999px;
       padding: 10px 14px;
       font-weight: bold;
@@ -316,7 +316,7 @@
 <body>
   <div class="app">
     <h1>Due It Now</h1>
-    <p class="intro">An easy way to stay aware of important deadlines and useful city programs in Cambridge.</p>
+    <p class="intro">An easy way to stay on top of important civic deadlines and useful city programs in Cambridge.</p>
 
     <div class="controls">
       <div class="control-group">
@@ -345,7 +345,7 @@
       { id: "renewals", label: "Renew Something" },
       { id: "food_basics", label: "Food or Basics" },
       { id: "kids_teens", label: "Kids or Teens" },
-      { id: "voting_help", label: "Voting Help" },
+      { id: "voting_help", label: "Voting" },
       { id: "older_adult_support", label: "Older Adult Support" },
       { id: "just_browsing", label: "Just Browsing" }
     ];
@@ -354,7 +354,8 @@
       { id: "all", label: "All Timing" },
       { id: "urgent", label: "Urgent" },
       { id: "soon", label: "Soon" },
-      { id: "ongoing", label: "Ongoing" }
+      { id: "ongoing", label: "Ongoing" },
+      { id: "passed", label: "Passed" }
     ];
 
     const DAY_IN_MS = 1000 * 60 * 60 * 24;
@@ -387,8 +388,16 @@
 
       const diffDays = Math.round((target - today) / DAY_IN_MS);
 
+      if (diffDays < -7) {
+        return { group: "passed", label: Math.abs(diffDays) + " days past" };
+      }
+
       if (diffDays < 0) {
-        return { group: "ongoing", label: "Past date" };
+        if (diffDays === -1) {
+          return { group: "recent_passed", label: "1 day past" };
+        }
+
+        return { group: "recent_passed", label: Math.abs(diffDays) + " days past" };
       }
 
       if (diffDays <= 7) {
@@ -504,33 +513,45 @@
     }
 
     function renderCards() {
-      const byPath = selected === "just_browsing"
-        ? items
-        : items.filter(item => item.pathways.includes(selected));
-      const filtered = byPath.filter(item => {
-        if (selectedUrgency === "all") {
-          return true;
+      const filtered = items.filter(item => {
+        const timingGroup = formatCountdown(item.date).group;
+
+        if (selectedUrgency === "passed") {
+          return timingGroup === "passed";
         }
 
-        return formatCountdown(item.date).group === selectedUrgency;
+        if (selected !== "just_browsing" && !item.pathways.includes(selected)) {
+          return false;
+        }
+
+        if (selectedUrgency === "all") {
+          return selected === "just_browsing" ? true : timingGroup !== "passed";
+        }
+
+        if (selectedUrgency === "ongoing") {
+          return timingGroup === "ongoing";
+        }
+
+        return timingGroup === selectedUrgency;
       });
 
       if (filtered.length === 0) {
         summaryEl.textContent = "No items match this view yet.";
         cardsEl.innerHTML = `
           <div class="empty-card">
-            Try a different timing filter or task while the feed is still growing.
+            Nothing to see here! If you believe an important deadline is missing, please let me know at dueitnow@gmail.com.
           </div>
         `;
         return;
       }
 
       const pathway = pathways.find(pathway => pathway.id === selected);
-      const timingText = selectedUrgency === "all"
-        ? "all timing"
-        : urgencyOptions.find(option => option.id === selectedUrgency).label.toLowerCase();
+      const timingText = urgencyOptions.find(option => option.id === selectedUrgency).label.toLowerCase();
+      const labelText = selectedUrgency === "passed"
+        ? "Showing passed items from across the feed."
+        : "Showing " + filtered.length + " item" + (filtered.length === 1 ? "" : "s") + " for " + pathway.label + " in " + timingText + ".";
 
-      summaryEl.textContent = filtered.length + " item" + (filtered.length === 1 ? "" : "s") + " for " + pathway.label + " in " + timingText + ".";
+      summaryEl.textContent = labelText;
       cardsEl.innerHTML = sortItems(filtered).map(renderCard).join("");
     }
 
