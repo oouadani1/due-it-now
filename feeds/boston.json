@@ -1,0 +1,92 @@
+{
+  "items": [
+    {
+      "title": "License Your Dog in Boston",
+      "date": "2026-03-31",
+      "display_date": "Tuesday, March 31, 2026",
+      "time": null,
+      "location": "Boston Animal Care and Control",
+      "description": "Dog owners must license dogs older than six months before the annual City deadline.",
+      "action_label": "License Your Dog",
+      "url": "https://www.boston.gov/departments/animal-care-and-control/how-license-your-dog",
+      "cost": "$15-$30, waived for eligible residents 70+ applying by mail or in person",
+      "pathways": [
+        "renewals",
+        "older_adults"
+      ],
+      "source": "City of Boston Animal Care and Control"
+    },
+    {
+      "title": "Apply for Boston Property Tax Exemptions",
+      "date": "2026-04-01",
+      "display_date": "Wednesday, April 1, 2026",
+      "time": null,
+      "location": "Boston Assessing Department",
+      "description": "Eligible homeowners can file for the current fiscal year property tax exemption by the annual deadline.",
+      "action_label": "Open Tax Exemptions",
+      "url": "https://www.boston.gov/departments/assessing/filing-property-tax-exemption",
+      "cost": "Free",
+      "pathways": [
+        "renewals",
+        "housing",
+        "older_adults"
+      ],
+      "source": "City of Boston Assessing"
+    },
+    {
+      "title": "Apply for the Boston Digital Equity Fund",
+      "date": "2026-04-09",
+      "display_date": "Thursday, April 9, 2026",
+      "time": "5:00 PM",
+      "location": "City of Boston grant portal",
+      "description": "Boston-based organizations can apply for digital navigation, training, and device access funding that supports residents' online access to services and opportunities.",
+      "action_label": "Apply for the Fund",
+      "url": "https://www.boston.gov/departments/innovation-and-technology/2026-digital-equity-fund",
+      "cost": "Free to apply",
+      "pathways": [
+        "education_work",
+        "health",
+        "just_browsing"
+      ],
+      "source": "City of Boston Innovation and Technology"
+    },
+    {
+      "title": "Apply for Boston Small Community Grants",
+      "date": "2026-04-27",
+      "display_date": "Monday, April 27, 2026",
+      "time": "5:00 PM",
+      "location": "City of Boston grant portal",
+      "description": "Nonprofits can apply for small City trust grants supporting direct-impact community work, recreation, beautification, and field trips for Boston residents.",
+      "action_label": "Apply for Small Grants",
+      "url": "https://www.boston.gov/node/15816191",
+      "cost": "Free to apply",
+      "pathways": [
+        "just_browsing",
+        "students_families",
+        "voting_civics"
+      ],
+      "source": "City of Boston Treasury"
+    },
+    {
+      "title": "Apply for an Age Strong Rolling Grant",
+      "date": "2026-05-07",
+      "display_date": "Thursday, May 7, 2026",
+      "time": "11:59 PM",
+      "location": "Age Strong Commission",
+      "description": "Boston nonprofits, civic associations, and senior groups can apply for small-scale funding that supports older adult programming and social connection.",
+      "action_label": "Apply for Rolling Grant",
+      "url": "https://www.boston.gov/node/16395271",
+      "cost": "Free to apply",
+      "pathways": [
+        "older_adults",
+        "health",
+        "just_browsing"
+      ],
+      "source": "City of Boston Age Strong Commission"
+    }
+  ],
+  "metadata": {
+    "updated_at": "2026-03-31T23:59:00-04:00",
+    "source_errors": []
+  }
+}
