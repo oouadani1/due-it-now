@@ -9,12 +9,12 @@
   <meta property="og:description" content="An easy way to stay on top of time-sensitive civic deadlines and programs in Cambridge, MA." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://oouadani1.github.io/due-it-now/" />
-  <meta property="og:image" content="https://oouadani1.github.io/due-it-now/preview.JPG" />
+  <meta property="og:image" content="https://oouadani1.github.io/due-it-now/preview.jpg" />
   <meta property="og:image:alt" content="View of the Cambridge skyline across the Charles River." />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Due It Now" />
   <meta name="twitter:description" content="An easy way to stay on top of time-sensitive civic deadlines and programs in Cambridge, MA." />
-  <meta name="twitter:image" content="https://oouadani1.github.io/due-it-now/preview.JPG" />
+  <meta name="twitter:image" content="https://oouadani1.github.io/due-it-now/preview.jpg" />
   <style>
     @font-face {
       font-family: "Degular Demo";
@@ -368,6 +368,7 @@
     const pathways = [
       { id: "renewals", label: "Renew Something" },
       { id: "housing", label: "Housing" },
+      { id: "health", label: "Health" },
       { id: "arts", label: "Arts" },
       { id: "education_work", label: "Education & Work" },
       { id: "students_families", label: "Students & Families" },
@@ -414,16 +415,12 @@
 
       const diffDays = Math.round((target - today) / DAY_IN_MS);
 
-      if (diffDays < -7) {
-        return { group: "passed", label: Math.abs(diffDays) + " days past" };
-      }
-
       if (diffDays < 0) {
         if (diffDays === -1) {
-          return { group: "recent_passed", label: "1 day past" };
+          return { group: "passed", label: "1 day past" };
         }
 
-        return { group: "recent_passed", label: Math.abs(diffDays) + " days past" };
+        return { group: "passed", label: Math.abs(diffDays) + " days past" };
       }
 
       if (diffDays <= 7) {
