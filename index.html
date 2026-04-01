@@ -71,6 +71,27 @@
       margin: 0 auto;
     }
 
+    .hero-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+      margin-bottom: 12px;
+    }
+
+    .hero-copy {
+      flex: 1 1 420px;
+      min-width: 0;
+    }
+
+    .title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 8px;
+    }
+
     h1 {
       font-family: var(--font-heading);
       font-weight: 700;
@@ -81,11 +102,81 @@
       letter-spacing: -0.03em;
     }
 
+    .title-city {
+      font-weight: 400;
+      opacity: 0.72;
+    }
+
     .intro {
       color: var(--text);
       margin-top: 0;
       margin-bottom: 20px;
       max-width: 42rem;
+    }
+
+    .area-search {
+      flex: 0 0 270px;
+      min-width: 220px;
+      position: relative;
+    }
+
+    .area-search-input {
+      width: 100%;
+      box-sizing: border-box;
+      font: inherit;
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.64);
+      border-radius: 999px;
+      padding: 10px 16px;
+      outline: none;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 10px 26px var(--shadow);
+    }
+
+    .area-search-input:focus {
+      border-color: var(--accent);
+      background: rgba(255, 255, 255, 0.74);
+    }
+
+    .area-results {
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      left: 0;
+      display: none;
+      background: rgba(255, 255, 255, 0.96);
+      border: 1px solid rgba(17, 17, 17, 0.08);
+      border-radius: 16px;
+      box-shadow: 0 16px 36px rgba(17, 17, 17, 0.12);
+      overflow: hidden;
+      z-index: 4;
+    }
+
+    .area-results.visible {
+      display: block;
+    }
+
+    .area-result {
+      width: 100%;
+      border: 0;
+      background: #ffffff;
+      color: var(--text);
+      text-align: left;
+      font: inherit;
+      padding: 12px 14px;
+      cursor: pointer;
+    }
+
+    .area-result + .area-result {
+      border-top: 1px solid rgba(17, 17, 17, 0.06);
+    }
+
+    .area-result:hover,
+    .area-result:focus {
+      background: #f4f8ff;
+      outline: none;
     }
 
     .controls {
@@ -328,6 +419,20 @@
         padding: 16px;
       }
 
+      .hero-row {
+        flex-direction: column;
+      }
+
+      .title-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .area-search {
+        width: 100%;
+        min-width: 0;
+      }
+
       .card-header {
         flex-direction: column;
       }
@@ -336,8 +441,18 @@
 </head>
 <body>
   <div class="app">
-    <h1>Due It Now</h1>
-    <p class="intro">An easy way to stay on top of time-sensitive civic deadlines and programs in Cambridge, MA.</p>
+    <div class="hero-row">
+      <div class="hero-copy">
+        <div class="title-row">
+          <h1>Due It Now <span class="title-city" id="title-city">- Cambridge</span></h1>
+          <div class="area-search">
+            <input class="area-search-input" id="area-search-input" type="text" placeholder="Search your area" autocomplete="off" />
+            <div class="area-results" id="area-results" role="listbox" aria-label="Area suggestions"></div>
+          </div>
+        </div>
+        <p class="intro" id="app-intro">An easy way to stay on top of time-sensitive civic deadlines and programs in Cambridge, MA.</p>
+      </div>
+    </div>
 
     <div class="controls">
       <div class="control-group">
@@ -365,6 +480,27 @@
   </div>
 
   <script>
+    const CITY_CONFIG = {
+      cambridge: {
+        label: "Cambridge",
+        slug: "cambridge",
+        title: "Due It Now - Cambridge",
+        intro: "An easy way to stay on top of time-sensitive civic deadlines and programs in Cambridge, MA.",
+        feedPath: "./feed.json",
+        loadingText: "Looking up current Cambridge items.",
+        unavailableText: "Hmm...no results (yet). This tool scans the web 90 days ahead, so there may be something just around the corner."
+      },
+      boston: {
+        label: "Boston",
+        slug: "boston",
+        title: "Due It Now - Boston",
+        intro: "An easy way to stay on top of time-sensitive civic deadlines and programs in Boston, MA.",
+        feedPath: "./feeds/boston.json",
+        loadingText: "Looking up current Boston items.",
+        unavailableText: "Boston items could not be loaded right now."
+      }
+    };
+
     const pathways = [
       { id: "renewals", label: "Renew Something" },
       { id: "housing", label: "Housing" },
@@ -386,12 +522,21 @@
     ];
 
     const DAY_IN_MS = 1000 * 60 * 60 * 24;
+    const HOUR_IN_MS = 1000 * 60 * 60;
+    const MINUTE_IN_MS = 1000 * 60;
+    const DEFAULT_DEADLINE_HOUR = 23;
+    const DEFAULT_DEADLINE_MINUTE = 59;
     let items = [];
 
     let selected = "renewals";
     let selectedUrgency = "all";
     let selectedSort = "soonest";
+    let selectedCity = "cambridge";
 
+    const titleCityEl = document.getElementById("title-city");
+    const appIntroEl = document.getElementById("app-intro");
+    const areaSearchInputEl = document.getElementById("area-search-input");
+    const areaResultsEl = document.getElementById("area-results");
     const chipsEl = document.getElementById("chips");
     const urgencyFiltersEl = document.getElementById("urgency-filters");
     const cardsEl = document.getElementById("cards");
@@ -404,18 +549,78 @@
       return today;
     }
 
-    function formatCountdown(itemDate) {
+    function parseLocalDate(itemDate) {
       if (!itemDate) {
+        return null;
+      }
+
+      const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(itemDate);
+      if (!match) {
+        const fallback = new Date(itemDate);
+        fallback.setHours(0, 0, 0, 0);
+        return fallback;
+      }
+
+      const year = Number(match[1]);
+      const monthIndex = Number(match[2]) - 1;
+      const day = Number(match[3]);
+      return new Date(year, monthIndex, day);
+    }
+
+    function parseClockTime(timeText) {
+      if (!timeText) {
+        return null;
+      }
+
+      const match = timeText.trim().match(/^(\d{1,2})(?::(\d{2}))?\s*(AM|PM)$/i);
+      if (!match) {
+        return null;
+      }
+
+      let hour = Number(match[1]);
+      const minute = Number(match[2] || "0");
+      const meridiem = match[3].toUpperCase();
+
+      if (meridiem === "PM" && hour !== 12) {
+        hour += 12;
+      }
+
+      if (meridiem === "AM" && hour === 12) {
+        hour = 0;
+      }
+
+      return { hour, minute };
+    }
+
+    function getItemDeadline(item) {
+      if (!item.date) {
+        return null;
+      }
+
+      const target = parseLocalDate(item.date);
+      const parsedTime = parseClockTime(item.time);
+      const hour = parsedTime ? parsedTime.hour : DEFAULT_DEADLINE_HOUR;
+      const minute = parsedTime ? parsedTime.minute : DEFAULT_DEADLINE_MINUTE;
+      target.setHours(hour, minute, 0, 0);
+      return target;
+    }
+
+    function formatCountdown(item) {
+      if (!item.date) {
         return { group: "ongoing", label: "Ongoing" };
       }
 
+      const now = new Date();
       const today = startOfToday();
-      const target = new Date(itemDate);
-      target.setHours(0, 0, 0, 0);
+      const target = getItemDeadline(item);
+      const diffMs = target - now;
+      const diffDays = Math.round((parseLocalDate(item.date) - today) / DAY_IN_MS);
 
-      const diffDays = Math.round((target - today) / DAY_IN_MS);
+      if (diffMs < 0) {
+        if (diffDays === 0) {
+          return { group: "passed", label: "Passed" };
+        }
 
-      if (diffDays < 0) {
         if (diffDays === -1) {
           return { group: "passed", label: "1 day past" };
         }
@@ -424,8 +629,22 @@
       }
 
       if (diffDays <= 7) {
+        if (diffMs <= 30 * MINUTE_IN_MS) {
+          return { group: "urgent", label: "Less than 1 hour left" };
+        }
+
         if (diffDays === 0) {
-          return { group: "urgent", label: "Today" };
+          if (diffMs < HOUR_IN_MS) {
+            return { group: "urgent", label: "1 hour left" };
+          }
+
+          const hoursLeftToday = Math.ceil(diffMs / HOUR_IN_MS);
+          return { group: "urgent", label: hoursLeftToday + " hours left" };
+        }
+
+        if (diffMs > 0 && diffMs < DAY_IN_MS) {
+          const hoursLeft = Math.ceil(diffMs / HOUR_IN_MS);
+          return { group: "urgent", label: hoursLeft === 1 ? "1 hour left" : hoursLeft + " hours left" };
         }
 
         if (diffDays === 1) {
@@ -464,7 +683,7 @@
     }
 
     function renderCard(item) {
-      const countdown = formatCountdown(item.date);
+      const countdown = formatCountdown(item);
 
       return `
         <article class="card">
@@ -479,6 +698,87 @@
           </a>
         </article>
       `;
+    }
+
+    function currentCityConfig() {
+      return CITY_CONFIG[selectedCity] || CITY_CONFIG.cambridge;
+    }
+
+    function allAreaOptions() {
+      return Object.entries(CITY_CONFIG).map(([cityId, city]) => ({
+        id: cityId,
+        label: city.label,
+        slug: city.slug
+      }));
+    }
+
+    function applyCityShell() {
+      const city = currentCityConfig();
+      document.title = city.title;
+      titleCityEl.textContent = "- " + city.label;
+      appIntroEl.textContent = city.intro;
+    }
+
+    function updateCityQuery(cityId) {
+      const url = new URL(window.location.href);
+      if (cityId === "cambridge") {
+        url.searchParams.delete("city");
+      } else {
+        url.searchParams.set("city", cityId);
+      }
+      window.history.replaceState({}, "", url);
+    }
+
+    function closeAreaResults() {
+      areaResultsEl.classList.remove("visible");
+      areaResultsEl.innerHTML = "";
+    }
+
+    function renderAreaOptions(query = "") {
+      const normalizedQuery = query.trim().toLowerCase();
+      const options = allAreaOptions().filter(option => {
+        if (!normalizedQuery) {
+          return true;
+        }
+        return option.label.toLowerCase().includes(normalizedQuery) || option.slug.toLowerCase().includes(normalizedQuery);
+      });
+
+      if (options.length === 0) {
+        closeAreaResults();
+        return;
+      }
+
+      areaResultsEl.innerHTML = options
+        .map(option => `<button class="area-result" type="button" data-city="${escapeHtml(option.id)}">${escapeHtml(option.label)}</button>`)
+        .join("");
+      areaResultsEl.classList.add("visible");
+    }
+
+    function findAreaMatch(value) {
+      const normalized = value.trim().toLowerCase();
+      if (!normalized) {
+        return null;
+      }
+
+      return allAreaOptions().find(option =>
+        option.label.toLowerCase() === normalized || option.slug.toLowerCase() === normalized
+      ) || null;
+    }
+
+    function switchCity(cityId) {
+      if (!CITY_CONFIG[cityId] || selectedCity === cityId) {
+        applyCityShell();
+        renderCards();
+        return;
+      }
+
+      selectedCity = cityId;
+      items = [];
+      applyCityShell();
+      renderCards();
+      updateCityQuery(cityId);
+      closeAreaResults();
+      loadFeed();
     }
 
     function renderChips() {
@@ -520,7 +820,7 @@
         return Number.POSITIVE_INFINITY;
       }
 
-      return new Date(item.date).getTime();
+      return parseLocalDate(item.date).getTime();
     }
 
     function sortItems(list) {
@@ -537,7 +837,7 @@
 
     function renderCards() {
       const filtered = items.filter(item => {
-        const timingGroup = formatCountdown(item.date).group;
+        const timingGroup = formatCountdown(item).group;
 
         if (selectedUrgency === "passed") {
           return timingGroup === "passed";
@@ -579,15 +879,16 @@
     }
 
     async function loadFeed() {
+      const city = currentCityConfig();
       summaryEl.textContent = "Loading local feed...";
       cardsEl.innerHTML = `
         <div class="empty-card">
-          Looking up current Cambridge items.
+          ${escapeHtml(city.loadingText)}
         </div>
       `;
 
       try {
-        const response = await fetch("./feed.json");
+        const response = await fetch(city.feedPath);
 
         if (!response.ok) {
           throw new Error("Could not load feed.json");
@@ -600,7 +901,7 @@
         summaryEl.textContent = "The feed could not be loaded.";
         cardsEl.innerHTML = `
           <div class="empty-card">
-            Check whether <code>feed.json</code> is valid and being served by the local server.
+            ${escapeHtml(city.unavailableText)}
           </div>
         `;
         console.error(error);
@@ -626,7 +927,62 @@
       renderCards();
     });
 
+    areaSearchInputEl.addEventListener("click", () => {
+      renderAreaOptions(areaSearchInputEl.value);
+    });
+
+    areaSearchInputEl.addEventListener("input", event => {
+      renderAreaOptions(event.target.value);
+      const match = findAreaMatch(event.target.value);
+      if (match) {
+        switchCity(match.id);
+      }
+    });
+
+    areaSearchInputEl.addEventListener("change", event => {
+      const match = findAreaMatch(event.target.value);
+      if (match) {
+        switchCity(match.id);
+        areaSearchInputEl.value = "";
+        return;
+      }
+      areaSearchInputEl.value = "";
+      applyCityShell();
+      closeAreaResults();
+    });
+
+    areaSearchInputEl.addEventListener("blur", () => {
+      window.setTimeout(() => {
+        areaSearchInputEl.value = "";
+        applyCityShell();
+        closeAreaResults();
+      }, 120);
+    });
+
+    areaResultsEl.addEventListener("mousedown", event => {
+      const button = event.target.closest(".area-result");
+      if (!button) {
+        return;
+      }
+      switchCity(button.dataset.city);
+      areaSearchInputEl.value = "";
+    });
+
+    document.addEventListener("click", event => {
+      if (event.target === areaSearchInputEl || areaResultsEl.contains(event.target)) {
+        return;
+      }
+      closeAreaResults();
+    });
+
+    const initialCity = new URLSearchParams(window.location.search).get("city");
+    if (initialCity && CITY_CONFIG[initialCity]) {
+      selectedCity = initialCity;
+    }
+
+    applyCityShell();
     updateSortToggle();
+    closeAreaResults();
     renderChips();
     renderUrgencyFilters();
     loadFeed();
