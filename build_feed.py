@@ -22,7 +22,8 @@ PASSED_ARCHIVE_DAYS = 60
 
 PARKING_URL = "https://www.cambridgema.gov/en/iwantto/applyforaparkingpermit"
 EXEMPTIONS_URL = "https://www.cambridgema.gov/Services/taxpayerexemptions"
-CENSUS_URL = "https://www.cambridgema.gov/Departments/electioncommission/news/2026/03/2026annualcitycensus"
+ELECTION_NEWS_URL = "https://www.cambridgema.gov/Departments/electioncommission/news"
+CENSUS_FORM_URL = "https://www.cambridgema.gov/Departments/electioncommission/census/form"
 LIBRARY_URL = "https://www.cambridgema.gov/en/Departments/cambridgepubliclibrary/"
 LIBRARY_CALENDAR_URL = "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar?department=cpl&view=Month&page=1&resultsperpage=15"
 CRLS_CALENDAR_URL = "https://crls.cpsd.us/calendar-link"
@@ -33,6 +34,25 @@ RENTAL_POOL_URL = "https://www.cambridgema.gov/CDD/housing/forapplicants/rentala
 RESALE_POOL_URL = "https://www.cambridgema.gov/CDD/housing/forapplicants/resalepool"
 MIDDLE_INCOME_URL = "https://www.cambridgema.gov/CDD/housing/forapplicants/middleincomerentalprogram"
 HOUSING_TRUST_URL = "https://www.cambridgema.gov/CDD/housing/housingtrust"
+CAMBRIDGE_ARTS_URL = "https://www.cambridgema.gov/arts"
+CAMBRIDGE_ARTS_CALENDAR_URL = "https://www.cambridgema.gov/arts/Calendar"
+CPHD_MINI_GRANTS_URL = "https://www.cambridgepublichealth.org/services/mini-grants/"
+CPP_URL = "https://earlychildhoodcambridge.org/cpp/"
+
+SOURCE_PARSERS = [
+    ("parking permits", "deadlines", "Cambridge parking permit renewal deadline", "stable city page", "strong deadline signal"),
+    ("tax exemptions", "deadlines", "annual Cambridge personal tax exemptions filing deadline", "stable city page", "strong deadline signal"),
+    ("annual census", "free services", "annual city census return notice", "election news index", "important evergreen civic action"),
+    ("public health", "health", "Cambridge Public Health mini-grants", "public health service page", "deadline-driven health opportunity"),
+    ("cpp", "students and families", "Cambridge Preschool Program application timeline", "office of early childhood page", "family application opportunity"),
+    ("housing opportunities", "free services", "Cambridge housing application pages", "city housing pages", "rolling availability notices"),
+    ("housing trust meetings", "coming up", "Cambridge Affordable Housing Trust meeting page", "city housing page", "date-based meeting extraction"),
+    ("school committee", "coming up", "CPSD all events page", "school calendar page", "keyword-filtered civic and family events"),
+    ("crls calendar", "coming up", "CRLS items inferred from CPSD calendar markup", "derived from school calendar page", "student-focused subset"),
+    ("primegov portal", "ongoing", "PrimeGov public meetings portal", "public meetings portal", "evergreen civic lookup"),
+    ("library programs", "free services", "Cambridge Public Library calendar", "library calendar pages", "keyword-filtered useful programs"),
+    ("cambridge arts", "arts and culture", "Cambridge Arts events portal", "arts homepage", "lightweight arts discovery source"),
+]
 
 
 @dataclass
@@ -130,6 +150,18 @@ class SimpleHTML(HTMLParser):
 
 def clean_whitespace(value: str) -> str:
     return re.sub(r"\s+", " ", value).strip()
+
+
+def contains_keyword(haystack: str, keyword: str) -> bool:
+    normalized = haystack.lower()
+    keyword = keyword.lower()
+    if re.search(r"[a-z0-9]", keyword) and " " not in keyword and "-" not in keyword:
+        return re.search(rf"\b{re.escape(keyword)}\b", normalized) is not None
+    return keyword in normalized
+
+
+def contains_any_keyword(haystack: str, keywords: Iterable[str]) -> bool:
+    return any(contains_keyword(haystack, keyword) for keyword in keywords)
 
 
 def fetch_html(url: str) -> str:
@@ -294,6 +326,83 @@ def sort_key(item: FeedItem) -> tuple[int, str]:
     return (0, item.date)
 
 
+def parse_occurrence_date(occurrence_id: str) -> datetime | None:
+    parts = occurrence_id.split("_")
+    if len(parts) < 2:
+        return None
+
+    timestamp = parts[1]
+    for fmt in ("%Y-%m-%dT%H:%M:%SZ", "%Y-%m-%d"):
+        try:
+            return datetime.strptime(timestamp, fmt)
+        except ValueError:
+            continue
+    return None
+
+
+def parse_datetime_attr(value: str) -> datetime | None:
+    cleaned = value.strip()
+    if cleaned.endswith("Z"):
+        cleaned = cleaned[:-1] + "+00:00"
+    try:
+        return datetime.fromisoformat(cleaned).replace(tzinfo=None)
+    except ValueError:
+        return None
+
+
+def format_hour_minute(hour: str, minute: str, meridian: str) -> str:
+    return f"{int(hour)}:{minute} {meridian.upper()}"
+
+
+def extract_school_calendar_events(html: str) -> list[dict[str, str | datetime | None]]:
+    events: list[dict[str, str | datetime | None]] = []
+    anchor_pattern = re.compile(
+        r'title="(?P<title>[^"]+)"\s+data-occur-id="(?P<occur>[^"]+)"[^>]*href="#"',
+        re.IGNORECASE,
+    )
+    matches = list(anchor_pattern.finditer(html))
+
+    for index, match in enumerate(matches):
+        next_start = matches[index + 1].start() if index + 1 < len(matches) else len(html)
+        segment = html[match.end() : next_start]
+        title = strip_tags(match.group("title"))
+        lowered = title.lower()
+        if not title or "cancel" in lowered or "rescheduled:" in lowered:
+            continue
+
+        start_datetime_match = re.search(r'<time[^>]*datetime="([^"]+)"[^>]*class="fsStartTime"', segment, re.IGNORECASE)
+        start_datetime = parse_datetime_attr(start_datetime_match.group(1)) if start_datetime_match else None
+        event_date = start_datetime or parse_occurrence_date(match.group("occur"))
+        if event_date is None:
+            continue
+
+        if 'fsAllDayEvent' in segment:
+            time_text = None
+        elif start_datetime_match:
+            time_parts = re.search(
+                r'<span class="fsHour">\s*(\d{1,2})</span>:\s*<span class="fsMinute">(\d{2})</span>\s*<span class="fsMeridian">\s*([AP]M)\s*</span>',
+                segment,
+                re.IGNORECASE,
+            )
+            time_text = format_hour_minute(*time_parts.groups()) if time_parts else event_date.strftime("%-I:%M %p")
+        else:
+            time_text = None
+
+        location_match = re.search(r'<div class="fsLocation">\s*(.*?)\s*(?:</div>|<)', segment, re.IGNORECASE | re.DOTALL)
+        location = strip_tags(location_match.group(1)) if location_match else "Cambridge Public Schools"
+
+        events.append(
+            {
+                "title": title,
+                "date": event_date,
+                "time": time_text,
+                "location": location or "Cambridge Public Schools",
+            }
+        )
+
+    return events
+
+
 def parse_parking_deadline() -> list[FeedItem]:
     html = fetch_html(PARKING_URL)
     parser = SimpleHTML()
@@ -365,13 +474,23 @@ def parse_tax_exemptions() -> list[FeedItem]:
 
 
 def parse_census_notice() -> list[FeedItem]:
-    html = fetch_html(CENSUS_URL)
+    html = fetch_html(ELECTION_NEWS_URL)
     parser = SimpleHTML()
     parser.feed(html)
-    text = "\n".join(parser.text_lines())
+    census_links: list[tuple[int, str, str]] = []
+    for link in parser.links:
+        text = clean_whitespace(link["text"])
+        if "annual city census" not in text.lower():
+            continue
+        year_match = re.search(r"\b(20\d{2})\b", text)
+        year = int(year_match.group(1)) if year_match else 0
+        census_links.append((year, text, event_detail_url(ELECTION_NEWS_URL, link["href"])))
 
-    if "Annual City Census" not in text:
+    if not census_links:
         raise ValueError("Could not find annual census notice.")
+
+    year, title, detail_url = max(census_links, key=lambda item: item[0])
+    description_year = str(year) if year else "current"
 
     return [
         FeedItem(
@@ -380,29 +499,104 @@ def parse_census_notice() -> list[FeedItem]:
             display_date="Return as soon as possible",
             time=None,
             location="Online, mail, or drop box",
-            description="Cambridge residents should return the annual city census to protect voting rights and support municipal services.",
+            description=f"Cambridge residents should return the {description_year} annual city census to protect voting rights and support municipal services.",
             action_label="Open Census Form",
-            url="https://www.cambridgema.gov/census",
+            url=CENSUS_FORM_URL,
             cost="Free",
             pathways=["voting_civics", "renewals", "just_browsing"],
-            source="Cambridge Election Commission",
+            source=f"Cambridge Election Commission ({title})",
+        )
+    ]
+
+
+def parse_public_health_minigrants() -> list[FeedItem]:
+    html = fetch_html(CPHD_MINI_GRANTS_URL)
+    parser = SimpleHTML()
+    parser.feed(html)
+    text = "\n".join(parser.text_lines())
+
+    if "Health Promotion Mini-Grants" not in text:
+        raise ValueError("Could not find Health Promotion Mini-Grants section.")
+
+    deadline_match = re.search(r"application deadline is ([A-Z][a-z]+ \d{1,2}, \d{4})", text, re.IGNORECASE)
+    if not deadline_match:
+        deadline_match = re.search(r"deadline[:\s]+([A-Z][a-z]+ \d{1,2}, \d{4})", text, re.IGNORECASE)
+    if not deadline_match:
+        raise ValueError("Could not find mini-grants deadline.")
+
+    deadline = parse_month_day_year(deadline_match.group(1))
+    if not should_keep_dated_item(deadline):
+        return []
+
+    return [
+        FeedItem(
+            title="Apply for Cambridge Public Health Mini-Grants",
+            date=iso_date(deadline),
+            display_date=display_date(deadline),
+            time=None,
+            location="Cambridge",
+            description="Community groups, schools, businesses, and other local organizations can apply for Cambridge Public Health mini-grants supporting healthy eating, physical activity, or youth wellness.",
+            action_label="Open Mini-Grants",
+            url=CPHD_MINI_GRANTS_URL,
+            cost="Free",
+            pathways=["health", "just_browsing"],
+            source="Cambridge Public Health Department",
+        )
+    ]
+
+
+def parse_cpp_application() -> list[FeedItem]:
+    html = fetch_html(CPP_URL)
+    parser = SimpleHTML()
+    parser.feed(html)
+    text = "\n".join(parser.text_lines())
+
+    if "Cambridge Preschool Program" not in text:
+        raise ValueError("Could not find Cambridge Preschool Program page.")
+
+    deadline_match = re.search(
+        r"Applications submitted by ([A-Z][a-z]+ \d{1,2}(?:st|nd|rd|th)?[,]?\s+20\d{2}) will be included",
+        text,
+        re.IGNORECASE,
+    )
+    if not deadline_match:
+        deadline_match = re.search(
+            r"between [A-Z][a-z]+ \d{1,2}, \d{4} and ([A-Z][a-z]+ \d{1,2}, \d{4})",
+            text,
+            re.IGNORECASE,
+        )
+    if not deadline_match:
+        raise ValueError("Could not find CPP application deadline.")
+
+    deadline_text = clean_whitespace(deadline_match.group(1))
+    deadline_text = re.sub(r"(\d{1,2})(st|nd|rd|th)", r"\1", deadline_text)
+    deadline_text = deadline_text.replace(" ,", ",")
+    deadline = parse_month_day_year(deadline_text)
+    if not should_keep_dated_item(deadline):
+        return []
+
+    return [
+        FeedItem(
+            title="Apply for Cambridge Preschool Program Spring Match",
+            date=iso_date(deadline),
+            display_date=display_date(deadline),
+            time=None,
+            location="Cambridge",
+            description="Cambridge families can apply for the Cambridge Preschool Program spring match for free public preschool and participating community-based providers.",
+            action_label="Open CPP Application Info",
+            url=CPP_URL,
+            cost="Free",
+            pathways=["students_families", "just_browsing"],
+            source="Cambridge Office of Early Childhood",
         )
     ]
 
 
 def parse_school_committee_meetings(limit: int = 6) -> list[FeedItem]:
     html = fetch_html(SCHOOL_COMMITTEE_URL)
-    parser = SimpleHTML()
-    parser.feed(html)
-    lines = parser.text_lines()
-
+    events = extract_school_calendar_events(html)
     items: list[FeedItem] = []
     seen: set[tuple[str, str]] = set()
-    current_date: datetime | None = None
-    date_pattern = re.compile(
-        r"^(Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday),\s+([A-Z][a-z]+)\s+(\d{1,2})$"
-    )
-    time_pattern = re.compile(r"^(\d{1,2}:\d{2}\s*[AP]M)(?:\s*-\s*\d{1,2}:\d{2}\s*[AP]M)?$", re.IGNORECASE)
     useful_keywords = (
         "committee",
         "subcommittee",
@@ -412,38 +606,15 @@ def parse_school_committee_meetings(limit: int = 6) -> list[FeedItem]:
         "workshop",
         "meeting",
     )
-    stop_lines = {
-        "Print Grid Element",
-        "Calendar RSS Feeds",
-        "Powered by Finalsite",
-    }
 
-    for i, line in enumerate(lines):
-        if line in stop_lines:
+    for event in events:
+        current_date = event["date"]
+        if not isinstance(current_date, datetime):
             continue
 
-        date_match = date_pattern.match(line)
-        if date_match:
-            month_name = date_match.group(2)
-            day = int(date_match.group(3))
-            event_year = TODAY.year
-            if month_name == "January" and TODAY.month == 12:
-                event_year += 1
-            current_date = datetime.strptime(f"{month_name} {day} {event_year}", "%B %d %Y")
-            continue
-
-        if current_date is None or i + 1 >= len(lines):
-            continue
-
-        next_line = lines[i + 1]
-        if not time_pattern.match(next_line) and next_line != "All Day":
-            continue
-
-        title = clean_whitespace(line)
-        lowered = title.lower()
+        title = clean_whitespace(str(event["title"]))
+        lowered = clean_whitespace(f"{title} {event['location']}").lower()
         if not any(keyword in lowered for keyword in useful_keywords):
-            continue
-        if "cancel" in lowered:
             continue
         if current_date.date() < TODAY.date():
             continue
@@ -455,11 +626,7 @@ def parse_school_committee_meetings(limit: int = 6) -> list[FeedItem]:
             continue
         seen.add(key)
 
-        location = "Cambridge Public Schools"
-        if i + 2 < len(lines):
-            candidate = clean_whitespace(lines[i + 2])
-            if candidate and not date_pattern.match(candidate) and not time_pattern.match(candidate):
-                location = candidate
+        location = clean_whitespace(str(event["location"]))
 
         description = "Upcoming Cambridge Public Schools event."
         if "committee" in lowered or "subcommittee" in lowered or "budget" in lowered:
@@ -472,7 +639,7 @@ def parse_school_committee_meetings(limit: int = 6) -> list[FeedItem]:
                 title=title_case(title),
                 date=iso_date(current_date),
                 display_date=display_date(current_date),
-                time=None if next_line == "All Day" else parse_time_range_start(next_line),
+                time=event["time"] if isinstance(event["time"], str) else None,
                 location=location,
                 description=description,
                 action_label="Open CPS Calendar",
@@ -490,44 +657,65 @@ def parse_school_committee_meetings(limit: int = 6) -> list[FeedItem]:
 
 
 def parse_crls_calendar(limit: int = 5) -> list[FeedItem]:
+    html = fetch_html(SCHOOL_COMMITTEE_URL)
+    events = extract_school_calendar_events(html)
     items: list[FeedItem] = []
-    for item in parse_school_committee_meetings(limit=24):
-        title = item.title.lower()
-        location = item.location.lower()
-        description = item.description.lower()
+    seen: set[tuple[str, str]] = set()
+    crls_keywords = (
+        "crls",
+        "cambridge rindge and latin",
+        "student",
+        "students",
+        "yearbook",
+        "college",
+        "media cafe",
+        "purim",
+        "attles",
+        "theater",
+        "theatre",
+        "music",
+        "concert",
+        "show",
+        "celebration",
+        "prom",
+        "graduation",
+    )
 
-        if not any(
-            keyword in " ".join([title, location, description])
-            for keyword in (
-                "crls",
-                "yearbook",
-                "college",
-                "student",
-                "purim",
-                "media cafe",
-                "meeting room at crls",
-                "budget",
-            )
-        ):
+    for event in events:
+        current_date = event["date"]
+        if not isinstance(current_date, datetime):
+            continue
+        if current_date.date() < TODAY.date() or not should_keep_dated_item(current_date):
             continue
 
-        normalized_source = "CRLS / CPS Calendar"
-        action_label = "Open CPS Calendar"
+        title = clean_whitespace(str(event["title"]))
+        location = clean_whitespace(str(event["location"]))
+        haystack = f"{title} {location}".lower()
+        if not contains_any_keyword(haystack, crls_keywords):
+            continue
+
+        key = (title, current_date.strftime("%Y-%m-%d"))
+        if key in seen:
+            continue
+        seen.add(key)
+
         pathways = ["students_families", "just_browsing"]
+        if contains_any_keyword(haystack, ("music", "concert", "theater", "theatre", "show", "celebration", "media arts", "arts")):
+            pathways.append("arts")
 
         items.append(
             FeedItem(
-                title=item.title,
-                date=item.date,
-                display_date=item.display_date,
-                time=item.time,
-                location=item.location,
-                description=item.description,
-                action_label=action_label,
-                url=item.url,
-                cost=item.cost,
-                pathways=pathways,
-                source=normalized_source,
+                title=title_case(title),
+                date=iso_date(current_date),
+                display_date=display_date(current_date),
+                time=event["time"] if isinstance(event["time"], str) else None,
+                location=location,
+                description="Upcoming Cambridge Rindge and Latin School or student-focused event.",
+                action_label="Open CPS Calendar",
+                url=SCHOOL_COMMITTEE_URL,
+                cost="Free",
+                pathways=sorted(set(pathways)),
+                source="CRLS / CPS Calendar",
             )
         )
 
@@ -538,7 +726,7 @@ def parse_crls_calendar(limit: int = 5) -> list[FeedItem]:
 
 
 def parse_crls_calendar_fallback(limit: int = 6) -> list[FeedItem]:
-    return parse_crls_calendar(limit=limit)
+    return []
 
 
 def parse_rwinters_entries(url: str, title_prefix: str, limit: int = 5) -> list[FeedItem]:
@@ -791,15 +979,15 @@ def classify_library_pathways(title: str, description: str) -> list[str]:
     haystack = f"{title} {description}".lower()
     pathways = ["just_browsing"]
 
-    if any(word in haystack for word in ("teen", "kids", "children", "youth")):
+    if contains_any_keyword(haystack, ("teen", "kids", "children", "youth", "family", "families")):
         pathways.append("students_families")
 
-    if any(word in haystack for word in ("older adult", "aging", "mindfulness")):
+    if contains_any_keyword(haystack, ("older adult", "aging", "mindfulness", "seniors")):
         pathways.append("older_adults")
 
-    if any(
-        word in haystack
-        for word in (
+    if contains_any_keyword(
+        haystack,
+        (
             "art",
             "arts",
             "artist",
@@ -811,20 +999,31 @@ def classify_library_pathways(title: str, description: str) -> list[str]:
             "poetry",
             "performance",
             "mural",
-        )
+            "music",
+            "film",
+            "dance",
+            "theater",
+            "theatre",
+            "studio",
+            "writing",
+            "maker",
+        ),
     ):
         pathways.append("arts")
 
-    if any(
-        re.search(pattern, haystack)
-        for pattern in (
-            r"\bjob\b",
-            r"\besol\b",
-            r"\btech help\b",
-            r"\bdigital equity\b",
-            r"\bsocial worker\b",
-            r"\btax assistance\b",
-        )
+    if contains_any_keyword(
+        haystack,
+        (
+            "job",
+            "esol",
+            "tech help",
+            "digital equity",
+            "social worker",
+            "tax assistance",
+            "resume",
+            "career",
+            "literacy",
+        ),
     ):
         pathways.append("education_work")
 
@@ -860,8 +1059,25 @@ def useful_library_program(title: str, description: str) -> bool:
         "registration is required",
         "deadline",
         "application",
+        "artist",
+        "art",
+        "craft",
+        "poetry",
+        "performance",
+        "film",
+        "music",
+        "dance",
+        "theater",
+        "theatre",
+        "writing",
+        "workshop",
+        "makerspace",
+        "vinyl cutting",
+        "author",
+        "creative coding",
+        "steam academy",
     ]
-    return any(keyword in haystack for keyword in keep_keywords)
+    return contains_any_keyword(haystack, keep_keywords)
 
 
 def parse_library_programs(limit: int = 4) -> list[FeedItem]:
@@ -991,24 +1207,53 @@ def parse_library_programs(limit: int = 4) -> list[FeedItem]:
     return items
 
 
-def build_feed() -> dict:
-    source_parsers = [
-        ("parking permits", parse_parking_deadline),
-        ("tax exemptions", parse_tax_exemptions),
-        ("annual census", parse_census_notice),
-        ("housing opportunities", parse_housing_opportunities),
-        ("housing trust meetings", parse_housing_trust_meetings),
-        ("school committee", parse_school_committee_meetings),
-        ("crls calendar", parse_crls_calendar),
-        ("crls calendar fallback", parse_crls_calendar_fallback),
-        ("primegov portal", parse_primegov_portal),
-        ("library programs", parse_library_programs),
+def parse_cambridge_arts() -> list[FeedItem]:
+    html = fetch_html(CAMBRIDGE_ARTS_URL)
+    parser = SimpleHTML()
+    parser.feed(html)
+    text = "\n".join(parser.text_lines())
+
+    if "View Events Calendar" not in text and "Upcoming Events" not in text:
+        return []
+
+    return [
+        FeedItem(
+            title="Browse Cambridge Arts Events",
+            date=None,
+            display_date="Ongoing",
+            time=None,
+            location="Cambridge",
+            description="Cambridge Arts publishes a local arts and culture calendar, festival information, and public art resources.",
+            action_label="Open Arts Calendar",
+            url=CAMBRIDGE_ARTS_CALENDAR_URL,
+            cost="Free",
+            pathways=["arts", "just_browsing"],
+            source="Cambridge Arts",
+        )
     ]
+
+
+def build_feed() -> dict:
+    parser_by_label = {
+        "parking permits": parse_parking_deadline,
+        "tax exemptions": parse_tax_exemptions,
+        "annual census": parse_census_notice,
+        "public health": parse_public_health_minigrants,
+        "cpp": parse_cpp_application,
+        "housing opportunities": parse_housing_opportunities,
+        "housing trust meetings": parse_housing_trust_meetings,
+        "school committee": parse_school_committee_meetings,
+        "crls calendar": parse_crls_calendar,
+        "primegov portal": parse_primegov_portal,
+        "library programs": parse_library_programs,
+        "cambridge arts": parse_cambridge_arts,
+    }
 
     items: list[FeedItem] = []
     errors: list[str] = []
 
-    for label, parser in source_parsers:
+    for label, _group, _summary, _source_type, _notes in SOURCE_PARSERS:
+        parser = parser_by_label[label]
         try:
             items.extend(parser())
         except Exception as exc:
