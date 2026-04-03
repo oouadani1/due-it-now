@@ -96,6 +96,22 @@
       "source": "CPSD All Events"
     },
     {
+      "title": "Special Education & Student Supports Subcommittee",
+      "date": "2026-04-08",
+      "display_date": "Wednesday, April 8, 2026",
+      "time": "4:00 PM",
+      "location": "Cambridge Public Schools",
+      "description": "Upcoming Cambridge Public Schools committee meeting or workshop.",
+      "action_label": "Open CPS Calendar",
+      "url": "https://www.cpsd.us/all-events",
+      "cost": "Free",
+      "pathways": [
+        "students_families",
+        "just_browsing"
+      ],
+      "source": "CPSD All Events"
+    },
+    {
       "title": "Apply for Cambridge Preschool Program Spring Match",
       "date": "2026-04-13",
       "display_date": "Monday, April 13, 2026",
@@ -131,22 +147,6 @@
       "title": "No School & CPS Offices Closed: Patriot's Day",
       "date": "2026-04-20",
       "display_date": "Monday, April 20, 2026",
-      "time": null,
-      "location": "Cambridge Public Schools",
-      "description": "Upcoming Cambridge Public Schools schedule change.",
-      "action_label": "Open CPS Calendar",
-      "url": "https://www.cpsd.us/all-events",
-      "cost": "Free",
-      "pathways": [
-        "students_families",
-        "just_browsing"
-      ],
-      "source": "CPSD All Events"
-    },
-    {
-      "title": "No School: April Break",
-      "date": "2026-04-21",
-      "display_date": "Tuesday, April 21, 2026",
       "time": null,
       "location": "Cambridge Public Schools",
       "description": "Upcoming Cambridge Public Schools schedule change.",
@@ -339,7 +339,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-04-02T11:11:15",
+    "updated_at": "2026-04-03T11:04:57",
     "source_errors": []
   }
 }
