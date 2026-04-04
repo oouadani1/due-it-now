@@ -48,22 +48,6 @@
       "source": "Cambridge Public Health Department"
     },
     {
-      "title": "No School & CPS Offices Closed: Good Friday",
-      "date": "2026-04-03",
-      "display_date": "Friday, April 3, 2026",
-      "time": null,
-      "location": "Cambridge Public Schools",
-      "description": "Upcoming Cambridge Public Schools schedule change.",
-      "action_label": "Open CPS Calendar",
-      "url": "https://www.cpsd.us/all-events",
-      "cost": "Free",
-      "pathways": [
-        "students_families",
-        "just_browsing"
-      ],
-      "source": "CPSD All Events"
-    },
-    {
       "title": "School Committee Meeting",
       "date": "2026-04-07",
       "display_date": "Tuesday, April 7, 2026",
@@ -147,6 +131,22 @@
       "title": "No School & CPS Offices Closed: Patriot's Day",
       "date": "2026-04-20",
       "display_date": "Monday, April 20, 2026",
+      "time": null,
+      "location": "Cambridge Public Schools",
+      "description": "Upcoming Cambridge Public Schools schedule change.",
+      "action_label": "Open CPS Calendar",
+      "url": "https://www.cpsd.us/all-events",
+      "cost": "Free",
+      "pathways": [
+        "students_families",
+        "just_browsing"
+      ],
+      "source": "CPSD All Events"
+    },
+    {
+      "title": "No School: April Break",
+      "date": "2026-04-21",
+      "display_date": "Tuesday, April 21, 2026",
       "time": null,
       "location": "Cambridge Public Schools",
       "description": "Upcoming Cambridge Public Schools schedule change.",
@@ -339,7 +339,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-04-03T11:04:57",
+    "updated_at": "2026-04-04T10:54:05",
     "source_errors": []
   }
 }
