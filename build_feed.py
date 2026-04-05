@@ -1270,17 +1270,14 @@ def parse_boston_dog_license() -> list[FeedItem]:
     text = "\n".join(parser.text_lines())
 
     deadline = None
-    full_match = re.search(r"\b([A-Z][a-z]+ \d{1,2}, \d{4})\b", text)
-    if full_match and "license" in text.lower():
-        deadline = parse_month_day_year(full_match.group(1))
-    if deadline is None:
+    if re.search(r"\bMarch 31\b", text, re.IGNORECASE):
+        deadline = parse_month_day("March 31")
+    elif re.search(r"\bApril 1\b", text, re.IGNORECASE):
+        deadline = datetime(CURRENT_YEAR, 3, 31)
+    else:
         month_day_match = re.search(r"by ([A-Z][a-z]+ \d{1,2})", text, re.IGNORECASE)
         if month_day_match:
             deadline = parse_month_day(month_day_match.group(1))
-    if deadline is None:
-        march_match = re.search(r"\b(March 31)\b", text, re.IGNORECASE)
-        if march_match:
-            deadline = parse_month_day(march_match.group(1))
 
     if deadline is None or not should_keep_dated_item(deadline):
         return []
