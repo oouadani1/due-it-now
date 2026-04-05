@@ -421,11 +421,14 @@
 
       .hero-row {
         flex-direction: column;
+        margin-bottom: 8px;
       }
 
       .title-row {
         flex-direction: column;
         align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 6px;
       }
 
       .area-search {
@@ -839,12 +842,12 @@
       const filtered = items.filter(item => {
         const timingGroup = formatCountdown(item).group;
 
-        if (selectedUrgency === "passed") {
-          return timingGroup === "passed";
-        }
-
         if (selected !== "just_browsing" && !item.pathways.includes(selected)) {
           return false;
+        }
+
+        if (selectedUrgency === "passed") {
+          return timingGroup === "passed";
         }
 
         if (selectedUrgency === "all") {
@@ -871,7 +874,9 @@
       const pathway = pathways.find(pathway => pathway.id === selected);
       const timingText = urgencyOptions.find(option => option.id === selectedUrgency).label.toLowerCase();
       const labelText = selectedUrgency === "passed"
-        ? "Showing passed items from across the feed."
+        ? (selected === "just_browsing"
+          ? "Showing passed items from across the feed."
+          : "Showing passed items for " + pathway.label + ".")
         : "Showing " + filtered.length + " item" + (filtered.length === 1 ? "" : "s") + " for " + pathway.label + " in " + timingText + ".";
 
       summaryEl.textContent = labelText;
@@ -925,6 +930,10 @@
       selectedSort = selectedSort === "soonest" ? "latest" : "soonest";
       updateSortToggle();
       renderCards();
+    });
+
+    areaSearchInputEl.addEventListener("focus", () => {
+      renderAreaOptions(areaSearchInputEl.value);
     });
 
     areaSearchInputEl.addEventListener("click", () => {
