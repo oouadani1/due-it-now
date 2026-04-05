@@ -158,6 +158,10 @@
       display: block;
     }
 
+    body.area-search-open {
+      overflow-x: hidden;
+    }
+
     .area-result {
       width: 100%;
       border: 0;
@@ -446,15 +450,20 @@
       }
 
       .area-results {
-        position: static;
-        top: auto;
-        right: auto;
-        left: auto;
-        margin-top: 6px;
+        position: absolute;
+        top: calc(100% + 4px);
+        right: 0;
+        left: 0;
+        margin-top: 0;
+        z-index: 12;
       }
 
       .intro {
         margin-bottom: 10px;
+      }
+
+      body.area-search-open .intro {
+        display: none;
       }
 
       .card-header {
@@ -754,6 +763,7 @@
     }
 
     function closeAreaResults() {
+      document.body.classList.remove("area-search-open");
       areaResultsEl.classList.remove("visible");
       areaResultsEl.innerHTML = "";
     }
@@ -775,6 +785,7 @@
       areaResultsEl.innerHTML = options
         .map(option => `<button class="area-result" type="button" data-city="${escapeHtml(option.id)}">${escapeHtml(option.label)}</button>`)
         .join("");
+      document.body.classList.add("area-search-open");
       areaResultsEl.classList.add("visible");
     }
 
