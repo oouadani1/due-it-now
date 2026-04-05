@@ -44,10 +44,19 @@ CPP_URL = "https://earlychildhoodcambridge.org/cpp/"
 BOSTON_DOG_LICENSE_URL = "https://www.boston.gov/departments/animal-care-and-control/how-license-your-dog"
 BOSTON_TAX_EXEMPTIONS_URL = "https://www.boston.gov/departments/assessing/filing-property-tax-exemption"
 BOSTON_ELECTIONS_URL = "https://www.boston.gov/departments/elections/boston-elections-commission"
+BOSTON_REGISTER_TO_VOTE_URL = "https://www.boston.gov/departments/elections/how-register-vote"
+BOSTON_VOTE_BY_MAIL_URL = "https://www.boston.gov/node/15908046"
 BOSTON_HOUSING_URL = "https://www.boston.gov/departments/housing"
-BOSTON_AGE_STRONG_GRANTS_URL = "https://www.boston.gov/departments/age-strong-commission/age-strong-2025-grantees"
+BOSTON_AGE_STRONG_GRANTS_URL = "https://www.boston.gov/node/16395271"
+BOSTON_PROPERTY_TAX_WORKOFF_URL = "https://www.boston.gov/departments/age-strong-commission/senior-property-tax-work"
+BOSTON_DIGITAL_EQUITY_URL = "https://www.boston.gov/departments/innovation-and-technology/2026-digital-equity-fund"
+BOSTON_SMALL_COMMUNITY_GRANTS_URL = "https://www.boston.gov/node/15816191"
+BOSTON_ANNUAL_ENROLLMENT_URL = "https://www.boston.gov/departments/human-resources/annual-enrollment-2026"
+BOSTON_SMALL_BUSINESS_URL = "https://www.boston.gov/departments/small-business"
+BOSTON_BIZUNLOCKED_URL = "https://www.boston.gov/departments/small-business-development/bizunlocked-boston-business-access-program"
 BOSTON_BPS_ENROLL_URL = "https://www.bostonpublicschools.org/enroll"
 BOSTON_BPL_ESOL_URL = "https://www.bpl.org/esol/"
+BOSTON_COMMUNITY_HEALTH_CERT_URL = "https://www.boston.gov/node/14911616"
 
 SOURCE_PARSERS = [
     ("parking permits", "deadlines", "Cambridge parking permit renewal deadline", "stable city page", "strong deadline signal"),
@@ -68,10 +77,19 @@ BOSTON_SOURCE_PARSERS = [
     ("boston dog license", "deadlines", "annual Boston dog license deadline", "city service page", "strong annual renewal signal"),
     ("boston tax exemptions", "deadlines", "Boston property tax exemption deadline", "city assessing page", "strong annual filing signal"),
     ("boston elections", "voting and civics", "Boston annual listing and elections page", "elections department page", "important civic participation source"),
+    ("boston voter registration", "voting and civics", "Boston voter registration deadline", "elections department page", "clear election deadline"),
+    ("boston vote by mail", "voting and civics", "Boston vote by mail application deadline", "elections department page", "clear election deadline"),
     ("boston housing", "housing", "Boston housing and Metrolist page", "office of housing page", "evergreen housing opportunity source"),
     ("boston age strong", "older adults", "Age Strong rolling grants", "city grants page", "deadline-driven older adult opportunity"),
+    ("boston tax work-off", "older adults", "Older Adult Property Tax Work-Off deadline", "age strong page", "clear annual civic benefit deadline"),
+    ("boston digital equity", "education and work", "Digital Equity Fund grant deadline", "city grants page", "high-signal annual grant"),
+    ("boston small community grants", "voting and civics", "Small Community Grants deadline", "city trust grants page", "high-signal recurring grant"),
+    ("boston annual enrollment", "health", "City annual enrollment deadline", "human resources page", "clear annual application window"),
+    ("boston small business activation", "education and work", "Small Business Month Activation Grant deadline", "small business page", "dated local opportunity"),
+    ("boston bizunlocked", "education and work", "BizUnlocked application deadline", "small business page", "dated local opportunity"),
     ("boston bps enrollment", "students and families", "Boston Public Schools enrollment page", "district enrollment page", "family-facing application source"),
     ("boston bpl esol", "education and work", "Boston Public Library ESOL page", "library adult learning page", "evergreen free service source"),
+    ("boston community health certificate", "health", "Community health certificate deadline", "city health training page", "dated local training opportunity"),
 ]
 
 
@@ -1342,21 +1360,117 @@ def parse_boston_elections() -> list[FeedItem]:
     parser.feed(html)
     text = "\n".join(parser.text_lines())
 
-    if "Annual Census" not in text and "Annual Listing" not in text:
+    items: list[FeedItem] = []
+
+    if "Annual Census" in text or "Annual Listing" in text:
+        items.append(
+            FeedItem(
+                title="Complete Your Boston Annual Census",
+                date=None,
+                display_date="Return as soon as possible",
+                time=None,
+                location="Online or by mail",
+                description="Boston residents should complete the annual census or listing to help keep voter rolls current and support city services.",
+                action_label="Open Elections Commission Page",
+                url=BOSTON_ELECTIONS_URL,
+                cost="Free",
+                pathways=["voting_civics", "renewals", "just_browsing"],
+                source="Boston Elections Commission",
+            )
+        )
+
+    general_deadline_match = re.search(
+        r"General state election:.*?Voter Registration Deadline:\s*[A-Z][a-z]+,\s*([A-Z][a-z]+ \d{1,2}, \d{4})",
+        text,
+        re.IGNORECASE | re.DOTALL,
+    )
+    if general_deadline_match:
+        deadline = parse_month_day_year(general_deadline_match.group(1))
+        if deadline is not None and should_keep_dated_item(deadline):
+            items.append(
+                FeedItem(
+                    title="Register to Vote for the Massachusetts General Election",
+                    date=iso_date(deadline),
+                    display_date=display_date(deadline),
+                    time="11:59 PM",
+                    location="Online, by mail, or in person",
+                    description="Boston residents must register to vote by the general election registration deadline to participate in the November state election.",
+                    action_label="Register to Vote",
+                    url=BOSTON_REGISTER_TO_VOTE_URL,
+                    cost="Free",
+                    pathways=["voting_civics"],
+                    source="Boston Elections Commission",
+                )
+            )
+
+    return items
+
+
+def parse_boston_voter_registration() -> list[FeedItem]:
+    html = fetch_html(BOSTON_VOTE_BY_MAIL_URL)
+    parser = SimpleHTML()
+    parser.feed(html)
+    text = "\n".join(parser.text_lines())
+
+    match = re.search(
+        r"deadline to register to vote .*? is ([A-Z][a-z]+ \d{1,2}, \d{4})",
+        text,
+        re.IGNORECASE,
+    )
+    if not match:
+        return []
+
+    deadline = parse_month_day_year(match.group(1))
+    if deadline is None or not should_keep_dated_item(deadline):
         return []
 
     return [
         FeedItem(
-            title="Complete Your Boston Annual Census",
-            date=None,
-            display_date="Return as soon as possible",
-            time=None,
-            location="Online or by mail",
-            description="Boston residents should complete the annual census or listing to help keep voter rolls current and support city services.",
-            action_label="Open Elections Commission Page",
-            url=BOSTON_ELECTIONS_URL,
+            title="Register to Vote for the Massachusetts State Primary",
+            date=iso_date(deadline),
+            display_date=display_date(deadline),
+            time="11:59 PM",
+            location="Online, by mail, or in person",
+            description="Boston residents must register to vote by the state primary registration deadline to participate in the September primary election.",
+            action_label="Register to Vote",
+            url=BOSTON_REGISTER_TO_VOTE_URL,
             cost="Free",
-            pathways=["voting_civics", "renewals", "just_browsing"],
+            pathways=["voting_civics"],
+            source="Boston Elections Commission",
+        )
+    ]
+
+
+def parse_boston_vote_by_mail() -> list[FeedItem]:
+    html = fetch_html(BOSTON_VOTE_BY_MAIL_URL)
+    parser = SimpleHTML()
+    parser.feed(html)
+    text = "\n".join(parser.text_lines())
+
+    match = re.search(
+        r"Applications to request a vote-by-mail ballot must be received by 5 p\.m\. on ([A-Z][a-z]+ \d{1,2}, \d{4})",
+        text,
+        re.IGNORECASE,
+    )
+    if not match:
+        return []
+
+    deadline = parse_month_day_year(match.group(1))
+    if deadline is None or not should_keep_dated_item(deadline):
+        return []
+
+    return [
+        FeedItem(
+            title="Apply to Vote by Mail for the Massachusetts State Primary",
+            date=iso_date(deadline),
+            display_date=display_date(deadline),
+            time="5:00 PM",
+            location="Boston Elections Department",
+            description="Registered Boston voters must submit vote-by-mail applications by the primary deadline to receive a mailed ballot.",
+            action_label="Apply to Vote by Mail",
+            url=BOSTON_VOTE_BY_MAIL_URL,
+            cost="Free",
+            pathways=["voting_civics"],
             source="Boston Elections Commission",
         )
     ]
@@ -1441,6 +1555,232 @@ def parse_boston_age_strong() -> list[FeedItem]:
     ]
 
 
+def parse_boston_tax_workoff() -> list[FeedItem]:
+    html = fetch_html(BOSTON_PROPERTY_TAX_WORKOFF_URL)
+    parser = SimpleHTML()
+    parser.feed(html)
+    text = "\n".join(parser.text_lines())
+
+    filing_match = re.search(r"Application Filing Deadline:\s*([A-Z][a-z]+ \d{1,2}, \d{4})", text, re.IGNORECASE)
+    cori_match = re.search(r"CORI Request Deadline:\s*([A-Z][a-z]+ \d{1,2}, \d{4})", text, re.IGNORECASE)
+
+    items: list[FeedItem] = []
+
+    if filing_match:
+        filing_deadline = parse_month_day_year(filing_match.group(1))
+        if filing_deadline is not None and should_keep_dated_item(filing_deadline):
+            items.append(
+                FeedItem(
+                    title="Apply for Boston's Older Adult Property Tax Work-Off Program",
+                    date=iso_date(filing_deadline),
+                    display_date=display_date(filing_deadline),
+                    time=None,
+                    location="Age Strong Commission",
+                    description="Eligible Boston older adults can apply for the annual property tax work-off program before the filing deadline.",
+                    action_label="Open Tax Work-Off Program",
+                    url=BOSTON_PROPERTY_TAX_WORKOFF_URL,
+                    cost="Free",
+                    pathways=["older_adults", "housing", "renewals"],
+                    source="City of Boston Age Strong Commission",
+                )
+            )
+
+    if cori_match:
+        cori_deadline = parse_month_day_year(cori_match.group(1))
+        if cori_deadline is not None and should_keep_dated_item(cori_deadline):
+            items.append(
+                FeedItem(
+                    title="Complete CORI Paperwork for Boston's Tax Work-Off Program",
+                    date=iso_date(cori_deadline),
+                    display_date=display_date(cori_deadline),
+                    time=None,
+                    location="Age Strong Commission",
+                    description="Boston property tax work-off applicants must complete the required CORI paperwork before the annual deadline.",
+                    action_label="Open Tax Work-Off Program",
+                    url=BOSTON_PROPERTY_TAX_WORKOFF_URL,
+                    cost="Free",
+                    pathways=["older_adults", "housing", "renewals"],
+                    source="City of Boston Age Strong Commission",
+                )
+            )
+
+    return items
+
+
+def parse_boston_digital_equity() -> list[FeedItem]:
+    html = fetch_html(BOSTON_DIGITAL_EQUITY_URL)
+    parser = SimpleHTML()
+    parser.feed(html)
+    text = "\n".join(parser.text_lines())
+
+    match = re.search(
+        r"deadline .*? is ([A-Z][a-z]+ \d{1,2}, \d{4}) at (\d{1,2}:\d{2}\s*[APap]\.?[Mm]\.?)",
+        text,
+        re.IGNORECASE,
+    )
+    if not match:
+        return []
+
+    deadline = parse_month_day_year(match.group(1))
+    if deadline is None or not should_keep_dated_item(deadline):
+        return []
+
+    time_text = match.group(2).replace(".", "").upper().replace("AM", " AM").replace("PM", " PM").strip()
+    time_text = clean_whitespace(time_text)
+
+    return [
+        FeedItem(
+            title="Apply for the Boston Digital Equity Fund",
+            date=iso_date(deadline),
+            display_date=display_date(deadline),
+            time=time_text,
+            location="City of Boston grant portal",
+            description="Boston-based organizations can apply for digital navigation, training, and device access funding that helps residents connect to services and opportunities.",
+            action_label="Apply for the Fund",
+            url=BOSTON_DIGITAL_EQUITY_URL,
+            cost="Free to apply",
+            pathways=["education_work", "health", "just_browsing"],
+            source="City of Boston Innovation and Technology",
+        )
+    ]
+
+
+def parse_boston_small_community_grants() -> list[FeedItem]:
+    html = fetch_html(BOSTON_SMALL_COMMUNITY_GRANTS_URL)
+    parser = SimpleHTML()
+    parser.feed(html)
+    text = "\n".join(parser.text_lines())
+
+    match = re.search(
+        r"Deadline for applications is [A-Z][a-z]+,\s*([A-Z][a-z]+ \d{1,2}) at (\d{1,2})\s*pm",
+        text,
+        re.IGNORECASE,
+    )
+    if not match:
+        return []
+
+    deadline = parse_month_day(match.group(1))
+    if deadline is None or not should_keep_dated_item(deadline):
+        return []
+
+    return [
+        FeedItem(
+            title="Apply for Boston Small Community Grants",
+            date=iso_date(deadline),
+            display_date=display_date(deadline),
+            time=f"{int(match.group(2))}:00 PM",
+            location="City of Boston grant portal",
+            description="Boston nonprofits can apply for small trust grants supporting direct-impact community work, recreation, beautification, and field trips for residents.",
+            action_label="Apply for Small Grants",
+            url=BOSTON_SMALL_COMMUNITY_GRANTS_URL,
+            cost="Free to apply",
+            pathways=["just_browsing", "students_families", "voting_civics"],
+            source="City of Boston Treasury",
+        )
+    ]
+
+
+def parse_boston_annual_enrollment() -> list[FeedItem]:
+    html = fetch_html(BOSTON_ANNUAL_ENROLLMENT_URL)
+    parser = SimpleHTML()
+    parser.feed(html)
+    text = "\n".join(parser.text_lines())
+
+    match = re.search(
+        r"deadline .*? ([A-Z][a-z]+ \d{1,2}, \d{4}) at (\d{1,2}:\d{2}\s*[ap]\.m\.)",
+        text,
+        re.IGNORECASE,
+    )
+    if not match:
+        return []
+
+    deadline = parse_month_day_year(match.group(1))
+    if deadline is None or not should_keep_dated_item(deadline):
+        return []
+
+    time_text = match.group(2).replace(".", "").upper()
+    return [
+        FeedItem(
+            title="Submit Boston Annual Enrollment Elections",
+            date=iso_date(deadline),
+            display_date=display_date(deadline),
+            time=time_text,
+            location="City of Boston benefits portal",
+            description="City of Boston employees and non-Medicare retirees must submit health and benefits enrollment changes by the annual enrollment deadline.",
+            action_label="Open Annual Enrollment",
+            url=BOSTON_ANNUAL_ENROLLMENT_URL,
+            cost="Free",
+            pathways=["health", "renewals", "just_browsing"],
+            source="City of Boston Human Resources",
+        )
+    ]
+
+
+def parse_boston_small_business_activation() -> list[FeedItem]:
+    html = fetch_html(BOSTON_SMALL_BUSINESS_URL)
+    parser = SimpleHTML()
+    parser.feed(html)
+    text = "\n".join(parser.text_lines())
+
+    if "Small Business Month Activation Grant" not in text:
+        return []
+
+    match = re.search(r"deadline to apply is ([A-Z][a-z]+ \d{1,2}, \d{4})", text, re.IGNORECASE)
+    if not match:
+        return []
+
+    deadline = parse_month_day_year(match.group(1))
+    if deadline is None or not should_keep_dated_item(deadline):
+        return []
+
+    return [
+        FeedItem(
+            title="Apply for the Boston Small Business Month Activation Grant",
+            date=iso_date(deadline),
+            display_date=display_date(deadline),
+            time="5:00 PM",
+            location="City of Boston Small Business",
+            description="Boston nonprofits, business groups, and community organizations can apply for small grants to host events during Small Business Month.",
+            action_label="Open Small Business Grant",
+            url=BOSTON_SMALL_BUSINESS_URL,
+            cost="Free to apply",
+            pathways=["education_work", "just_browsing"],
+            source="City of Boston Small Business",
+        )
+    ]
+
+
+def parse_boston_bizunlocked() -> list[FeedItem]:
+    html = fetch_html(BOSTON_BIZUNLOCKED_URL)
+    parser = SimpleHTML()
+    parser.feed(html)
+    text = "\n".join(parser.text_lines())
+
+    match = re.search(r"deadline to apply .*? is ([A-Z][a-z]+ \d{1,2}, \d{4})", text, re.IGNORECASE)
+    if not match:
+        return []
+
+    deadline = parse_month_day_year(match.group(1))
+    if deadline is None or not should_keep_dated_item(deadline):
+        return []
+
+    return [
+        FeedItem(
+            title="Apply for BizUnlocked Boston",
+            date=iso_date(deadline),
+            display_date=display_date(deadline),
+            time=None,
+            location="Boston",
+            description="Eligible early-stage Boston business owners can apply for the City's BizUnlocked business access program and cohort-based support.",
+            action_label="Apply to BizUnlocked",
+            url=BOSTON_BIZUNLOCKED_URL,
+            cost="Free",
+            pathways=["education_work", "just_browsing"],
+            source="City of Boston Small Business Development",
+        )
+    ]
+
+
 def parse_boston_bps_enrollment() -> list[FeedItem]:
     html = fetch_html(BOSTON_BPS_ENROLL_URL)
     parser = SimpleHTML()
@@ -1520,6 +1860,37 @@ def parse_boston_bpl_esol() -> list[FeedItem]:
     ]
 
 
+def parse_boston_community_health_certificate() -> list[FeedItem]:
+    html = fetch_html(BOSTON_COMMUNITY_HEALTH_CERT_URL)
+    parser = SimpleHTML()
+    parser.feed(html)
+    text = "\n".join(parser.text_lines())
+
+    match = re.search(r"Spring 2026 .*? deadline is ([A-Z][a-z]+ \d{1,2}, \d{4})", text, re.IGNORECASE)
+    if not match:
+        return []
+
+    deadline = parse_month_day_year(match.group(1))
+    if deadline is None or not should_keep_dated_item(deadline):
+        return []
+
+    return [
+        FeedItem(
+            title="Apply for the Boston Community Health Education Certificate",
+            date=iso_date(deadline),
+            display_date=display_date(deadline),
+            time=None,
+            location="Boston Public Health Commission",
+            description="Boston-area applicants can apply for the community health education certificate program before the spring application deadline.",
+            action_label="Open Certificate Program",
+            url=BOSTON_COMMUNITY_HEALTH_CERT_URL,
+            cost="Free",
+            pathways=["health", "education_work", "just_browsing"],
+            source="Boston Public Health Commission",
+        )
+    ]
+
+
 def build_feed() -> dict:
     parser_by_label = {
         "parking permits": parse_parking_deadline,
@@ -1562,10 +1933,19 @@ def build_boston_feed() -> dict:
         "boston dog license": parse_boston_dog_license,
         "boston tax exemptions": parse_boston_tax_exemptions,
         "boston elections": parse_boston_elections,
+        "boston voter registration": parse_boston_voter_registration,
+        "boston vote by mail": parse_boston_vote_by_mail,
         "boston housing": parse_boston_housing,
         "boston age strong": parse_boston_age_strong,
+        "boston tax work-off": parse_boston_tax_workoff,
+        "boston digital equity": parse_boston_digital_equity,
+        "boston small community grants": parse_boston_small_community_grants,
+        "boston annual enrollment": parse_boston_annual_enrollment,
+        "boston small business activation": parse_boston_small_business_activation,
+        "boston bizunlocked": parse_boston_bizunlocked,
         "boston bps enrollment": parse_boston_bps_enrollment,
         "boston bpl esol": parse_boston_bpl_esol,
+        "boston community health certificate": parse_boston_community_health_certificate,
     }
 
     items: list[FeedItem] = []

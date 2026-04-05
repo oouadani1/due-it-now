@@ -1,6 +1,39 @@
 {
   "items": [
     {
+      "title": "Apply for the Boston Small Business Month Activation Grant",
+      "date": "2026-02-24",
+      "display_date": "Tuesday, February 24, 2026",
+      "time": "5:00 PM",
+      "location": "City of Boston Small Business",
+      "description": "Boston nonprofits, business groups, and community organizations can apply for small grants to host events during Small Business Month.",
+      "action_label": "Open Small Business Grant",
+      "url": "https://www.boston.gov/departments/small-business",
+      "cost": "Free to apply",
+      "pathways": [
+        "education_work",
+        "just_browsing"
+      ],
+      "source": "City of Boston Small Business"
+    },
+    {
+      "title": "Apply for the Boston Community Health Education Certificate",
+      "date": "2026-03-24",
+      "display_date": "Tuesday, March 24, 2026",
+      "time": null,
+      "location": "Boston Public Health Commission",
+      "description": "Boston-area applicants can apply for the community health education certificate program before the spring application deadline.",
+      "action_label": "Open Certificate Program",
+      "url": "https://www.boston.gov/node/14911616",
+      "cost": "Free",
+      "pathways": [
+        "health",
+        "education_work",
+        "just_browsing"
+      ],
+      "source": "Boston Public Health Commission"
+    },
+    {
       "title": "License Your Dog in Boston",
       "date": "2026-03-31",
       "display_date": "Tuesday, March 31, 2026",
@@ -32,6 +65,169 @@
         "older_adults"
       ],
       "source": "City of Boston Assessing"
+    },
+    {
+      "title": "Apply for the Boston Digital Equity Fund",
+      "date": "2026-04-09",
+      "display_date": "Thursday, April 9, 2026",
+      "time": "5:00 PM",
+      "location": "City of Boston grant portal",
+      "description": "Boston-based organizations can apply for digital navigation, training, and device access funding that helps residents connect to services and opportunities.",
+      "action_label": "Apply for the Fund",
+      "url": "https://www.boston.gov/departments/innovation-and-technology/2026-digital-equity-fund",
+      "cost": "Free to apply",
+      "pathways": [
+        "education_work",
+        "health",
+        "just_browsing"
+      ],
+      "source": "City of Boston Innovation and Technology"
+    },
+    {
+      "title": "Apply for BizUnlocked Boston",
+      "date": "2026-04-10",
+      "display_date": "Friday, April 10, 2026",
+      "time": null,
+      "location": "Boston",
+      "description": "Eligible early-stage Boston business owners can apply for the City's BizUnlocked business access program and cohort-based support.",
+      "action_label": "Apply to BizUnlocked",
+      "url": "https://www.boston.gov/departments/small-business-development/bizunlocked-boston-business-access-program",
+      "cost": "Free",
+      "pathways": [
+        "education_work",
+        "just_browsing"
+      ],
+      "source": "City of Boston Small Business Development"
+    },
+    {
+      "title": "Apply for Boston Small Community Grants",
+      "date": "2026-04-27",
+      "display_date": "Monday, April 27, 2026",
+      "time": "5:00 PM",
+      "location": "City of Boston grant portal",
+      "description": "Boston nonprofits can apply for small trust grants supporting direct-impact community work, recreation, beautification, and field trips for residents.",
+      "action_label": "Apply for Small Grants",
+      "url": "https://www.boston.gov/node/15816191",
+      "cost": "Free to apply",
+      "pathways": [
+        "just_browsing",
+        "students_families",
+        "voting_civics"
+      ],
+      "source": "City of Boston Treasury"
+    },
+    {
+      "title": "Apply for an Age Strong Rolling Grant",
+      "date": "2026-05-07",
+      "display_date": "Thursday, May 7, 2026",
+      "time": "11:59 PM",
+      "location": "Age Strong Commission",
+      "description": "Boston nonprofits, civic associations, and senior groups can apply for small-scale funding that supports older adult programming and social connection.",
+      "action_label": "Open Age Strong Grants",
+      "url": "https://www.boston.gov/node/16395271",
+      "cost": "Free to apply",
+      "pathways": [
+        "older_adults",
+        "health",
+        "just_browsing"
+      ],
+      "source": "City of Boston Age Strong Commission"
+    },
+    {
+      "title": "Submit Boston Annual Enrollment Elections",
+      "date": "2026-05-15",
+      "display_date": "Friday, May 15, 2026",
+      "time": "5:00 PM",
+      "location": "City of Boston benefits portal",
+      "description": "City of Boston employees and non-Medicare retirees must submit health and benefits enrollment changes by the annual enrollment deadline.",
+      "action_label": "Open Annual Enrollment",
+      "url": "https://www.boston.gov/departments/human-resources/annual-enrollment-2026",
+      "cost": "Free",
+      "pathways": [
+        "health",
+        "renewals",
+        "just_browsing"
+      ],
+      "source": "City of Boston Human Resources"
+    },
+    {
+      "title": "Apply for Boston's Older Adult Property Tax Work-Off Program",
+      "date": "2026-07-10",
+      "display_date": "Friday, July 10, 2026",
+      "time": null,
+      "location": "Age Strong Commission",
+      "description": "Eligible Boston older adults can apply for the annual property tax work-off program before the filing deadline.",
+      "action_label": "Open Tax Work-Off Program",
+      "url": "https://www.boston.gov/departments/age-strong-commission/senior-property-tax-work",
+      "cost": "Free",
+      "pathways": [
+        "older_adults",
+        "housing",
+        "renewals"
+      ],
+      "source": "City of Boston Age Strong Commission"
+    },
+    {
+      "title": "Complete CORI Paperwork for Boston's Tax Work-Off Program",
+      "date": "2026-07-24",
+      "display_date": "Friday, July 24, 2026",
+      "time": null,
+      "location": "Age Strong Commission",
+      "description": "Boston property tax work-off applicants must complete the required CORI paperwork before the annual deadline.",
+      "action_label": "Open Tax Work-Off Program",
+      "url": "https://www.boston.gov/departments/age-strong-commission/senior-property-tax-work",
+      "cost": "Free",
+      "pathways": [
+        "older_adults",
+        "housing",
+        "renewals"
+      ],
+      "source": "City of Boston Age Strong Commission"
+    },
+    {
+      "title": "Register to Vote for the Massachusetts State Primary",
+      "date": "2026-08-22",
+      "display_date": "Saturday, August 22, 2026",
+      "time": "11:59 PM",
+      "location": "Online, by mail, or in person",
+      "description": "Boston residents must register to vote by the state primary registration deadline to participate in the September primary election.",
+      "action_label": "Register to Vote",
+      "url": "https://www.boston.gov/departments/elections/how-register-vote",
+      "cost": "Free",
+      "pathways": [
+        "voting_civics"
+      ],
+      "source": "Boston Elections Commission"
+    },
+    {
+      "title": "Apply to Vote by Mail for the Massachusetts State Primary",
+      "date": "2026-08-25",
+      "display_date": "Tuesday, August 25, 2026",
+      "time": "5:00 PM",
+      "location": "Boston Elections Department",
+      "description": "Registered Boston voters must submit vote-by-mail applications by the primary deadline to receive a mailed ballot.",
+      "action_label": "Apply to Vote by Mail",
+      "url": "https://www.boston.gov/node/15908046",
+      "cost": "Free",
+      "pathways": [
+        "voting_civics"
+      ],
+      "source": "Boston Elections Commission"
+    },
+    {
+      "title": "Register to Vote for the Massachusetts General Election",
+      "date": "2026-10-24",
+      "display_date": "Saturday, October 24, 2026",
+      "time": "11:59 PM",
+      "location": "Online, by mail, or in person",
+      "description": "Boston residents must register to vote by the general election registration deadline to participate in the November state election.",
+      "action_label": "Register to Vote",
+      "url": "https://www.boston.gov/departments/elections/how-register-vote",
+      "cost": "Free",
+      "pathways": [
+        "voting_civics"
+      ],
+      "source": "Boston Elections Commission"
     },
     {
       "title": "Check Boston Public Schools Enrollment",
@@ -68,23 +264,6 @@
       "source": "Boston Elections Commission"
     },
     {
-      "title": "Explore Age Strong Grant Opportunities",
-      "date": null,
-      "display_date": "Ongoing",
-      "time": null,
-      "location": "Boston",
-      "description": "Age Strong offers grant opportunities for organizations serving older adults in Boston, including small-scale rolling support.",
-      "action_label": "Open Age Strong Grants",
-      "url": "https://www.boston.gov/departments/age-strong-commission/age-strong-2025-grantees",
-      "cost": "Free to apply",
-      "pathways": [
-        "older_adults",
-        "health",
-        "just_browsing"
-      ],
-      "source": "City of Boston Age Strong Commission"
-    },
-    {
       "title": "Join Boston Public Library ESOL Classes",
       "date": null,
       "display_date": "Ongoing",
@@ -118,7 +297,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-04-04T22:04:26",
+    "updated_at": "2026-04-04T22:30:00-04:00",
     "source_errors": []
   }
 }
