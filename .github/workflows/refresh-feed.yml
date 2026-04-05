@@ -28,4 +28,4 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Refresh civic feed"
-          file_pattern: feed.json
+          file_pattern: feed.json feeds/boston.json

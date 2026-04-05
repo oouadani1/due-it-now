@@ -2,14 +2,14 @@
   "items": [
     {
       "title": "License Your Dog in Boston",
-      "date": "2026-03-31",
-      "display_date": "Tuesday, March 31, 2026",
+      "date": "2026-02-06",
+      "display_date": "Friday, February 6, 2026",
       "time": null,
       "location": "Boston Animal Care and Control",
       "description": "Dog owners must license dogs older than six months before the annual City deadline.",
       "action_label": "License Your Dog",
       "url": "https://www.boston.gov/departments/animal-care-and-control/how-license-your-dog",
-      "cost": "$15-$30, waived for eligible residents 70+ applying by mail or in person",
+      "cost": "$15-$30, waived for some eligible older adults applying by mail or in person",
       "pathways": [
         "renewals",
         "older_adults"
@@ -34,48 +34,48 @@
       "source": "City of Boston Assessing"
     },
     {
-      "title": "Apply for the Boston Digital Equity Fund",
-      "date": "2026-04-09",
-      "display_date": "Thursday, April 9, 2026",
-      "time": "5:00 PM",
-      "location": "City of Boston grant portal",
-      "description": "Boston-based organizations can apply for digital navigation, training, and device access funding that supports residents' online access to services and opportunities.",
-      "action_label": "Apply for the Fund",
-      "url": "https://www.boston.gov/departments/innovation-and-technology/2026-digital-equity-fund",
-      "cost": "Free to apply",
+      "title": "Check Boston Public Schools Enrollment",
+      "date": null,
+      "display_date": "Ongoing",
+      "time": null,
+      "location": "Boston Public Schools",
+      "description": "Boston families can use the BPS enrollment page to review registration steps, school assignment information, and current enrollment guidance.",
+      "action_label": "Open BPS Enrollment",
+      "url": "https://www.bostonpublicschools.org/enroll",
+      "cost": "Free",
       "pathways": [
+        "students_families",
         "education_work",
-        "health",
         "just_browsing"
       ],
-      "source": "City of Boston Innovation and Technology"
+      "source": "Boston Public Schools"
     },
     {
-      "title": "Apply for Boston Small Community Grants",
-      "date": "2026-04-27",
-      "display_date": "Monday, April 27, 2026",
-      "time": "5:00 PM",
-      "location": "City of Boston grant portal",
-      "description": "Nonprofits can apply for small City trust grants supporting direct-impact community work, recreation, beautification, and field trips for Boston residents.",
-      "action_label": "Apply for Small Grants",
-      "url": "https://www.boston.gov/node/15816191",
-      "cost": "Free to apply",
+      "title": "Complete Your Boston Annual Census",
+      "date": null,
+      "display_date": "Return as soon as possible",
+      "time": null,
+      "location": "Online or by mail",
+      "description": "Boston residents should complete the annual census or listing to help keep voter rolls current and support city services.",
+      "action_label": "Open Elections Commission Page",
+      "url": "https://www.boston.gov/departments/elections/boston-elections-commission",
+      "cost": "Free",
       "pathways": [
-        "just_browsing",
-        "students_families",
-        "voting_civics"
+        "voting_civics",
+        "renewals",
+        "just_browsing"
       ],
-      "source": "City of Boston Treasury"
+      "source": "Boston Elections Commission"
     },
     {
-      "title": "Apply for an Age Strong Rolling Grant",
-      "date": "2026-05-07",
-      "display_date": "Thursday, May 7, 2026",
-      "time": "11:59 PM",
-      "location": "Age Strong Commission",
-      "description": "Boston nonprofits, civic associations, and senior groups can apply for small-scale funding that supports older adult programming and social connection.",
-      "action_label": "Apply for Rolling Grant",
-      "url": "https://www.boston.gov/node/16395271",
+      "title": "Explore Age Strong Grant Opportunities",
+      "date": null,
+      "display_date": "Ongoing",
+      "time": null,
+      "location": "Boston",
+      "description": "Age Strong offers grant opportunities for organizations serving older adults in Boston, including small-scale rolling support.",
+      "action_label": "Open Age Strong Grants",
+      "url": "https://www.boston.gov/departments/age-strong-commission/age-strong-2025-grantees",
       "cost": "Free to apply",
       "pathways": [
         "older_adults",
@@ -83,10 +83,42 @@
         "just_browsing"
       ],
       "source": "City of Boston Age Strong Commission"
+    },
+    {
+      "title": "Join Boston Public Library ESOL Classes",
+      "date": null,
+      "display_date": "Ongoing",
+      "time": null,
+      "location": "Boston Public Library",
+      "description": "Boston Public Library offers free English-language learning classes and conversation groups for adult learners living in Massachusetts.",
+      "action_label": "Open BPL ESOL",
+      "url": "https://www.bpl.org/esol/",
+      "cost": "Free",
+      "pathways": [
+        "education_work",
+        "just_browsing"
+      ],
+      "source": "Boston Public Library"
+    },
+    {
+      "title": "Track Boston Affordable Housing Lotteries",
+      "date": null,
+      "display_date": "Ongoing",
+      "time": null,
+      "location": "Boston",
+      "description": "Boston's Office of Housing points residents to Metrolist for income-restricted rentals, homeownership opportunities, and housing lottery listings.",
+      "action_label": "Open Boston Housing",
+      "url": "https://www.boston.gov/departments/housing",
+      "cost": "Free",
+      "pathways": [
+        "housing",
+        "just_browsing"
+      ],
+      "source": "City of Boston Housing"
     }
   ],
   "metadata": {
-    "updated_at": "2026-03-31T23:59:00-04:00",
+    "updated_at": "2026-04-04T22:04:26",
     "source_errors": []
   }
 }

@@ -14,6 +14,8 @@ from urllib.request import Request, urlopen
 
 PROJECT_ROOT = Path(__file__).resolve().parent
 FEED_PATH = PROJECT_ROOT / "feed.json"
+FEEDS_DIR = PROJECT_ROOT / "feeds"
+BOSTON_FEED_PATH = FEEDS_DIR / "boston.json"
 TODAY = datetime.now()
 CURRENT_YEAR = TODAY.year
 LOOKAHEAD_DAYS = 365
@@ -39,6 +41,14 @@ CAMBRIDGE_ARTS_CALENDAR_URL = "https://www.cambridgema.gov/arts/Calendar"
 CPHD_MINI_GRANTS_URL = "https://www.cambridgepublichealth.org/services/mini-grants/"
 CPP_URL = "https://earlychildhoodcambridge.org/cpp/"
 
+BOSTON_DOG_LICENSE_URL = "https://www.boston.gov/departments/animal-care-and-control/how-license-your-dog"
+BOSTON_TAX_EXEMPTIONS_URL = "https://www.boston.gov/departments/assessing/filing-property-tax-exemption"
+BOSTON_ELECTIONS_URL = "https://www.boston.gov/departments/elections/boston-elections-commission"
+BOSTON_HOUSING_URL = "https://www.boston.gov/departments/housing"
+BOSTON_AGE_STRONG_GRANTS_URL = "https://www.boston.gov/departments/age-strong-commission/age-strong-2025-grantees"
+BOSTON_BPS_ENROLL_URL = "https://www.bostonpublicschools.org/enroll"
+BOSTON_BPL_ESOL_URL = "https://www.bpl.org/esol/"
+
 SOURCE_PARSERS = [
     ("parking permits", "deadlines", "Cambridge parking permit renewal deadline", "stable city page", "strong deadline signal"),
     ("tax exemptions", "deadlines", "annual Cambridge personal tax exemptions filing deadline", "stable city page", "strong deadline signal"),
@@ -52,6 +62,16 @@ SOURCE_PARSERS = [
     ("primegov portal", "ongoing", "PrimeGov public meetings portal", "public meetings portal", "evergreen civic lookup"),
     ("library programs", "free services", "Cambridge Public Library calendar", "library calendar pages", "keyword-filtered useful programs"),
     ("cambridge arts", "arts and culture", "Cambridge Arts events portal", "arts homepage", "lightweight arts discovery source"),
+]
+
+BOSTON_SOURCE_PARSERS = [
+    ("boston dog license", "deadlines", "annual Boston dog license deadline", "city service page", "strong annual renewal signal"),
+    ("boston tax exemptions", "deadlines", "Boston property tax exemption deadline", "city assessing page", "strong annual filing signal"),
+    ("boston elections", "voting and civics", "Boston annual listing and elections page", "elections department page", "important civic participation source"),
+    ("boston housing", "housing", "Boston housing and Metrolist page", "office of housing page", "evergreen housing opportunity source"),
+    ("boston age strong", "older adults", "Age Strong rolling grants", "city grants page", "deadline-driven older adult opportunity"),
+    ("boston bps enrollment", "students and families", "Boston Public Schools enrollment page", "district enrollment page", "family-facing application source"),
+    ("boston bpl esol", "education and work", "Boston Public Library ESOL page", "library adult learning page", "evergreen free service source"),
 ]
 
 
@@ -192,6 +212,16 @@ def parse_month_day_year(text: str) -> datetime | None:
     for fmt in ("%B %d, %Y", "%b %d, %Y"):
         try:
             return datetime.strptime(cleaned, fmt)
+        except ValueError:
+            continue
+    return None
+
+
+def parse_month_day(text: str, year: int = CURRENT_YEAR) -> datetime | None:
+    cleaned = clean_whitespace(text).replace(",", "")
+    for fmt in ("%B %d %Y", "%b %d %Y"):
+        try:
+            return datetime.strptime(f"{cleaned} {year}", fmt)
         except ValueError:
             continue
     return None
@@ -1233,6 +1263,266 @@ def parse_cambridge_arts() -> list[FeedItem]:
     ]
 
 
+def parse_boston_dog_license() -> list[FeedItem]:
+    html = fetch_html(BOSTON_DOG_LICENSE_URL)
+    parser = SimpleHTML()
+    parser.feed(html)
+    text = "\n".join(parser.text_lines())
+
+    deadline = None
+    full_match = re.search(r"\b([A-Z][a-z]+ \d{1,2}, \d{4})\b", text)
+    if full_match and "license" in text.lower():
+        deadline = parse_month_day_year(full_match.group(1))
+    if deadline is None:
+        month_day_match = re.search(r"by ([A-Z][a-z]+ \d{1,2})", text, re.IGNORECASE)
+        if month_day_match:
+            deadline = parse_month_day(month_day_match.group(1))
+    if deadline is None:
+        march_match = re.search(r"\b(March 31)\b", text, re.IGNORECASE)
+        if march_match:
+            deadline = parse_month_day(march_match.group(1))
+
+    if deadline is None or not should_keep_dated_item(deadline):
+        return []
+
+    return [
+        FeedItem(
+            title="License Your Dog in Boston",
+            date=iso_date(deadline),
+            display_date=display_date(deadline),
+            time=None,
+            location="Boston Animal Care and Control",
+            description="Dog owners must license dogs older than six months before the annual City deadline.",
+            action_label="License Your Dog",
+            url=BOSTON_DOG_LICENSE_URL,
+            cost="$15-$30, waived for some eligible older adults applying by mail or in person",
+            pathways=["renewals", "older_adults"],
+            source="City of Boston Animal Care and Control",
+        )
+    ]
+
+
+def parse_boston_tax_exemptions() -> list[FeedItem]:
+    html = fetch_html(BOSTON_TAX_EXEMPTIONS_URL)
+    parser = SimpleHTML()
+    parser.feed(html)
+    text = "\n".join(parser.text_lines())
+
+    deadline = None
+    full_match = re.search(r"\b([A-Z][a-z]+ \d{1,2}, \d{4})\b", text)
+    if full_match:
+        deadline = parse_month_day_year(full_match.group(1))
+    if deadline is None:
+        month_day_match = re.search(r"(?:due|deadline)[^\n.]*?\b([A-Z][a-z]+ \d{1,2})\b", text, re.IGNORECASE)
+        if month_day_match:
+            deadline = parse_month_day(month_day_match.group(1))
+    if deadline is None and "April 1" in text:
+        deadline = parse_month_day("April 1")
+
+    if deadline is None or not should_keep_dated_item(deadline):
+        return []
+
+    return [
+        FeedItem(
+            title="Apply for Boston Property Tax Exemptions",
+            date=iso_date(deadline),
+            display_date=display_date(deadline),
+            time=None,
+            location="Boston Assessing Department",
+            description="Eligible homeowners can file for the current fiscal year property tax exemption by the annual deadline.",
+            action_label="Open Tax Exemptions",
+            url=BOSTON_TAX_EXEMPTIONS_URL,
+            cost="Free",
+            pathways=["renewals", "housing", "older_adults"],
+            source="City of Boston Assessing",
+        )
+    ]
+
+
+def parse_boston_elections() -> list[FeedItem]:
+    html = fetch_html(BOSTON_ELECTIONS_URL)
+    parser = SimpleHTML()
+    parser.feed(html)
+    text = "\n".join(parser.text_lines())
+
+    if "Annual Census" not in text and "Annual Listing" not in text:
+        return []
+
+    return [
+        FeedItem(
+            title="Complete Your Boston Annual Census",
+            date=None,
+            display_date="Return as soon as possible",
+            time=None,
+            location="Online or by mail",
+            description="Boston residents should complete the annual census or listing to help keep voter rolls current and support city services.",
+            action_label="Open Elections Commission Page",
+            url=BOSTON_ELECTIONS_URL,
+            cost="Free",
+            pathways=["voting_civics", "renewals", "just_browsing"],
+            source="Boston Elections Commission",
+        )
+    ]
+
+
+def parse_boston_housing() -> list[FeedItem]:
+    html = fetch_html(BOSTON_HOUSING_URL)
+    parser = SimpleHTML()
+    parser.feed(html)
+    text = "\n".join(parser.text_lines())
+
+    if "Metrolist" not in text and "income-restricted housing" not in text:
+        return []
+
+    return [
+        FeedItem(
+            title="Track Boston Affordable Housing Lotteries",
+            date=None,
+            display_date="Ongoing",
+            time=None,
+            location="Boston",
+            description="Boston's Office of Housing points residents to Metrolist for income-restricted rentals, homeownership opportunities, and housing lottery listings.",
+            action_label="Open Boston Housing",
+            url=BOSTON_HOUSING_URL,
+            cost="Free",
+            pathways=["housing", "just_browsing"],
+            source="City of Boston Housing",
+        )
+    ]
+
+
+def parse_boston_age_strong() -> list[FeedItem]:
+    html = fetch_html(BOSTON_AGE_STRONG_GRANTS_URL)
+    parser = SimpleHTML()
+    parser.feed(html)
+    text = "\n".join(parser.text_lines())
+
+    if "Rolling Grant" not in text and "Rolling Grants" not in text:
+        return []
+
+    dates = []
+    for match in re.findall(r"\b([A-Z][a-z]+ \d{1,2}, \d{4})\b", text):
+        parsed = parse_month_day_year(match)
+        if parsed is None or not should_keep_dated_item(parsed):
+            continue
+        if parsed.date() < TODAY.date():
+            continue
+        dates.append(parsed)
+
+    if dates:
+        deadline = min(dates)
+        return [
+            FeedItem(
+                title="Apply for an Age Strong Rolling Grant",
+                date=iso_date(deadline),
+                display_date=display_date(deadline),
+                time="11:59 PM",
+                location="Age Strong Commission",
+                description="Boston nonprofits, civic associations, and senior groups can apply for small-scale funding that supports older adult programming and social connection.",
+                action_label="Open Age Strong Grants",
+                url=BOSTON_AGE_STRONG_GRANTS_URL,
+                cost="Free to apply",
+                pathways=["older_adults", "health", "just_browsing"],
+                source="City of Boston Age Strong Commission",
+            )
+        ]
+
+    return [
+        FeedItem(
+            title="Explore Age Strong Grant Opportunities",
+            date=None,
+            display_date="Ongoing",
+            time=None,
+            location="Boston",
+            description="Age Strong offers grant opportunities for organizations serving older adults in Boston, including small-scale rolling support.",
+            action_label="Open Age Strong Grants",
+            url=BOSTON_AGE_STRONG_GRANTS_URL,
+            cost="Free to apply",
+            pathways=["older_adults", "health", "just_browsing"],
+            source="City of Boston Age Strong Commission",
+        )
+    ]
+
+
+def parse_boston_bps_enrollment() -> list[FeedItem]:
+    html = fetch_html(BOSTON_BPS_ENROLL_URL)
+    parser = SimpleHTML()
+    parser.feed(html)
+    text = "\n".join(parser.text_lines())
+
+    if "Welcome to BPS Enrollment" not in text:
+        return []
+
+    matches = re.findall(r"\b([A-Z][a-z]+ \d{1,2}, \d{4})\b", text)
+    future_dates = []
+    for match in matches:
+        parsed = parse_month_day_year(match)
+        if parsed is None or parsed.date() < TODAY.date():
+            continue
+        if should_keep_dated_item(parsed):
+            future_dates.append(parsed)
+
+    if future_dates:
+        deadline = min(future_dates)
+        return [
+            FeedItem(
+                title="Review Boston Public Schools Enrollment Deadlines",
+                date=iso_date(deadline),
+                display_date=display_date(deadline),
+                time=None,
+                location="Boston Public Schools",
+                description="Boston families can review current school enrollment dates, registration windows, and assignment steps through the BPS enrollment page.",
+                action_label="Open BPS Enrollment",
+                url=BOSTON_BPS_ENROLL_URL,
+                cost="Free",
+                pathways=["students_families", "education_work", "just_browsing"],
+                source="Boston Public Schools",
+            )
+        ]
+
+    return [
+        FeedItem(
+            title="Check Boston Public Schools Enrollment",
+            date=None,
+            display_date="Ongoing",
+            time=None,
+            location="Boston Public Schools",
+            description="Boston families can use the BPS enrollment page to review registration steps, school assignment information, and current enrollment guidance.",
+            action_label="Open BPS Enrollment",
+            url=BOSTON_BPS_ENROLL_URL,
+            cost="Free",
+            pathways=["students_families", "education_work", "just_browsing"],
+            source="Boston Public Schools",
+        )
+    ]
+
+
+def parse_boston_bpl_esol() -> list[FeedItem]:
+    html = fetch_html(BOSTON_BPL_ESOL_URL)
+    parser = SimpleHTML()
+    parser.feed(html)
+    text = "\n".join(parser.text_lines())
+
+    if "English Language Learning" not in text and "English for Speakers of Other Languages" not in text:
+        return []
+
+    return [
+        FeedItem(
+            title="Join Boston Public Library ESOL Classes",
+            date=None,
+            display_date="Ongoing",
+            time=None,
+            location="Boston Public Library",
+            description="Boston Public Library offers free English-language learning classes and conversation groups for adult learners living in Massachusetts.",
+            action_label="Open BPL ESOL",
+            url=BOSTON_BPL_ESOL_URL,
+            cost="Free",
+            pathways=["education_work", "just_browsing"],
+            source="Boston Public Library",
+        )
+    ]
+
+
 def build_feed() -> dict:
     parser_by_label = {
         "parking permits": parse_parking_deadline,
@@ -1270,15 +1560,55 @@ def build_feed() -> dict:
     }
 
 
+def build_boston_feed() -> dict:
+    parser_by_label = {
+        "boston dog license": parse_boston_dog_license,
+        "boston tax exemptions": parse_boston_tax_exemptions,
+        "boston elections": parse_boston_elections,
+        "boston housing": parse_boston_housing,
+        "boston age strong": parse_boston_age_strong,
+        "boston bps enrollment": parse_boston_bps_enrollment,
+        "boston bpl esol": parse_boston_bpl_esol,
+    }
+
+    items: list[FeedItem] = []
+    errors: list[str] = []
+
+    for label, _group, _summary, _source_type, _notes in BOSTON_SOURCE_PARSERS:
+        parser = parser_by_label[label]
+        try:
+            items.extend(parser())
+        except Exception as exc:
+            errors.append(f"{label}: {exc}")
+
+    unique = dedupe_items(items)
+    ordered = sorted(unique, key=sort_key)
+    return {
+        "items": [item.to_dict() for item in ordered],
+        "metadata": {
+            "updated_at": datetime.now().isoformat(timespec="seconds"),
+            "source_errors": errors,
+        },
+    }
+
+
 def main() -> None:
-    feed = build_feed()
-    FEED_PATH.write_text(json.dumps(feed, indent=2), encoding="utf-8")
-    print(f"Wrote {len(feed['items'])} items to {FEED_PATH.name}")
-    errors = feed.get("metadata", {}).get("source_errors", [])
-    if errors:
-        print("Warnings:")
-        for error in errors:
-            print(f"- {error}")
+    cambridge_feed = build_feed()
+    boston_feed = build_boston_feed()
+
+    FEEDS_DIR.mkdir(exist_ok=True)
+    FEED_PATH.write_text(json.dumps(cambridge_feed, indent=2), encoding="utf-8")
+    BOSTON_FEED_PATH.write_text(json.dumps(boston_feed, indent=2), encoding="utf-8")
+
+    print(f"Wrote {len(cambridge_feed['items'])} items to {FEED_PATH.name}")
+    print(f"Wrote {len(boston_feed['items'])} items to {BOSTON_FEED_PATH.relative_to(PROJECT_ROOT)}")
+
+    for label, feed in (("Cambridge", cambridge_feed), ("Boston", boston_feed)):
+        errors = feed.get("metadata", {}).get("source_errors", [])
+        if errors:
+            print(f"{label} warnings:")
+            for error in errors:
+                print(f"- {error}")
 
 
 if __name__ == "__main__":
