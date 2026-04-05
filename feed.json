@@ -32,87 +32,6 @@
       "source": "Cambridge Taxpayer Exemptions"
     },
     {
-      "title": "Early Release Wednesday (K-8)",
-      "date": "2026-04-01",
-      "display_date": "Wednesday, April 1, 2026",
-      "time": null,
-      "location": "Cambridge Public Schools",
-      "description": "Upcoming Cambridge Public Schools schedule change.",
-      "action_label": "Open CPS Calendar",
-      "url": "https://www.cpsd.us/all-events",
-      "cost": "Free",
-      "pathways": [
-        "students_families",
-        "just_browsing"
-      ],
-      "source": "CPSD All Events"
-    },
-    {
-      "title": "Beginner ESOL (Central Square)",
-      "date": "2026-04-01",
-      "display_date": "Wednesday, April 1, 2026",
-      "time": "10:30 AM",
-      "location": "Central Square Branch, 45 Pearl St., Cambridge, MA 02139",
-      "description": "Join us for an English for Speakers of Other Languages (ESOL) class.",
-      "action_label": "View Program Details",
-      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=39b6bbbe610b4d11b31ff86b273d93af",
-      "cost": "Free",
-      "pathways": [
-        "education_work",
-        "just_browsing"
-      ],
-      "source": "Cambridge Public Library"
-    },
-    {
-      "title": "High Beginner ESOL (Central Square)",
-      "date": "2026-04-01",
-      "display_date": "Wednesday, April 1, 2026",
-      "time": "10:30 AM",
-      "location": "Central Square Branch, 45 Pearl St., Cambridge, MA 02139",
-      "description": "Join us for an English for Speakers of Other Languages (ESOL) Class.",
-      "action_label": "View Program Details",
-      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=7e21ee76b2ab426b928028d08f3fec62",
-      "cost": "Free",
-      "pathways": [
-        "education_work",
-        "just_browsing"
-      ],
-      "source": "Cambridge Public Library"
-    },
-    {
-      "title": "Fiber Crafts Group - Drop-In (O'Connell)",
-      "date": "2026-04-01",
-      "display_date": "Wednesday, April 1, 2026",
-      "time": "11:00 AM",
-      "location": "O'Connell Branch, 48 Sixth St., Cambridge, MA 02141",
-      "description": "Bring your project and enjoy the company of other fiber crafters Drop-in with this informal group to work on your craft, get inspired, pick up skills and socialize.",
-      "action_label": "View Program Details",
-      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=77f145324c5841e7b1db951cae3fb1d5",
-      "cost": "Free",
-      "pathways": [
-        "arts",
-        "just_browsing"
-      ],
-      "source": "Cambridge Public Library"
-    },
-    {
-      "title": "Wellness for Older Adults: Low-impact Fitness (Main)",
-      "date": "2026-04-01",
-      "display_date": "Wednesday, April 1, 2026",
-      "time": "11:15 AM",
-      "location": "Main Library, Community Room, 449 Broadway, Cambridge, MA 02138",
-      "description": "This class is designed for people of all levels to strengthen the muscles, the heart and the brain--all while having fun and moving to great music!",
-      "action_label": "View Program Details",
-      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=574a44e641b6471198a00588de18c3a8",
-      "cost": "Free",
-      "pathways": [
-        "arts",
-        "just_browsing",
-        "older_adults"
-      ],
-      "source": "Cambridge Public Library"
-    },
-    {
       "title": "Apply for Cambridge Public Health Mini-Grants",
       "date": "2026-04-03",
       "display_date": "Friday, April 3, 2026",
@@ -127,22 +46,6 @@
         "just_browsing"
       ],
       "source": "Cambridge Public Health Department"
-    },
-    {
-      "title": "No School & CPS Offices Closed: Good Friday",
-      "date": "2026-04-03",
-      "display_date": "Friday, April 3, 2026",
-      "time": null,
-      "location": "Cambridge Public Schools",
-      "description": "Upcoming Cambridge Public Schools schedule change.",
-      "action_label": "Open CPS Calendar",
-      "url": "https://www.cpsd.us/all-events",
-      "cost": "Free",
-      "pathways": [
-        "students_families",
-        "just_browsing"
-      ],
-      "source": "CPSD All Events"
     },
     {
       "title": "School Committee Meeting",
@@ -167,6 +70,22 @@
       "time": null,
       "location": "Cambridge Public Schools",
       "description": "Upcoming Cambridge Public Schools schedule change.",
+      "action_label": "Open CPS Calendar",
+      "url": "https://www.cpsd.us/all-events",
+      "cost": "Free",
+      "pathways": [
+        "students_families",
+        "just_browsing"
+      ],
+      "source": "CPSD All Events"
+    },
+    {
+      "title": "Special Education & Student Supports Subcommittee",
+      "date": "2026-04-08",
+      "display_date": "Wednesday, April 8, 2026",
+      "time": "4:00 PM",
+      "location": "Cambridge Public Schools",
+      "description": "Upcoming Cambridge Public Schools committee meeting or workshop.",
       "action_label": "Open CPS Calendar",
       "url": "https://www.cpsd.us/all-events",
       "cost": "Free",
@@ -223,6 +142,87 @@
         "just_browsing"
       ],
       "source": "CPSD All Events"
+    },
+    {
+      "title": "No School: April Break",
+      "date": "2026-04-21",
+      "display_date": "Tuesday, April 21, 2026",
+      "time": null,
+      "location": "Cambridge Public Schools",
+      "description": "Upcoming Cambridge Public Schools schedule change.",
+      "action_label": "Open CPS Calendar",
+      "url": "https://www.cpsd.us/all-events",
+      "cost": "Free",
+      "pathways": [
+        "students_families",
+        "just_browsing"
+      ],
+      "source": "CPSD All Events"
+    },
+    {
+      "title": "Beginner ESOL (Central Square)",
+      "date": "2026-05-01",
+      "display_date": "Friday, May 1, 2026",
+      "time": "10:30 AM",
+      "location": "Central Square Branch, 45 Pearl St., Cambridge, MA 02139",
+      "description": "Join us for an English for Speakers of Other Languages (ESOL) class.",
+      "action_label": "View Program Details",
+      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=543c0cd8d69c4e1aa30e9335cd8e0a2d",
+      "cost": "Free",
+      "pathways": [
+        "education_work",
+        "just_browsing"
+      ],
+      "source": "Cambridge Public Library"
+    },
+    {
+      "title": "High Beginner ESOL (Central Square)",
+      "date": "2026-05-01",
+      "display_date": "Friday, May 1, 2026",
+      "time": "10:30 AM",
+      "location": "Central Square Branch, 45 Pearl St., Cambridge, MA 02139",
+      "description": "Join us for an English for Speakers of Other Languages (ESOL) Class.",
+      "action_label": "View Program Details",
+      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=97bcae9f3c3249cdafc553d4cbf5160f",
+      "cost": "Free",
+      "pathways": [
+        "education_work",
+        "just_browsing"
+      ],
+      "source": "Cambridge Public Library"
+    },
+    {
+      "title": "Drop-in Tech Help at the Library (Central Square)",
+      "date": "2026-05-01",
+      "display_date": "Friday, May 1, 2026",
+      "time": "11:00 AM",
+      "location": "Central Square Branch, 45 Pearl St., Cambridge, MA 02139",
+      "description": "Looking for some basic computer or mobile device guidance?",
+      "action_label": "View Program Details",
+      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=ab5821a909774d7f86ef650390b6f638",
+      "cost": "Free",
+      "pathways": [
+        "education_work",
+        "just_browsing"
+      ],
+      "source": "Cambridge Public Library"
+    },
+    {
+      "title": "Wellness for Older Adults: Zumba Gold (Main)",
+      "date": "2026-05-01",
+      "display_date": "Friday, May 1, 2026",
+      "time": "11:30 AM",
+      "location": "Main Library, Community Room, 449 Broadway, Cambridge, MA 02138",
+      "description": "Join instructor Darren Hairston for Zumba Gold \u2013 the fun and energizing dance fitness class tailored for active older adults and beginners!",
+      "action_label": "View Program Details",
+      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=08a2a12e34974b9c8aa68766b64091cd",
+      "cost": "Free",
+      "pathways": [
+        "arts",
+        "just_browsing",
+        "older_adults"
+      ],
+      "source": "Cambridge Public Library"
     },
     {
       "title": "Apply to Cambridge Homeownership Resale Pool",
@@ -339,7 +339,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-04-01T11:15:04",
+    "updated_at": "2026-04-04T10:54:05",
     "source_errors": []
   }
 }
