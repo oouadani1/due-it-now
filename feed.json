@@ -48,22 +48,6 @@
       "source": "Cambridge Public Health Department"
     },
     {
-      "title": "School Committee Meeting",
-      "date": "2026-04-07",
-      "display_date": "Tuesday, April 7, 2026",
-      "time": "6:00 PM",
-      "location": "Dr. Henrietta Attles Meeting Room at CRLS, 459 Broadway, Cambridge",
-      "description": "Upcoming Cambridge Public Schools committee meeting or workshop.",
-      "action_label": "Open CPS Calendar",
-      "url": "https://www.cpsd.us/all-events",
-      "cost": "Free",
-      "pathways": [
-        "students_families",
-        "just_browsing"
-      ],
-      "source": "CPSD All Events"
-    },
-    {
       "title": "Early Release Wednesday (K-8)",
       "date": "2026-04-08",
       "display_date": "Wednesday, April 8, 2026",
@@ -94,22 +78,6 @@
         "just_browsing"
       ],
       "source": "CPSD All Events"
-    },
-    {
-      "title": "Apply for Cambridge Preschool Program Spring Match",
-      "date": "2026-04-13",
-      "display_date": "Monday, April 13, 2026",
-      "time": null,
-      "location": "Cambridge",
-      "description": "Cambridge families can apply for the Cambridge Preschool Program spring match for free public preschool and participating community-based providers.",
-      "action_label": "Open CPP Application Info",
-      "url": "https://earlychildhoodcambridge.org/cpp/",
-      "cost": "Free",
-      "pathways": [
-        "students_families",
-        "just_browsing"
-      ],
-      "source": "Cambridge Office of Early Childhood"
     },
     {
       "title": "Early Release Wednesday (K-8)",
@@ -147,6 +115,22 @@
       "title": "No School: April Break",
       "date": "2026-04-21",
       "display_date": "Tuesday, April 21, 2026",
+      "time": null,
+      "location": "Cambridge Public Schools",
+      "description": "Upcoming Cambridge Public Schools schedule change.",
+      "action_label": "Open CPS Calendar",
+      "url": "https://www.cpsd.us/all-events",
+      "cost": "Free",
+      "pathways": [
+        "students_families",
+        "just_browsing"
+      ],
+      "source": "CPSD All Events"
+    },
+    {
+      "title": "No School: April Break",
+      "date": "2026-04-22",
+      "display_date": "Wednesday, April 22, 2026",
       "time": null,
       "location": "Cambridge Public Schools",
       "description": "Upcoming Cambridge Public Schools schedule change.",
@@ -339,7 +323,9 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-04-07T11:15:33",
-    "source_errors": []
+    "updated_at": "2026-04-08T11:16:16",
+    "source_errors": [
+      "cpp: Could not find CPP application deadline."
+    ]
   }
 }
