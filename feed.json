@@ -49,38 +49,6 @@
     },
     {
       "title": "Early Release Wednesday (K-8)",
-      "date": "2026-04-08",
-      "display_date": "Wednesday, April 8, 2026",
-      "time": null,
-      "location": "Cambridge Public Schools",
-      "description": "Upcoming Cambridge Public Schools schedule change.",
-      "action_label": "Open CPS Calendar",
-      "url": "https://www.cpsd.us/all-events",
-      "cost": "Free",
-      "pathways": [
-        "students_families",
-        "just_browsing"
-      ],
-      "source": "CPSD All Events"
-    },
-    {
-      "title": "Special Education & Student Supports Subcommittee",
-      "date": "2026-04-08",
-      "display_date": "Wednesday, April 8, 2026",
-      "time": "4:00 PM",
-      "location": "Cambridge Public Schools",
-      "description": "Upcoming Cambridge Public Schools committee meeting or workshop.",
-      "action_label": "Open CPS Calendar",
-      "url": "https://www.cpsd.us/all-events",
-      "cost": "Free",
-      "pathways": [
-        "students_families",
-        "just_browsing"
-      ],
-      "source": "CPSD All Events"
-    },
-    {
-      "title": "Early Release Wednesday (K-8)",
       "date": "2026-04-15",
       "display_date": "Wednesday, April 15, 2026",
       "time": null,
@@ -131,6 +99,38 @@
       "title": "No School: April Break",
       "date": "2026-04-22",
       "display_date": "Wednesday, April 22, 2026",
+      "time": null,
+      "location": "Cambridge Public Schools",
+      "description": "Upcoming Cambridge Public Schools schedule change.",
+      "action_label": "Open CPS Calendar",
+      "url": "https://www.cpsd.us/all-events",
+      "cost": "Free",
+      "pathways": [
+        "students_families",
+        "just_browsing"
+      ],
+      "source": "CPSD All Events"
+    },
+    {
+      "title": "No School: April Break",
+      "date": "2026-04-23",
+      "display_date": "Thursday, April 23, 2026",
+      "time": null,
+      "location": "Cambridge Public Schools",
+      "description": "Upcoming Cambridge Public Schools schedule change.",
+      "action_label": "Open CPS Calendar",
+      "url": "https://www.cpsd.us/all-events",
+      "cost": "Free",
+      "pathways": [
+        "students_families",
+        "just_browsing"
+      ],
+      "source": "CPSD All Events"
+    },
+    {
+      "title": "No School: April Break",
+      "date": "2026-04-24",
+      "display_date": "Friday, April 24, 2026",
       "time": null,
       "location": "Cambridge Public Schools",
       "description": "Upcoming Cambridge Public Schools schedule change.",
@@ -323,7 +323,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-04-08T11:16:16",
+    "updated_at": "2026-04-09T11:21:37",
     "source_errors": [
       "cpp: Could not find CPP application deadline."
     ]
