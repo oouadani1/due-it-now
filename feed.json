@@ -48,22 +48,6 @@
       "source": "Cambridge Public Health Department"
     },
     {
-      "title": "Early Release Wednesday (K-8)",
-      "date": "2026-04-15",
-      "display_date": "Wednesday, April 15, 2026",
-      "time": null,
-      "location": "Cambridge Public Schools",
-      "description": "Upcoming Cambridge Public Schools schedule change.",
-      "action_label": "Open CPS Calendar",
-      "url": "https://www.cpsd.us/all-events",
-      "cost": "Free",
-      "pathways": [
-        "students_families",
-        "just_browsing"
-      ],
-      "source": "CPSD All Events"
-    },
-    {
       "title": "No School & CPS Offices Closed: Patriot's Day",
       "date": "2026-04-20",
       "display_date": "Monday, April 20, 2026",
@@ -131,6 +115,22 @@
       "title": "No School: April Break",
       "date": "2026-04-24",
       "display_date": "Friday, April 24, 2026",
+      "time": null,
+      "location": "Cambridge Public Schools",
+      "description": "Upcoming Cambridge Public Schools schedule change.",
+      "action_label": "Open CPS Calendar",
+      "url": "https://www.cpsd.us/all-events",
+      "cost": "Free",
+      "pathways": [
+        "students_families",
+        "just_browsing"
+      ],
+      "source": "CPSD All Events"
+    },
+    {
+      "title": "Early Release Wednesday (K-8)",
+      "date": "2026-04-29",
+      "display_date": "Wednesday, April 29, 2026",
       "time": null,
       "location": "Cambridge Public Schools",
       "description": "Upcoming Cambridge Public Schools schedule change.",
@@ -323,7 +323,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-04-15T11:18:12",
+    "updated_at": "2026-04-16T11:31:57",
     "source_errors": [
       "cpp: Could not find CPP application deadline."
     ]
