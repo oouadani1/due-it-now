@@ -50,23 +50,6 @@
       "source": "City of Boston Small Business Development"
     },
     {
-      "title": "Review Boston Public Schools Enrollment Deadlines",
-      "date": "2026-04-20",
-      "display_date": "Monday, April 20, 2026",
-      "time": null,
-      "location": "Boston Public Schools",
-      "description": "Boston families can review current school enrollment dates, registration windows, and assignment steps through the BPS enrollment page.",
-      "action_label": "Open BPS Enrollment",
-      "url": "https://www.bostonpublicschools.org/enroll",
-      "cost": "Free",
-      "pathways": [
-        "students_families",
-        "education_work",
-        "just_browsing"
-      ],
-      "source": "Boston Public Schools"
-    },
-    {
       "title": "Apply for Boston Small Community Grants",
       "date": "2026-04-27",
       "display_date": "Monday, April 27, 2026",
@@ -116,6 +99,23 @@
         "renewals"
       ],
       "source": "City of Boston Age Strong Commission"
+    },
+    {
+      "title": "Check Boston Public Schools Enrollment",
+      "date": null,
+      "display_date": "Ongoing",
+      "time": null,
+      "location": "Boston Public Schools",
+      "description": "Boston families can use the BPS enrollment page to review registration steps, school assignment information, and current enrollment guidance.",
+      "action_label": "Open BPS Enrollment",
+      "url": "https://www.bostonpublicschools.org/enroll",
+      "cost": "Free",
+      "pathways": [
+        "students_families",
+        "education_work",
+        "just_browsing"
+      ],
+      "source": "Boston Public Schools"
     },
     {
       "title": "Complete Your Boston Annual Census",
@@ -168,7 +168,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-04-20T11:44:27",
+    "updated_at": "2026-04-21T11:34:18",
     "source_errors": []
   }
 }
