@@ -49,22 +49,6 @@
     },
     {
       "title": "No School: April Break",
-      "date": "2026-04-21",
-      "display_date": "Tuesday, April 21, 2026",
-      "time": null,
-      "location": "Cambridge Public Schools",
-      "description": "Upcoming Cambridge Public Schools schedule change.",
-      "action_label": "Open CPS Calendar",
-      "url": "https://www.cpsd.us/all-events",
-      "cost": "Free",
-      "pathways": [
-        "students_families",
-        "just_browsing"
-      ],
-      "source": "CPSD All Events"
-    },
-    {
-      "title": "No School: April Break",
       "date": "2026-04-22",
       "display_date": "Wednesday, April 22, 2026",
       "time": null,
@@ -225,22 +209,6 @@
       "source": "Cambridge Housing Department"
     },
     {
-      "title": "Browse Cambridge Arts Events",
-      "date": null,
-      "display_date": "Ongoing",
-      "time": null,
-      "location": "Cambridge",
-      "description": "Cambridge Arts publishes a local arts and culture calendar, festival information, and public art resources.",
-      "action_label": "Open Arts Calendar",
-      "url": "https://www.cambridgema.gov/arts/Calendar",
-      "cost": "Free",
-      "pathways": [
-        "arts",
-        "just_browsing"
-      ],
-      "source": "Cambridge Arts"
-    },
-    {
       "title": "Check Current and Upcoming Cambridge Public Meetings",
       "date": null,
       "display_date": "Ongoing",
@@ -307,7 +275,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-04-21T11:33:48",
+    "updated_at": "2026-04-22T11:33:23",
     "source_errors": [
       "cpp: Could not find CPP application deadline."
     ]
