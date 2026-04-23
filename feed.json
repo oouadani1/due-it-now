@@ -1,21 +1,6 @@
 {
   "items": [
     {
-      "title": "Renew Cambridge Parking Permit",
-      "date": "2026-03-31",
-      "display_date": "Tuesday, March 31, 2026",
-      "time": null,
-      "location": "Cambridge",
-      "description": "Resident and visitor parking permits should be renewed online or in person before the city deadline.",
-      "action_label": "Renew Parking Permit",
-      "url": "https://www.cambridgema.gov/en/iwantto/applyforaparkingpermit",
-      "cost": "Varies by permit type",
-      "pathways": [
-        "renewals"
-      ],
-      "source": "Cambridge Parking Permits"
-    },
-    {
       "title": "Apply for Cambridge Personal Tax Exemptions",
       "date": "2026-04-01",
       "display_date": "Wednesday, April 1, 2026",
@@ -46,22 +31,6 @@
         "just_browsing"
       ],
       "source": "Cambridge Public Health Department"
-    },
-    {
-      "title": "No School: April Break",
-      "date": "2026-04-22",
-      "display_date": "Wednesday, April 22, 2026",
-      "time": null,
-      "location": "Cambridge Public Schools",
-      "description": "Upcoming Cambridge Public Schools schedule change.",
-      "action_label": "Open CPS Calendar",
-      "url": "https://www.cpsd.us/all-events",
-      "cost": "Free",
-      "pathways": [
-        "students_families",
-        "just_browsing"
-      ],
-      "source": "CPSD All Events"
     },
     {
       "title": "No School: April Break",
@@ -275,8 +244,9 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-04-22T11:33:23",
+    "updated_at": "2026-04-23T11:33:31",
     "source_errors": [
+      "parking permits: Could not find parking permit deadline.",
       "cpp: Could not find CPP application deadline."
     ]
   }
