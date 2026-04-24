@@ -34,8 +34,8 @@
     },
     {
       "title": "No School: April Break",
-      "date": "2026-04-23",
-      "display_date": "Thursday, April 23, 2026",
+      "date": "2026-04-24",
+      "display_date": "Friday, April 24, 2026",
       "time": null,
       "location": "Cambridge Public Schools",
       "description": "Upcoming Cambridge Public Schools schedule change.",
@@ -49,12 +49,12 @@
       "source": "CPSD All Events"
     },
     {
-      "title": "No School: April Break",
-      "date": "2026-04-24",
-      "display_date": "Friday, April 24, 2026",
+      "title": "School Committee: Virtual Special Meeting",
+      "date": "2026-04-28",
+      "display_date": "Tuesday, April 28, 2026",
       "time": null,
       "location": "Cambridge Public Schools",
-      "description": "Upcoming Cambridge Public Schools schedule change.",
+      "description": "Upcoming Cambridge Public Schools committee meeting or workshop.",
       "action_label": "Open CPS Calendar",
       "url": "https://www.cpsd.us/all-events",
       "cost": "Free",
@@ -244,7 +244,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-04-23T11:33:31",
+    "updated_at": "2026-04-24T11:35:57",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
       "cpp: Could not find CPP application deadline."
