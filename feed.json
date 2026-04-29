@@ -33,22 +33,6 @@
       "source": "Cambridge Public Health Department"
     },
     {
-      "title": "School Committee: Virtual Special Meeting",
-      "date": "2026-04-28",
-      "display_date": "Tuesday, April 28, 2026",
-      "time": "4:00 PM",
-      "location": "Cambridge Public Schools",
-      "description": "Upcoming Cambridge Public Schools committee meeting or workshop.",
-      "action_label": "Open CPS Calendar",
-      "url": "https://www.cpsd.us/all-events",
-      "cost": "Free",
-      "pathways": [
-        "students_families",
-        "just_browsing"
-      ],
-      "source": "CPSD All Events"
-    },
-    {
       "title": "Early Release Wednesday (K-8)",
       "date": "2026-04-29",
       "display_date": "Wednesday, April 29, 2026",
@@ -244,7 +228,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-04-28T12:02:55",
+    "updated_at": "2026-04-29T11:55:15",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
       "cpp: Could not find CPP application deadline."
