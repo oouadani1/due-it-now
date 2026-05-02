@@ -33,67 +33,49 @@
       "source": "Cambridge Public Health Department"
     },
     {
-      "title": "Beginner ESOL (Central Square)",
-      "date": "2026-05-01",
-      "display_date": "Friday, May 1, 2026",
-      "time": "10:30 AM",
-      "location": "Central Square Branch, 45 Pearl St., Cambridge, MA 02139",
-      "description": "Join us for an English for Speakers of Other Languages (ESOL) class.",
+      "title": "CPR Class for Parents and Caregivers (Main)",
+      "date": "2026-05-02",
+      "display_date": "Saturday, May 2, 2026",
+      "time": "9:30 AM",
+      "location": "Main Library, Curious George Room, 449 Broadway, Cambridge, MA 02138",
+      "description": "This CPR class will cover life-saving skills for infants, children and adults.",
       "action_label": "View Program Details",
-      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=543c0cd8d69c4e1aa30e9335cd8e0a2d",
+      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=2263def70e184838a61047d930b0b8fd",
       "cost": "Free",
       "pathways": [
-        "education_work",
+        "just_browsing",
+        "students_families"
+      ],
+      "source": "Cambridge Public Library"
+    },
+    {
+      "title": "Sewing 101 (Main)",
+      "date": "2026-05-02",
+      "display_date": "Saturday, May 2, 2026",
+      "time": "9:30 AM",
+      "location": "Main Library, 449 Broadway, Cambridge, MA 02138",
+      "description": "In this 90-minute workshop, you\u2019ll learn the basics of sewing machine operation and safety.",
+      "action_label": "View Program Details",
+      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=9dff87a5823e41c9828521fc71866f2d",
+      "cost": "Free",
+      "pathways": [
         "just_browsing"
       ],
       "source": "Cambridge Public Library"
     },
     {
-      "title": "High Beginner ESOL (Central Square)",
-      "date": "2026-05-01",
-      "display_date": "Friday, May 1, 2026",
-      "time": "10:30 AM",
-      "location": "Central Square Branch, 45 Pearl St., Cambridge, MA 02139",
-      "description": "Join us for an English for Speakers of Other Languages (ESOL) Class.",
-      "action_label": "View Program Details",
-      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=97bcae9f3c3249cdafc553d4cbf5160f",
-      "cost": "Free",
-      "pathways": [
-        "education_work",
-        "just_browsing"
-      ],
-      "source": "Cambridge Public Library"
-    },
-    {
-      "title": "Drop-in Tech Help at the Library (Central Square)",
-      "date": "2026-05-01",
-      "display_date": "Friday, May 1, 2026",
-      "time": "11:00 AM",
-      "location": "Central Square Branch, 45 Pearl St., Cambridge, MA 02139",
-      "description": "Looking for some basic computer or mobile device guidance?",
-      "action_label": "View Program Details",
-      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=ab5821a909774d7f86ef650390b6f638",
-      "cost": "Free",
-      "pathways": [
-        "education_work",
-        "just_browsing"
-      ],
-      "source": "Cambridge Public Library"
-    },
-    {
-      "title": "Wellness for Older Adults: Zumba Gold (Main)",
-      "date": "2026-05-01",
-      "display_date": "Friday, May 1, 2026",
+      "title": "Hive Safety Training (Main)",
+      "date": "2026-05-02",
+      "display_date": "Saturday, May 2, 2026",
       "time": "11:30 AM",
-      "location": "Main Library, Community Room, 449 Broadway, Cambridge, MA 02138",
-      "description": "Join instructor Darren Hairston for Zumba Gold \u2013 the fun and energizing dance fitness class tailored for active older adults and beginners!",
+      "location": "Main Library, 449 Broadway, Cambridge, MA 02138",
+      "description": "Are you interested in using The Hive?",
       "action_label": "View Program Details",
-      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=08a2a12e34974b9c8aa68766b64091cd",
+      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=4712972deb4543c1944b934e886cc884",
       "cost": "Free",
       "pathways": [
         "arts",
-        "just_browsing",
-        "older_adults"
+        "just_browsing"
       ],
       "source": "Cambridge Public Library"
     },
@@ -226,6 +208,22 @@
       "source": "CRLS / CPS Calendar"
     },
     {
+      "title": "High Beginner ESOL Class (Central Square)",
+      "date": "2026-06-01",
+      "display_date": "Monday, June 1, 2026",
+      "time": "10:30 AM",
+      "location": "Central Square Branch, 45 Pearl St., Cambridge, MA 02139",
+      "description": "Join us for an English for Speakers of Other Languages (ESOL) Class.",
+      "action_label": "View Program Details",
+      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=ef39c1903bf8458da044a766e373956f",
+      "cost": "Free",
+      "pathways": [
+        "education_work",
+        "just_browsing"
+      ],
+      "source": "Cambridge Public Library"
+    },
+    {
       "title": "School Committee Meeting",
       "date": "2026-06-02",
       "display_date": "Tuesday, June 2, 2026",
@@ -340,7 +338,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-05-01T11:33:59",
+    "updated_at": "2026-05-02T11:08:09",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
       "cpp: Could not find CPP application deadline."

@@ -50,23 +50,6 @@
       "source": "City of Boston Small Business Development"
     },
     {
-      "title": "Apply for Boston Small Community Grants",
-      "date": "2026-04-27",
-      "display_date": "Monday, April 27, 2026",
-      "time": "5:00 PM",
-      "location": "City of Boston grant portal",
-      "description": "Boston nonprofits can apply for small trust grants supporting direct-impact community work, recreation, beautification, and field trips for residents.",
-      "action_label": "Apply for Small Grants",
-      "url": "https://www.boston.gov/node/15816191",
-      "cost": "Free to apply",
-      "pathways": [
-        "just_browsing",
-        "students_families",
-        "voting_civics"
-      ],
-      "source": "City of Boston Treasury"
-    },
-    {
       "title": "Apply for an Age Strong Rolling Grant",
       "date": "2026-05-07",
       "display_date": "Thursday, May 7, 2026",
@@ -168,7 +151,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-05-01T11:34:20",
+    "updated_at": "2026-05-02T11:08:40",
     "source_errors": []
   }
 }
