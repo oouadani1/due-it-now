@@ -33,53 +33,6 @@
       "source": "Cambridge Public Health Department"
     },
     {
-      "title": "CPR Class for Parents and Caregivers (Main)",
-      "date": "2026-05-02",
-      "display_date": "Saturday, May 2, 2026",
-      "time": "9:30 AM",
-      "location": "Main Library, Curious George Room, 449 Broadway, Cambridge, MA 02138",
-      "description": "This CPR class will cover life-saving skills for infants, children and adults.",
-      "action_label": "View Program Details",
-      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=2263def70e184838a61047d930b0b8fd",
-      "cost": "Free",
-      "pathways": [
-        "just_browsing",
-        "students_families"
-      ],
-      "source": "Cambridge Public Library"
-    },
-    {
-      "title": "Sewing 101 (Main)",
-      "date": "2026-05-02",
-      "display_date": "Saturday, May 2, 2026",
-      "time": "9:30 AM",
-      "location": "Main Library, 449 Broadway, Cambridge, MA 02138",
-      "description": "In this 90-minute workshop, you\u2019ll learn the basics of sewing machine operation and safety.",
-      "action_label": "View Program Details",
-      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=9dff87a5823e41c9828521fc71866f2d",
-      "cost": "Free",
-      "pathways": [
-        "just_browsing"
-      ],
-      "source": "Cambridge Public Library"
-    },
-    {
-      "title": "Hive Safety Training (Main)",
-      "date": "2026-05-02",
-      "display_date": "Saturday, May 2, 2026",
-      "time": "11:30 AM",
-      "location": "Main Library, 449 Broadway, Cambridge, MA 02138",
-      "description": "Are you interested in using The Hive?",
-      "action_label": "View Program Details",
-      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=4712972deb4543c1944b934e886cc884",
-      "cost": "Free",
-      "pathways": [
-        "arts",
-        "just_browsing"
-      ],
-      "source": "Cambridge Public Library"
-    },
-    {
       "title": "School Committee Meeting",
       "date": "2026-05-05",
       "display_date": "Tuesday, May 5, 2026",
@@ -224,6 +177,54 @@
       "source": "Cambridge Public Library"
     },
     {
+      "title": "English Conversation Practice, Intermediate (O'Neill)",
+      "date": "2026-06-01",
+      "display_date": "Monday, June 1, 2026",
+      "time": "1:00 PM",
+      "location": "O'Neill Branch, 70 Rindge Ave., Cambridge, MA 02140",
+      "description": "Join us for an English for Speakers of Other Languages (ESOL) Class.",
+      "action_label": "View Program Details",
+      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=dd2922e3caf2461481e6afefa069a62a",
+      "cost": "Free",
+      "pathways": [
+        "education_work",
+        "just_browsing"
+      ],
+      "source": "Cambridge Public Library"
+    },
+    {
+      "title": "High Beginner ESOL (Central Square)",
+      "date": "2026-06-01",
+      "display_date": "Monday, June 1, 2026",
+      "time": "3:00 PM",
+      "location": "Central Square Branch, 45 Pearl St., Cambridge, MA 02139",
+      "description": "Join us for an English for Speakers of Other Languages (ESOL) class.",
+      "action_label": "View Program Details",
+      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=0ffed9a61f4d4b388a374828eaea6dad",
+      "cost": "Free",
+      "pathways": [
+        "education_work",
+        "just_browsing"
+      ],
+      "source": "Cambridge Public Library"
+    },
+    {
+      "title": "Beginning English Class (Valente)",
+      "date": "2026-06-01",
+      "display_date": "Monday, June 1, 2026",
+      "time": "6:00 PM",
+      "location": "Valente Branch, 826 Cambridge St., Cambridge, MA 02141",
+      "description": "Join us for an English for Speakers of Other Languages (ESOL) class!",
+      "action_label": "View Program Details",
+      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=578170ab3bee4d348bd426a80e45c1db",
+      "cost": "Free",
+      "pathways": [
+        "education_work",
+        "just_browsing"
+      ],
+      "source": "Cambridge Public Library"
+    },
+    {
       "title": "School Committee Meeting",
       "date": "2026-06-02",
       "display_date": "Tuesday, June 2, 2026",
@@ -338,7 +339,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-05-02T11:08:09",
+    "updated_at": "2026-05-03T11:08:15",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
       "cpp: Could not find CPP application deadline."
