@@ -33,12 +33,12 @@
       "source": "Cambridge Public Health Department"
     },
     {
-      "title": "School Committee Meeting",
-      "date": "2026-05-05",
-      "display_date": "Tuesday, May 5, 2026",
-      "time": "6:00 PM",
-      "location": "Dr. Henrietta Attles Meeting Room at CRLS, 459 Broadway, Cambridge",
-      "description": "Upcoming Cambridge Public Schools committee meeting or workshop.",
+      "title": "Early Release Wednesday (K-8)",
+      "date": "2026-05-06",
+      "display_date": "Wednesday, May 6, 2026",
+      "time": null,
+      "location": "Cambridge Public Schools",
+      "description": "Upcoming Cambridge Public Schools schedule change.",
       "action_label": "Open CPS Calendar",
       "url": "https://www.cpsd.us/all-events",
       "cost": "Free",
@@ -49,12 +49,12 @@
       "source": "CPSD All Events"
     },
     {
-      "title": "Early Release Wednesday (K-8)",
-      "date": "2026-05-06",
-      "display_date": "Wednesday, May 6, 2026",
-      "time": null,
+      "title": "Curriculum & Achievement Subcommittee",
+      "date": "2026-05-07",
+      "display_date": "Thursday, May 7, 2026",
+      "time": "4:30 PM",
       "location": "Cambridge Public Schools",
-      "description": "Upcoming Cambridge Public Schools schedule change.",
+      "description": "Upcoming Cambridge Public Schools committee meeting or workshop.",
       "action_label": "Open CPS Calendar",
       "url": "https://www.cpsd.us/all-events",
       "cost": "Free",
@@ -241,6 +241,22 @@
       "source": "CRLS / CPS Calendar"
     },
     {
+      "title": "CRLS Graduation",
+      "date": "2026-06-04",
+      "display_date": "Thursday, June 4, 2026",
+      "time": null,
+      "location": "Cambridge Public Schools",
+      "description": "Upcoming Cambridge Rindge and Latin School or student-focused event.",
+      "action_label": "Open CPS Calendar",
+      "url": "https://www.cpsd.us/all-events",
+      "cost": "Free",
+      "pathways": [
+        "just_browsing",
+        "students_families"
+      ],
+      "source": "CRLS / CPS Calendar"
+    },
+    {
       "title": "Apply to Cambridge Homeownership Resale Pool",
       "date": null,
       "display_date": "Applications accepted on a rolling basis",
@@ -339,7 +355,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-05-05T11:40:28",
+    "updated_at": "2026-05-06T12:11:34",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
       "cpp: Could not find CPP application deadline."
