@@ -33,22 +33,6 @@
       "source": "Cambridge Public Health Department"
     },
     {
-      "title": "Early Release Wednesday (K-8)",
-      "date": "2026-05-06",
-      "display_date": "Wednesday, May 6, 2026",
-      "time": null,
-      "location": "Cambridge Public Schools",
-      "description": "Upcoming Cambridge Public Schools schedule change.",
-      "action_label": "Open CPS Calendar",
-      "url": "https://www.cpsd.us/all-events",
-      "cost": "Free",
-      "pathways": [
-        "students_families",
-        "just_browsing"
-      ],
-      "source": "CPSD All Events"
-    },
-    {
       "title": "Curriculum & Achievement Subcommittee",
       "date": "2026-05-07",
       "display_date": "Thursday, May 7, 2026",
@@ -132,6 +116,22 @@
       "title": "Early Release Wednesday (K-8)",
       "date": "2026-05-20",
       "display_date": "Wednesday, May 20, 2026",
+      "time": null,
+      "location": "Cambridge Public Schools",
+      "description": "Upcoming Cambridge Public Schools schedule change.",
+      "action_label": "Open CPS Calendar",
+      "url": "https://www.cpsd.us/all-events",
+      "cost": "Free",
+      "pathways": [
+        "students_families",
+        "just_browsing"
+      ],
+      "source": "CPSD All Events"
+    },
+    {
+      "title": "No School & CPS Offices Closed: Memorial Day",
+      "date": "2026-05-25",
+      "display_date": "Monday, May 25, 2026",
       "time": null,
       "location": "Cambridge Public Schools",
       "description": "Upcoming Cambridge Public Schools schedule change.",
@@ -355,7 +355,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-05-06T12:11:34",
+    "updated_at": "2026-05-07T12:12:51",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
       "cpp: Could not find CPP application deadline."
