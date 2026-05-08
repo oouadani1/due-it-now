@@ -33,10 +33,10 @@
       "source": "Cambridge Public Health Department"
     },
     {
-      "title": "Curriculum & Achievement Subcommittee",
-      "date": "2026-05-07",
-      "display_date": "Thursday, May 7, 2026",
-      "time": "4:30 PM",
+      "title": "School Committee Special Meeting",
+      "date": "2026-05-12",
+      "display_date": "Tuesday, May 12, 2026",
+      "time": "4:00 PM",
       "location": "Cambridge Public Schools",
       "description": "Upcoming Cambridge Public Schools committee meeting or workshop.",
       "action_label": "Open CPS Calendar",
@@ -47,38 +47,6 @@
         "just_browsing"
       ],
       "source": "CPSD All Events"
-    },
-    {
-      "title": "Haitian Affinity Group Meeting",
-      "date": "2026-05-07",
-      "display_date": "Thursday, May 7, 2026",
-      "time": "6:30 PM",
-      "location": "Virtual",
-      "description": "Upcoming Cambridge Public Schools event.",
-      "action_label": "Open CPS Calendar",
-      "url": "https://www.cpsd.us/all-events",
-      "cost": "Free",
-      "pathways": [
-        "students_families",
-        "just_browsing"
-      ],
-      "source": "CPSD All Events"
-    },
-    {
-      "title": "District Plan Focus Group",
-      "date": "2026-05-07",
-      "display_date": "Thursday, May 7, 2026",
-      "time": "6:00 PM",
-      "location": "CRLS",
-      "description": "Upcoming Cambridge Rindge and Latin School or student-focused event.",
-      "action_label": "Open CPS Calendar",
-      "url": "https://www.cpsd.us/all-events",
-      "cost": "Free",
-      "pathways": [
-        "just_browsing",
-        "students_families"
-      ],
-      "source": "CRLS / CPS Calendar"
     },
     {
       "title": "Early Release Wednesday (K-8)",
@@ -132,6 +100,22 @@
       "title": "No School & CPS Offices Closed: Memorial Day",
       "date": "2026-05-25",
       "display_date": "Monday, May 25, 2026",
+      "time": null,
+      "location": "Cambridge Public Schools",
+      "description": "Upcoming Cambridge Public Schools schedule change.",
+      "action_label": "Open CPS Calendar",
+      "url": "https://www.cpsd.us/all-events",
+      "cost": "Free",
+      "pathways": [
+        "students_families",
+        "just_browsing"
+      ],
+      "source": "CPSD All Events"
+    },
+    {
+      "title": "Early Release Wednesday (K-8)",
+      "date": "2026-05-27",
+      "display_date": "Wednesday, May 27, 2026",
       "time": null,
       "location": "Cambridge Public Schools",
       "description": "Upcoming Cambridge Public Schools schedule change.",
@@ -355,7 +339,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-05-07T12:12:51",
+    "updated_at": "2026-05-08T11:46:41",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
       "cpp: Could not find CPP application deadline."
