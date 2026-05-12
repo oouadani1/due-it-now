@@ -65,6 +65,22 @@
       "source": "CPSD All Events"
     },
     {
+      "title": "Current and Rising Upper School Caregiver Academy: Partnering to Support Student Success in ELA/ Literacy",
+      "date": "2026-05-14",
+      "display_date": "Thursday, May 14, 2026",
+      "time": "6:00 PM",
+      "location": "Virtual",
+      "description": "Upcoming Cambridge Rindge and Latin School or student-focused event.",
+      "action_label": "Open CPS Calendar",
+      "url": "https://www.cpsd.us/all-events",
+      "cost": "Free",
+      "pathways": [
+        "just_browsing",
+        "students_families"
+      ],
+      "source": "CRLS / CPS Calendar"
+    },
+    {
       "title": "School Committee Meeting",
       "date": "2026-05-19",
       "display_date": "Tuesday, May 19, 2026",
@@ -193,22 +209,6 @@
       "source": "Cambridge Public Library"
     },
     {
-      "title": "Beginning English Class (Valente)",
-      "date": "2026-06-01",
-      "display_date": "Monday, June 1, 2026",
-      "time": "6:00 PM",
-      "location": "Valente Branch, 826 Cambridge St., Cambridge, MA 02141",
-      "description": "Join us for an English for Speakers of Other Languages (ESOL) class!",
-      "action_label": "View Program Details",
-      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=578170ab3bee4d348bd426a80e45c1db",
-      "cost": "Free",
-      "pathways": [
-        "education_work",
-        "just_browsing"
-      ],
-      "source": "Cambridge Public Library"
-    },
-    {
       "title": "School Committee Meeting",
       "date": "2026-06-02",
       "display_date": "Tuesday, June 2, 2026",
@@ -239,6 +239,22 @@
         "students_families"
       ],
       "source": "CRLS / CPS Calendar"
+    },
+    {
+      "title": "Beginner ESOL (Central Square)",
+      "date": "2026-07-01",
+      "display_date": "Wednesday, July 1, 2026",
+      "time": "10:30 AM",
+      "location": "Central Square Branch, 45 Pearl St., Cambridge, MA 02139",
+      "description": "Join us for an English for Speakers of Other Languages (ESOL) class.",
+      "action_label": "View Program Details",
+      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=db1644260bfc488ea7e1b429dc7d3694",
+      "cost": "Free",
+      "pathways": [
+        "education_work",
+        "just_browsing"
+      ],
+      "source": "Cambridge Public Library"
     },
     {
       "title": "Apply to Cambridge Homeownership Resale Pool",
@@ -339,7 +355,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-05-11T13:19:47",
+    "updated_at": "2026-05-12T12:19:45",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
       "cpp: Could not find CPP application deadline."
