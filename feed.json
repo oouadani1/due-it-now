@@ -33,22 +33,6 @@
       "source": "Cambridge Public Health Department"
     },
     {
-      "title": "School Committee Special Meeting",
-      "date": "2026-05-12",
-      "display_date": "Tuesday, May 12, 2026",
-      "time": "4:00 PM",
-      "location": "Cambridge Public Schools",
-      "description": "Upcoming Cambridge Public Schools committee meeting or workshop.",
-      "action_label": "Open CPS Calendar",
-      "url": "https://www.cpsd.us/all-events",
-      "cost": "Free",
-      "pathways": [
-        "students_families",
-        "just_browsing"
-      ],
-      "source": "CPSD All Events"
-    },
-    {
       "title": "Early Release Wednesday (K-8)",
       "date": "2026-05-13",
       "display_date": "Wednesday, May 13, 2026",
@@ -214,15 +198,15 @@
       "display_date": "Tuesday, June 2, 2026",
       "time": "6:00 PM",
       "location": "Dr. Henrietta Attles Meeting Room at CRLS, 459 Broadway, Cambridge",
-      "description": "Upcoming Cambridge Rindge and Latin School or student-focused event.",
+      "description": "Upcoming Cambridge Public Schools committee meeting or workshop.",
       "action_label": "Open CPS Calendar",
       "url": "https://www.cpsd.us/all-events",
       "cost": "Free",
       "pathways": [
-        "just_browsing",
-        "students_families"
+        "students_families",
+        "just_browsing"
       ],
-      "source": "CRLS / CPS Calendar"
+      "source": "CPSD All Events"
     },
     {
       "title": "CRLS Graduation",
@@ -355,7 +339,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-05-12T12:19:45",
+    "updated_at": "2026-05-13T12:25:16",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
       "cpp: Could not find CPP application deadline."
