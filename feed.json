@@ -33,22 +33,6 @@
       "source": "Cambridge Public Health Department"
     },
     {
-      "title": "Early Release Wednesday (K-8)",
-      "date": "2026-05-13",
-      "display_date": "Wednesday, May 13, 2026",
-      "time": null,
-      "location": "Cambridge Public Schools",
-      "description": "Upcoming Cambridge Public Schools schedule change.",
-      "action_label": "Open CPS Calendar",
-      "url": "https://www.cpsd.us/all-events",
-      "cost": "Free",
-      "pathways": [
-        "students_families",
-        "just_browsing"
-      ],
-      "source": "CPSD All Events"
-    },
-    {
       "title": "Current and Rising Upper School Caregiver Academy: Partnering to Support Student Success in ELA/ Literacy",
       "date": "2026-05-14",
       "display_date": "Thursday, May 14, 2026",
@@ -209,6 +193,22 @@
       "source": "CPSD All Events"
     },
     {
+      "title": "Early Release Wednesday (K-8)",
+      "date": "2026-06-03",
+      "display_date": "Wednesday, June 3, 2026",
+      "time": null,
+      "location": "Cambridge Public Schools",
+      "description": "Upcoming Cambridge Public Schools schedule change.",
+      "action_label": "Open CPS Calendar",
+      "url": "https://www.cpsd.us/all-events",
+      "cost": "Free",
+      "pathways": [
+        "students_families",
+        "just_browsing"
+      ],
+      "source": "CPSD All Events"
+    },
+    {
       "title": "CRLS Graduation",
       "date": "2026-06-04",
       "display_date": "Thursday, June 4, 2026",
@@ -339,7 +339,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-05-13T12:25:16",
+    "updated_at": "2026-05-14T12:05:56",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
       "cpp: Could not find CPP application deadline."
