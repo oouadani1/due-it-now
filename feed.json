@@ -33,22 +33,6 @@
       "source": "Cambridge Public Health Department"
     },
     {
-      "title": "Current and Rising Upper School Caregiver Academy: Partnering to Support Student Success in ELA/ Literacy",
-      "date": "2026-05-14",
-      "display_date": "Thursday, May 14, 2026",
-      "time": "6:00 PM",
-      "location": "Virtual",
-      "description": "Upcoming Cambridge Rindge and Latin School or student-focused event.",
-      "action_label": "Open CPS Calendar",
-      "url": "https://www.cpsd.us/all-events",
-      "cost": "Free",
-      "pathways": [
-        "just_browsing",
-        "students_families"
-      ],
-      "source": "CRLS / CPS Calendar"
-    },
-    {
       "title": "School Committee Meeting",
       "date": "2026-05-19",
       "display_date": "Tuesday, May 19, 2026",
@@ -339,7 +323,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-05-14T12:05:56",
+    "updated_at": "2026-05-15T12:14:07",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
       "cpp: Could not find CPP application deadline."
