@@ -323,7 +323,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-05-17T11:33:57",
+    "updated_at": "2026-05-18T14:01:16",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
       "cpp: Could not find CPP application deadline."
