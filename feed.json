@@ -145,6 +145,21 @@
       "source": "Cambridge Public Library"
     },
     {
+      "title": "Getting Started with Adobe Illustrator (Main)",
+      "date": "2026-06-01",
+      "display_date": "Monday, June 1, 2026",
+      "time": "1:30 PM",
+      "location": "Main Library, 449 Broadway, Cambridge, MA 02138",
+      "description": "In this introductory class, you\u2019ll learn the fundamentals of Adobe Illustrator, a powerful, industry-standard design tool.",
+      "action_label": "View Program Details",
+      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=b88b6902a5f74046995eb70434af8e7d",
+      "cost": "Free",
+      "pathways": [
+        "just_browsing"
+      ],
+      "source": "Cambridge Public Library"
+    },
+    {
       "title": "High Beginner ESOL (Central Square)",
       "date": "2026-06-01",
       "display_date": "Monday, June 1, 2026",
@@ -207,22 +222,6 @@
         "students_families"
       ],
       "source": "CRLS / CPS Calendar"
-    },
-    {
-      "title": "Beginner ESOL (Central Square)",
-      "date": "2026-07-01",
-      "display_date": "Wednesday, July 1, 2026",
-      "time": "10:30 AM",
-      "location": "Central Square Branch, 45 Pearl St., Cambridge, MA 02139",
-      "description": "Join us for an English for Speakers of Other Languages (ESOL) class.",
-      "action_label": "View Program Details",
-      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=db1644260bfc488ea7e1b429dc7d3694",
-      "cost": "Free",
-      "pathways": [
-        "education_work",
-        "just_browsing"
-      ],
-      "source": "Cambridge Public Library"
     },
     {
       "title": "Apply to Cambridge Homeownership Resale Pool",
@@ -323,7 +322,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-05-18T14:01:16",
+    "updated_at": "2026-05-19T13:32:33",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
       "cpp: Could not find CPP application deadline."
