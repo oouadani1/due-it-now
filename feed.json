@@ -33,22 +33,6 @@
       "source": "Cambridge Public Health Department"
     },
     {
-      "title": "School Committee Meeting",
-      "date": "2026-05-19",
-      "display_date": "Tuesday, May 19, 2026",
-      "time": "6:00 PM",
-      "location": "Dr. Henrietta Attles Meeting Room at CRLS, 459 Broadway, Cambridge",
-      "description": "Upcoming Cambridge Public Schools committee meeting or workshop.",
-      "action_label": "Open CPS Calendar",
-      "url": "https://www.cpsd.us/all-events",
-      "cost": "Free",
-      "pathways": [
-        "students_families",
-        "just_browsing"
-      ],
-      "source": "CPSD All Events"
-    },
-    {
       "title": "Early Release Wednesday (K-8)",
       "date": "2026-05-20",
       "display_date": "Wednesday, May 20, 2026",
@@ -322,7 +306,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-05-19T13:32:33",
+    "updated_at": "2026-05-20T12:39:34",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
       "cpp: Could not find CPP application deadline."
