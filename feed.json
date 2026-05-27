@@ -33,22 +33,6 @@
       "source": "Cambridge Public Health Department"
     },
     {
-      "title": "No School & CPS Offices Closed: Memorial Day",
-      "date": "2026-05-25",
-      "display_date": "Monday, May 25, 2026",
-      "time": null,
-      "location": "Cambridge Public Schools",
-      "description": "Upcoming Cambridge Public Schools schedule change.",
-      "action_label": "Open CPS Calendar",
-      "url": "https://www.cpsd.us/all-events",
-      "cost": "Free",
-      "pathways": [
-        "students_families",
-        "just_browsing"
-      ],
-      "source": "CPSD All Events"
-    },
-    {
       "title": "Early Release Wednesday (K-8)",
       "date": "2026-05-27",
       "display_date": "Wednesday, May 27, 2026",
@@ -113,6 +97,23 @@
       "source": "Cambridge Public Library"
     },
     {
+      "title": "Wellness for Older Adults: Low-impact Fitness (Virtual)",
+      "date": "2026-06-01",
+      "display_date": "Monday, June 1, 2026",
+      "time": "11:45 AM",
+      "location": "Cambridge Public Library",
+      "description": "This class is designed for people of all levels to strengthen the muscles, the heart and the brain--all while having fun and moving to great music!",
+      "action_label": "View Program Details",
+      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=6ce7518674cc4630afb207b697fdd8ed",
+      "cost": "Free",
+      "pathways": [
+        "arts",
+        "just_browsing",
+        "older_adults"
+      ],
+      "source": "Cambridge Public Library"
+    },
+    {
       "title": "English Conversation Practice, Intermediate (O'Neill)",
       "date": "2026-06-01",
       "display_date": "Monday, June 1, 2026",
@@ -139,22 +140,6 @@
       "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=b88b6902a5f74046995eb70434af8e7d",
       "cost": "Free",
       "pathways": [
-        "just_browsing"
-      ],
-      "source": "Cambridge Public Library"
-    },
-    {
-      "title": "High Beginner ESOL (Central Square)",
-      "date": "2026-06-01",
-      "display_date": "Monday, June 1, 2026",
-      "time": "3:00 PM",
-      "location": "Central Square Branch, 45 Pearl St., Cambridge, MA 02139",
-      "description": "Join us for an English for Speakers of Other Languages (ESOL) class.",
-      "action_label": "View Program Details",
-      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=0ffed9a61f4d4b388a374828eaea6dad",
-      "cost": "Free",
-      "pathways": [
-        "education_work",
         "just_browsing"
       ],
       "source": "Cambridge Public Library"
@@ -306,7 +291,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-05-25T13:43:18",
+    "updated_at": "2026-05-27T13:50:12",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
       "cpp: Could not find CPP application deadline."
