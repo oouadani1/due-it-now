@@ -33,22 +33,6 @@
       "source": "Cambridge Public Health Department"
     },
     {
-      "title": "Buildings and Grounds Subcommittee Meeting",
-      "date": "2026-05-28",
-      "display_date": "Thursday, May 28, 2026",
-      "time": "5:00 PM",
-      "location": "Cambridge Public Schools",
-      "description": "Upcoming Cambridge Public Schools committee meeting or workshop.",
-      "action_label": "Open CPS Calendar",
-      "url": "https://www.cpsd.us/all-events",
-      "cost": "Free",
-      "pathways": [
-        "students_families",
-        "just_browsing"
-      ],
-      "source": "CPSD All Events"
-    },
-    {
       "title": "High Beginner ESOL Class (Central Square)",
       "date": "2026-06-01",
       "display_date": "Monday, June 1, 2026",
@@ -259,7 +243,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-05-28T14:07:20",
+    "updated_at": "2026-05-29T13:34:54",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
       "cpp: Could not find CPP application deadline."
