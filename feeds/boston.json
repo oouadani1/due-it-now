@@ -1,22 +1,6 @@
 {
   "items": [
     {
-      "title": "License Your Dog in Boston",
-      "date": "2026-03-31",
-      "display_date": "Tuesday, March 31, 2026",
-      "time": null,
-      "location": "Boston Animal Care and Control",
-      "description": "Dog owners must license dogs older than six months before the annual City deadline.",
-      "action_label": "License Your Dog",
-      "url": "https://www.boston.gov/departments/animal-care-and-control/how-license-your-dog",
-      "cost": "$15-$30, waived for some eligible older adults applying by mail or in person",
-      "pathways": [
-        "renewals",
-        "older_adults"
-      ],
-      "source": "City of Boston Animal Care and Control"
-    },
-    {
       "title": "Apply for Boston Property Tax Exemptions",
       "date": "2026-04-01",
       "display_date": "Wednesday, April 1, 2026",
@@ -151,7 +135,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-05-30T11:45:54",
+    "updated_at": "2026-05-31T11:51:49",
     "source_errors": []
   }
 }
