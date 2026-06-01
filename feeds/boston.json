@@ -1,23 +1,6 @@
 {
   "items": [
     {
-      "title": "Apply for Boston Property Tax Exemptions",
-      "date": "2026-04-01",
-      "display_date": "Wednesday, April 1, 2026",
-      "time": null,
-      "location": "Boston Assessing Department",
-      "description": "Eligible homeowners can file for the current fiscal year property tax exemption by the annual deadline.",
-      "action_label": "Open Tax Exemptions",
-      "url": "https://www.boston.gov/departments/assessing/filing-property-tax-exemption",
-      "cost": "Free",
-      "pathways": [
-        "renewals",
-        "housing",
-        "older_adults"
-      ],
-      "source": "City of Boston Assessing"
-    },
-    {
       "title": "Apply for BizUnlocked Boston",
       "date": "2026-04-10",
       "display_date": "Friday, April 10, 2026",
@@ -135,7 +118,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-05-31T11:51:49",
+    "updated_at": "2026-06-01T16:19:19",
     "source_errors": []
   }
 }

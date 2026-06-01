@@ -1,22 +1,6 @@
 {
   "items": [
     {
-      "title": "Apply for Cambridge Personal Tax Exemptions",
-      "date": "2026-04-01",
-      "display_date": "Wednesday, April 1, 2026",
-      "time": null,
-      "location": "Assessing Office",
-      "description": "Eligible residents can apply for Cambridge personal tax exemptions by the annual filing deadline.",
-      "action_label": "Open Tax Exemptions",
-      "url": "https://www.cambridgema.gov/Services/taxpayerexemptions",
-      "cost": "Free",
-      "pathways": [
-        "renewals",
-        "older_adults"
-      ],
-      "source": "Cambridge Taxpayer Exemptions"
-    },
-    {
       "title": "Apply for Cambridge Public Health Mini-Grants",
       "date": "2026-04-03",
       "display_date": "Friday, April 3, 2026",
@@ -146,6 +130,70 @@
       "source": "CRLS / CPS Calendar"
     },
     {
+      "title": "Early Release Wednesday (K-8)",
+      "date": "2026-06-10",
+      "display_date": "Wednesday, June 10, 2026",
+      "time": null,
+      "location": "Cambridge Public Schools",
+      "description": "Upcoming Cambridge Public Schools schedule change.",
+      "action_label": "Open CPS Calendar",
+      "url": "https://www.cpsd.us/all-events",
+      "cost": "Free",
+      "pathways": [
+        "students_families",
+        "just_browsing"
+      ],
+      "source": "CPSD All Events"
+    },
+    {
+      "title": "School Committee Meeting",
+      "date": "2026-06-16",
+      "display_date": "Tuesday, June 16, 2026",
+      "time": "6:00 PM",
+      "location": "Dr. Henrietta Attles Meeting Room at CRLS, 459 Broadway, Cambridge",
+      "description": "Upcoming Cambridge Public Schools committee meeting or workshop.",
+      "action_label": "Open CPS Calendar",
+      "url": "https://www.cpsd.us/all-events",
+      "cost": "Free",
+      "pathways": [
+        "students_families",
+        "just_browsing"
+      ],
+      "source": "CPSD All Events"
+    },
+    {
+      "title": "Early Release Wednesday (K-8)",
+      "date": "2026-06-17",
+      "display_date": "Wednesday, June 17, 2026",
+      "time": null,
+      "location": "Cambridge Public Schools",
+      "description": "Upcoming Cambridge Public Schools schedule change.",
+      "action_label": "Open CPS Calendar",
+      "url": "https://www.cpsd.us/all-events",
+      "cost": "Free",
+      "pathways": [
+        "students_families",
+        "just_browsing"
+      ],
+      "source": "CPSD All Events"
+    },
+    {
+      "title": "No School & CPS Offices Closed: Juneteenth",
+      "date": "2026-06-19",
+      "display_date": "Friday, June 19, 2026",
+      "time": null,
+      "location": "Cambridge Public Schools",
+      "description": "Upcoming Cambridge Public Schools schedule change.",
+      "action_label": "Open CPS Calendar",
+      "url": "https://www.cpsd.us/all-events",
+      "cost": "Free",
+      "pathways": [
+        "students_families",
+        "just_browsing"
+      ],
+      "source": "CPSD All Events"
+    },
+    {
       "title": "Apply to Cambridge Homeownership Resale Pool",
       "date": null,
       "display_date": "Applications accepted on a rolling basis",
@@ -244,7 +292,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-05-31T11:51:26",
+    "updated_at": "2026-06-01T16:18:55",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
       "cpp: Could not find CPP application deadline."
