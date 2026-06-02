@@ -17,71 +17,6 @@
       "source": "Cambridge Public Health Department"
     },
     {
-      "title": "High Beginner ESOL Class (Central Square)",
-      "date": "2026-06-01",
-      "display_date": "Monday, June 1, 2026",
-      "time": "10:30 AM",
-      "location": "Central Square Branch, 45 Pearl St., Cambridge, MA 02139",
-      "description": "Join us for an English for Speakers of Other Languages (ESOL) Class.",
-      "action_label": "View Program Details",
-      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=ef39c1903bf8458da044a766e373956f",
-      "cost": "Free",
-      "pathways": [
-        "education_work",
-        "just_browsing"
-      ],
-      "source": "Cambridge Public Library"
-    },
-    {
-      "title": "Wellness for Older Adults: Low-impact Fitness (Virtual)",
-      "date": "2026-06-01",
-      "display_date": "Monday, June 1, 2026",
-      "time": "11:45 AM",
-      "location": "Cambridge Public Library",
-      "description": "This class is designed for people of all levels to strengthen the muscles, the heart and the brain--all while having fun and moving to great music!",
-      "action_label": "View Program Details",
-      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=6ce7518674cc4630afb207b697fdd8ed",
-      "cost": "Free",
-      "pathways": [
-        "arts",
-        "just_browsing",
-        "older_adults"
-      ],
-      "source": "Cambridge Public Library"
-    },
-    {
-      "title": "English Conversation Practice, Intermediate (O'Neill)",
-      "date": "2026-06-01",
-      "display_date": "Monday, June 1, 2026",
-      "time": "1:00 PM",
-      "location": "O'Neill Branch, 70 Rindge Ave., Cambridge, MA 02140",
-      "description": "Join us for an English for Speakers of Other Languages (ESOL) Class.",
-      "action_label": "View Program Details",
-      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=dd2922e3caf2461481e6afefa069a62a",
-      "cost": "Free",
-      "pathways": [
-        "education_work",
-        "just_browsing"
-      ],
-      "source": "Cambridge Public Library"
-    },
-    {
-      "title": "High Beginner ESOL (Central Square)",
-      "date": "2026-06-01",
-      "display_date": "Monday, June 1, 2026",
-      "time": "3:00 PM",
-      "location": "Central Square Branch, 45 Pearl St., Cambridge, MA 02139",
-      "description": "Join us for an English for Speakers of Other Languages (ESOL) class.",
-      "action_label": "View Program Details",
-      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=0ffed9a61f4d4b388a374828eaea6dad",
-      "cost": "Free",
-      "pathways": [
-        "education_work",
-        "just_browsing"
-      ],
-      "source": "Cambridge Public Library"
-    },
-    {
       "title": "School Committee Meeting",
       "date": "2026-06-02",
       "display_date": "Tuesday, June 2, 2026",
@@ -194,6 +129,70 @@
       "source": "CPSD All Events"
     },
     {
+      "title": "Beginner ESOL (Central Square)",
+      "date": "2026-07-01",
+      "display_date": "Wednesday, July 1, 2026",
+      "time": "10:30 AM",
+      "location": "Central Square Branch, 45 Pearl St., Cambridge, MA 02139",
+      "description": "Join us for an English for Speakers of Other Languages (ESOL) class.",
+      "action_label": "View Program Details",
+      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=db1644260bfc488ea7e1b429dc7d3694",
+      "cost": "Free",
+      "pathways": [
+        "education_work",
+        "just_browsing"
+      ],
+      "source": "Cambridge Public Library"
+    },
+    {
+      "title": "High Beginner ESOL (Central Square)",
+      "date": "2026-07-01",
+      "display_date": "Wednesday, July 1, 2026",
+      "time": "10:30 AM",
+      "location": "Central Square Branch, 45 Pearl St., Cambridge, MA 02139",
+      "description": "Join us for an English for Speakers of Other Languages (ESOL) Class.",
+      "action_label": "View Program Details",
+      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=db6f572ebb954ae780a5267a399ace40",
+      "cost": "Free",
+      "pathways": [
+        "education_work",
+        "just_browsing"
+      ],
+      "source": "Cambridge Public Library"
+    },
+    {
+      "title": "English Conversation Practice, Intermediate (O'Neill)",
+      "date": "2026-07-01",
+      "display_date": "Wednesday, July 1, 2026",
+      "time": "1:00 PM",
+      "location": "O'Neill Branch, 70 Rindge Ave., Cambridge, MA 02140",
+      "description": "Join us for an English for Speakers of Other Languages (ESOL) Conversation Practice.",
+      "action_label": "View Program Details",
+      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=11f77e9bed2b458680f2c547ae53df28",
+      "cost": "Free",
+      "pathways": [
+        "education_work",
+        "just_browsing"
+      ],
+      "source": "Cambridge Public Library"
+    },
+    {
+      "title": "Resume and Job Application Support (Central Square)",
+      "date": "2026-07-01",
+      "display_date": "Wednesday, July 1, 2026",
+      "time": "1:00 PM",
+      "location": "Central Square Branch, 45 Pearl St., Cambridge, MA 02139",
+      "description": "Looking for assistance creating a resume or looking for jobs?",
+      "action_label": "View Program Details",
+      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=6f726da2549e4b31950d14a93806faff",
+      "cost": "Free",
+      "pathways": [
+        "education_work",
+        "just_browsing"
+      ],
+      "source": "Cambridge Public Library"
+    },
+    {
       "title": "Apply to Cambridge Homeownership Resale Pool",
       "date": null,
       "display_date": "Applications accepted on a rolling basis",
@@ -224,6 +223,22 @@
         "just_browsing"
       ],
       "source": "Cambridge Housing Department"
+    },
+    {
+      "title": "Browse Cambridge Arts Events",
+      "date": null,
+      "display_date": "Ongoing",
+      "time": null,
+      "location": "Cambridge",
+      "description": "Cambridge Arts publishes a local arts and culture calendar, festival information, and public art resources.",
+      "action_label": "Open Arts Calendar",
+      "url": "https://www.cambridgema.gov/arts/Calendar",
+      "cost": "Free",
+      "pathways": [
+        "arts",
+        "just_browsing"
+      ],
+      "source": "Cambridge Arts"
     },
     {
       "title": "Check Current and Upcoming Cambridge Public Meetings",
@@ -292,7 +307,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-06-01T16:18:55",
+    "updated_at": "2026-06-02T14:32:24",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
       "cpp: Could not find CPP application deadline."
