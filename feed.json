@@ -1,38 +1,6 @@
 {
   "items": [
     {
-      "title": "Apply for Cambridge Public Health Mini-Grants",
-      "date": "2026-04-03",
-      "display_date": "Friday, April 3, 2026",
-      "time": null,
-      "location": "Cambridge",
-      "description": "Community groups, schools, businesses, and other local organizations can apply for Cambridge Public Health mini-grants supporting healthy eating, physical activity, or youth wellness.",
-      "action_label": "Open Mini-Grants",
-      "url": "https://www.cambridgepublichealth.org/services/mini-grants/",
-      "cost": "Free",
-      "pathways": [
-        "health",
-        "just_browsing"
-      ],
-      "source": "Cambridge Public Health Department"
-    },
-    {
-      "title": "School Committee Meeting",
-      "date": "2026-06-02",
-      "display_date": "Tuesday, June 2, 2026",
-      "time": "6:00 PM",
-      "location": "Dr. Henrietta Attles Meeting Room at CRLS, 459 Broadway, Cambridge",
-      "description": "Upcoming Cambridge Public Schools committee meeting or workshop.",
-      "action_label": "Open CPS Calendar",
-      "url": "https://www.cpsd.us/all-events",
-      "cost": "Free",
-      "pathways": [
-        "students_families",
-        "just_browsing"
-      ],
-      "source": "CPSD All Events"
-    },
-    {
       "title": "Early Release Wednesday (K-8)",
       "date": "2026-06-03",
       "display_date": "Wednesday, June 3, 2026",
@@ -129,6 +97,22 @@
       "source": "CPSD All Events"
     },
     {
+      "title": "Early Release Wednesday (K-8)",
+      "date": "2026-06-24",
+      "display_date": "Wednesday, June 24, 2026",
+      "time": null,
+      "location": "Cambridge Public Schools",
+      "description": "Upcoming Cambridge Public Schools schedule change.",
+      "action_label": "Open CPS Calendar",
+      "url": "https://www.cpsd.us/all-events",
+      "cost": "Free",
+      "pathways": [
+        "students_families",
+        "just_browsing"
+      ],
+      "source": "CPSD All Events"
+    },
+    {
       "title": "Beginner ESOL (Central Square)",
       "date": "2026-07-01",
       "display_date": "Wednesday, July 1, 2026",
@@ -152,7 +136,7 @@
       "location": "Central Square Branch, 45 Pearl St., Cambridge, MA 02139",
       "description": "Join us for an English for Speakers of Other Languages (ESOL) Class.",
       "action_label": "View Program Details",
-      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=db6f572ebb954ae780a5267a399ace40",
+      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=2b282dfcbcdf4958a535ca50a3adc2c0",
       "cost": "Free",
       "pathways": [
         "education_work",
@@ -307,7 +291,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-06-02T14:32:24",
+    "updated_at": "2026-06-03T15:05:04",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
       "cpp: Could not find CPP application deadline."
