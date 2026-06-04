@@ -1,12 +1,28 @@
 {
   "items": [
     {
-      "title": "Early Release Wednesday (K-8)",
-      "date": "2026-06-03",
-      "display_date": "Wednesday, June 3, 2026",
+      "title": "CRLS Graduation",
+      "date": "2026-06-04",
+      "display_date": "Thursday, June 4, 2026",
       "time": null,
       "location": "Cambridge Public Schools",
-      "description": "Upcoming Cambridge Public Schools schedule change.",
+      "description": "Upcoming Cambridge Rindge and Latin School or student-focused event.",
+      "action_label": "Open CPS Calendar",
+      "url": "https://www.cpsd.us/all-events",
+      "cost": "Free",
+      "pathways": [
+        "just_browsing",
+        "students_families"
+      ],
+      "source": "CRLS / CPS Calendar"
+    },
+    {
+      "title": "School Committee Virtual Special Meeting",
+      "date": "2026-06-05",
+      "display_date": "Friday, June 5, 2026",
+      "time": "11:30 AM",
+      "location": "Cambridge Public Schools",
+      "description": "Upcoming Cambridge Public Schools committee meeting or workshop.",
       "action_label": "Open CPS Calendar",
       "url": "https://www.cpsd.us/all-events",
       "cost": "Free",
@@ -17,10 +33,10 @@
       "source": "CPSD All Events"
     },
     {
-      "title": "CRLS Graduation",
-      "date": "2026-06-04",
-      "display_date": "Thursday, June 4, 2026",
-      "time": null,
+      "title": "Special Education & Student Supports",
+      "date": "2026-06-08",
+      "display_date": "Monday, June 8, 2026",
+      "time": "5:00 PM",
       "location": "Cambridge Public Schools",
       "description": "Upcoming Cambridge Rindge and Latin School or student-focused event.",
       "action_label": "Open CPS Calendar",
@@ -291,9 +307,10 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-06-03T15:05:04",
+    "updated_at": "2026-06-04T13:32:07",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
+      "public health: Could not find mini-grants deadline.",
       "cpp: Could not find CPP application deadline."
     ]
   }
