@@ -1,22 +1,6 @@
 {
   "items": [
     {
-      "title": "CRLS Graduation",
-      "date": "2026-06-04",
-      "display_date": "Thursday, June 4, 2026",
-      "time": null,
-      "location": "Cambridge Public Schools",
-      "description": "Upcoming Cambridge Rindge and Latin School or student-focused event.",
-      "action_label": "Open CPS Calendar",
-      "url": "https://www.cpsd.us/all-events",
-      "cost": "Free",
-      "pathways": [
-        "just_browsing",
-        "students_families"
-      ],
-      "source": "CRLS / CPS Calendar"
-    },
-    {
       "title": "School Committee Virtual Special Meeting",
       "date": "2026-06-05",
       "display_date": "Friday, June 5, 2026",
@@ -161,6 +145,22 @@
       "source": "Cambridge Public Library"
     },
     {
+      "title": "Fiber Crafts Group - Drop-In (O'Connell)",
+      "date": "2026-07-01",
+      "display_date": "Wednesday, July 1, 2026",
+      "time": "11:00 AM",
+      "location": "O'Connell Branch, 48 Sixth St., Cambridge, MA 02141",
+      "description": "Bring your project and enjoy the company of other fiber crafters Drop-in with this informal group to work on your craft, get inspired, pick up skills and socialize.",
+      "action_label": "View Program Details",
+      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=da7628fecced4e91af258ee05d1264f7",
+      "cost": "Free",
+      "pathways": [
+        "arts",
+        "just_browsing"
+      ],
+      "source": "Cambridge Public Library"
+    },
+    {
       "title": "English Conversation Practice, Intermediate (O'Neill)",
       "date": "2026-07-01",
       "display_date": "Wednesday, July 1, 2026",
@@ -169,22 +169,6 @@
       "description": "Join us for an English for Speakers of Other Languages (ESOL) Conversation Practice.",
       "action_label": "View Program Details",
       "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=11f77e9bed2b458680f2c547ae53df28",
-      "cost": "Free",
-      "pathways": [
-        "education_work",
-        "just_browsing"
-      ],
-      "source": "Cambridge Public Library"
-    },
-    {
-      "title": "Resume and Job Application Support (Central Square)",
-      "date": "2026-07-01",
-      "display_date": "Wednesday, July 1, 2026",
-      "time": "1:00 PM",
-      "location": "Central Square Branch, 45 Pearl St., Cambridge, MA 02139",
-      "description": "Looking for assistance creating a resume or looking for jobs?",
-      "action_label": "View Program Details",
-      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=6f726da2549e4b31950d14a93806faff",
       "cost": "Free",
       "pathways": [
         "education_work",
@@ -307,7 +291,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-06-04T13:32:07",
+    "updated_at": "2026-06-05T13:26:34",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
       "public health: Could not find mini-grants deadline.",
