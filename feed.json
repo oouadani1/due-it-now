@@ -1,22 +1,6 @@
 {
   "items": [
     {
-      "title": "School Committee Virtual Special Meeting",
-      "date": "2026-06-05",
-      "display_date": "Friday, June 5, 2026",
-      "time": "11:30 AM",
-      "location": "Cambridge Public Schools",
-      "description": "Upcoming Cambridge Public Schools committee meeting or workshop.",
-      "action_label": "Open CPS Calendar",
-      "url": "https://www.cpsd.us/all-events",
-      "cost": "Free",
-      "pathways": [
-        "students_families",
-        "just_browsing"
-      ],
-      "source": "CPSD All Events"
-    },
-    {
       "title": "Special Education & Student Supports",
       "date": "2026-06-08",
       "display_date": "Monday, June 8, 2026",
@@ -291,7 +275,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-06-05T13:26:34",
+    "updated_at": "2026-06-06T11:45:59",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
       "public health: Could not find mini-grants deadline.",
