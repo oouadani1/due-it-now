@@ -1,22 +1,6 @@
 {
   "items": [
     {
-      "title": "Early Release Wednesday (K-8)",
-      "date": "2026-06-10",
-      "display_date": "Wednesday, June 10, 2026",
-      "time": null,
-      "location": "Cambridge Public Schools",
-      "description": "Upcoming Cambridge Public Schools schedule change.",
-      "action_label": "Open CPS Calendar",
-      "url": "https://www.cpsd.us/all-events",
-      "cost": "Free",
-      "pathways": [
-        "students_families",
-        "just_browsing"
-      ],
-      "source": "CPSD All Events"
-    },
-    {
       "title": "School Committee Meeting",
       "date": "2026-06-16",
       "display_date": "Tuesday, June 16, 2026",
@@ -39,6 +23,22 @@
       "time": null,
       "location": "Cambridge Public Schools",
       "description": "Upcoming Cambridge Public Schools schedule change.",
+      "action_label": "Open CPS Calendar",
+      "url": "https://www.cpsd.us/all-events",
+      "cost": "Free",
+      "pathways": [
+        "students_families",
+        "just_browsing"
+      ],
+      "source": "CPSD All Events"
+    },
+    {
+      "title": "Governance Subcommittee",
+      "date": "2026-06-17",
+      "display_date": "Wednesday, June 17, 2026",
+      "time": "4:00 PM",
+      "location": "Cambridge Public Schools",
+      "description": "Upcoming Cambridge Public Schools committee meeting or workshop.",
       "action_label": "Open CPS Calendar",
       "url": "https://www.cpsd.us/all-events",
       "cost": "Free",
@@ -259,7 +259,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-06-10T13:49:56",
+    "updated_at": "2026-06-11T14:12:10",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
       "public health: Could not find mini-grants deadline.",
