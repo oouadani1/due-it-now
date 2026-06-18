@@ -1,72 +1,6 @@
 {
   "items": [
     {
-      "title": "License Your Dog in Boston",
-      "date": "2026-03-31",
-      "display_date": "Tuesday, March 31, 2026",
-      "time": null,
-      "location": "Boston Animal Care and Control",
-      "description": "Dog owners must license dogs older than six months before the annual City deadline.",
-      "action_label": "License Your Dog",
-      "url": "https://www.boston.gov/departments/animal-care-and-control/how-license-your-dog",
-      "cost": "$15-$30, waived for some eligible older adults applying by mail or in person",
-      "pathways": [
-        "renewals",
-        "older_adults"
-      ],
-      "source": "City of Boston Animal Care and Control"
-    },
-    {
-      "title": "Apply for Boston Property Tax Exemptions",
-      "date": "2026-04-01",
-      "display_date": "Wednesday, April 1, 2026",
-      "time": null,
-      "location": "Boston Assessing Department",
-      "description": "Eligible homeowners can file for the current fiscal year property tax exemption by the annual deadline.",
-      "action_label": "Open Tax Exemptions",
-      "url": "https://www.boston.gov/departments/assessing/filing-property-tax-exemption",
-      "cost": "Free",
-      "pathways": [
-        "renewals",
-        "housing",
-        "older_adults"
-      ],
-      "source": "City of Boston Assessing"
-    },
-    {
-      "title": "Apply for BizUnlocked Boston",
-      "date": "2026-04-10",
-      "display_date": "Friday, April 10, 2026",
-      "time": null,
-      "location": "Boston",
-      "description": "Eligible early-stage Boston business owners can apply for the City's BizUnlocked business access program and cohort-based support.",
-      "action_label": "Apply to BizUnlocked",
-      "url": "https://www.boston.gov/departments/small-business-development/bizunlocked-boston-business-access-program",
-      "cost": "Free",
-      "pathways": [
-        "education_work",
-        "just_browsing"
-      ],
-      "source": "City of Boston Small Business Development"
-    },
-    {
-      "title": "Review Boston Public Schools Enrollment Deadlines",
-      "date": "2026-05-25",
-      "display_date": "Monday, May 25, 2026",
-      "time": null,
-      "location": "Boston Public Schools",
-      "description": "Boston families can review current school enrollment dates, registration windows, and assignment steps through the BPS enrollment page.",
-      "action_label": "Open BPS Enrollment",
-      "url": "https://www.bostonpublicschools.org/enroll",
-      "cost": "Free",
-      "pathways": [
-        "students_families",
-        "education_work",
-        "just_browsing"
-      ],
-      "source": "Boston Public Schools"
-    },
-    {
       "title": "Apply for an Age Strong Rolling Grant",
       "date": "2026-06-30",
       "display_date": "Tuesday, June 30, 2026",
@@ -99,6 +33,23 @@
         "renewals"
       ],
       "source": "City of Boston Age Strong Commission"
+    },
+    {
+      "title": "Check Boston Public Schools Enrollment",
+      "date": null,
+      "display_date": "Ongoing",
+      "time": null,
+      "location": "Boston Public Schools",
+      "description": "Boston families can use the BPS enrollment page to review registration steps, school assignment information, and current enrollment guidance.",
+      "action_label": "Open BPS Enrollment",
+      "url": "https://www.bostonpublicschools.org/enroll",
+      "cost": "Free",
+      "pathways": [
+        "students_families",
+        "education_work",
+        "just_browsing"
+      ],
+      "source": "Boston Public Schools"
     },
     {
       "title": "Complete Your Boston Annual Census",
@@ -151,7 +102,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-05-25T13:43:45",
+    "updated_at": "2026-06-17T14:02:50",
     "source_errors": []
   }
 }

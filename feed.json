@@ -1,41 +1,25 @@
 {
   "items": [
     {
-      "title": "Apply for Cambridge Personal Tax Exemptions",
-      "date": "2026-04-01",
-      "display_date": "Wednesday, April 1, 2026",
+      "title": "Early Release Wednesday (K-8)",
+      "date": "2026-06-17",
+      "display_date": "Wednesday, June 17, 2026",
       "time": null,
-      "location": "Assessing Office",
-      "description": "Eligible residents can apply for Cambridge personal tax exemptions by the annual filing deadline.",
-      "action_label": "Open Tax Exemptions",
-      "url": "https://www.cambridgema.gov/Services/taxpayerexemptions",
+      "location": "Cambridge Public Schools",
+      "description": "Upcoming Cambridge Public Schools schedule change.",
+      "action_label": "Open CPS Calendar",
+      "url": "https://www.cpsd.us/all-events",
       "cost": "Free",
       "pathways": [
-        "renewals",
-        "older_adults"
-      ],
-      "source": "Cambridge Taxpayer Exemptions"
-    },
-    {
-      "title": "Apply for Cambridge Public Health Mini-Grants",
-      "date": "2026-04-03",
-      "display_date": "Friday, April 3, 2026",
-      "time": null,
-      "location": "Cambridge",
-      "description": "Community groups, schools, businesses, and other local organizations can apply for Cambridge Public Health mini-grants supporting healthy eating, physical activity, or youth wellness.",
-      "action_label": "Open Mini-Grants",
-      "url": "https://www.cambridgepublichealth.org/services/mini-grants/",
-      "cost": "Free",
-      "pathways": [
-        "health",
+        "students_families",
         "just_browsing"
       ],
-      "source": "Cambridge Public Health Department"
+      "source": "CPSD All Events"
     },
     {
-      "title": "No School & CPS Offices Closed: Memorial Day",
-      "date": "2026-05-25",
-      "display_date": "Monday, May 25, 2026",
+      "title": "No School & CPS Offices Closed: Juneteenth",
+      "date": "2026-06-19",
+      "display_date": "Friday, June 19, 2026",
       "time": null,
       "location": "Cambridge Public Schools",
       "description": "Upcoming Cambridge Public Schools schedule change.",
@@ -50,8 +34,8 @@
     },
     {
       "title": "Early Release Wednesday (K-8)",
-      "date": "2026-05-27",
-      "display_date": "Wednesday, May 27, 2026",
+      "date": "2026-06-24",
+      "display_date": "Wednesday, June 24, 2026",
       "time": null,
       "location": "Cambridge Public Schools",
       "description": "Upcoming Cambridge Public Schools schedule change.",
@@ -65,93 +49,30 @@
       "source": "CPSD All Events"
     },
     {
-      "title": "Helping High-Achieving Students Build Resilience and Keep Moving Forward",
-      "date": "2026-05-27",
-      "display_date": "Wednesday, May 27, 2026",
-      "time": "7:00 PM",
-      "location": "Cambridge Public Schools",
-      "description": "Upcoming Cambridge Rindge and Latin School or student-focused event.",
-      "action_label": "Open CPS Calendar",
-      "url": "https://www.cpsd.us/all-events",
-      "cost": "Free",
-      "pathways": [
-        "just_browsing",
-        "students_families"
-      ],
-      "source": "CRLS / CPS Calendar"
-    },
-    {
-      "title": "Buildings and Grounds Subcommittee Meeting",
-      "date": "2026-05-28",
-      "display_date": "Thursday, May 28, 2026",
-      "time": "5:00 PM",
-      "location": "Cambridge Public Schools",
-      "description": "Upcoming Cambridge Public Schools committee meeting or workshop.",
-      "action_label": "Open CPS Calendar",
-      "url": "https://www.cpsd.us/all-events",
-      "cost": "Free",
-      "pathways": [
-        "students_families",
-        "just_browsing"
-      ],
-      "source": "CPSD All Events"
-    },
-    {
-      "title": "High Beginner ESOL Class (Central Square)",
-      "date": "2026-06-01",
-      "display_date": "Monday, June 1, 2026",
+      "title": "Beginner ESOL (Central Square)",
+      "date": "2026-07-01",
+      "display_date": "Wednesday, July 1, 2026",
       "time": "10:30 AM",
       "location": "Central Square Branch, 45 Pearl St., Cambridge, MA 02139",
-      "description": "Join us for an English for Speakers of Other Languages (ESOL) Class.",
+      "description": "Join us for an English for Speakers of Other Languages (ESOL) class.",
       "action_label": "View Program Details",
-      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=ef39c1903bf8458da044a766e373956f",
+      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=db1644260bfc488ea7e1b429dc7d3694",
       "cost": "Free",
       "pathways": [
         "education_work",
-        "just_browsing"
-      ],
-      "source": "Cambridge Public Library"
-    },
-    {
-      "title": "English Conversation Practice, Intermediate (O'Neill)",
-      "date": "2026-06-01",
-      "display_date": "Monday, June 1, 2026",
-      "time": "1:00 PM",
-      "location": "O'Neill Branch, 70 Rindge Ave., Cambridge, MA 02140",
-      "description": "Join us for an English for Speakers of Other Languages (ESOL) Class.",
-      "action_label": "View Program Details",
-      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=dd2922e3caf2461481e6afefa069a62a",
-      "cost": "Free",
-      "pathways": [
-        "education_work",
-        "just_browsing"
-      ],
-      "source": "Cambridge Public Library"
-    },
-    {
-      "title": "Getting Started with Adobe Illustrator (Main)",
-      "date": "2026-06-01",
-      "display_date": "Monday, June 1, 2026",
-      "time": "1:30 PM",
-      "location": "Main Library, 449 Broadway, Cambridge, MA 02138",
-      "description": "In this introductory class, you\u2019ll learn the fundamentals of Adobe Illustrator, a powerful, industry-standard design tool.",
-      "action_label": "View Program Details",
-      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=b88b6902a5f74046995eb70434af8e7d",
-      "cost": "Free",
-      "pathways": [
         "just_browsing"
       ],
       "source": "Cambridge Public Library"
     },
     {
       "title": "High Beginner ESOL (Central Square)",
-      "date": "2026-06-01",
-      "display_date": "Monday, June 1, 2026",
-      "time": "3:00 PM",
+      "date": "2026-07-01",
+      "display_date": "Wednesday, July 1, 2026",
+      "time": "10:30 AM",
       "location": "Central Square Branch, 45 Pearl St., Cambridge, MA 02139",
-      "description": "Join us for an English for Speakers of Other Languages (ESOL) class.",
+      "description": "Join us for an English for Speakers of Other Languages (ESOL) Class.",
       "action_label": "View Program Details",
-      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=0ffed9a61f4d4b388a374828eaea6dad",
+      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=2b282dfcbcdf4958a535ca50a3adc2c0",
       "cost": "Free",
       "pathways": [
         "education_work",
@@ -160,52 +81,36 @@
       "source": "Cambridge Public Library"
     },
     {
-      "title": "School Committee Meeting",
-      "date": "2026-06-02",
-      "display_date": "Tuesday, June 2, 2026",
-      "time": "6:00 PM",
-      "location": "Dr. Henrietta Attles Meeting Room at CRLS, 459 Broadway, Cambridge",
-      "description": "Upcoming Cambridge Public Schools committee meeting or workshop.",
-      "action_label": "Open CPS Calendar",
-      "url": "https://www.cpsd.us/all-events",
+      "title": "Fiber Crafts Group - Drop-In (O'Connell)",
+      "date": "2026-07-01",
+      "display_date": "Wednesday, July 1, 2026",
+      "time": "11:00 AM",
+      "location": "O'Connell Branch, 48 Sixth St., Cambridge, MA 02141",
+      "description": "Bring your project and enjoy the company of other fiber crafters Drop-in with this informal group to work on your craft, get inspired, pick up skills and socialize.",
+      "action_label": "View Program Details",
+      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=da7628fecced4e91af258ee05d1264f7",
       "cost": "Free",
       "pathways": [
-        "students_families",
+        "arts",
         "just_browsing"
       ],
-      "source": "CPSD All Events"
+      "source": "Cambridge Public Library"
     },
     {
-      "title": "Early Release Wednesday (K-8)",
-      "date": "2026-06-03",
-      "display_date": "Wednesday, June 3, 2026",
-      "time": null,
-      "location": "Cambridge Public Schools",
-      "description": "Upcoming Cambridge Public Schools schedule change.",
-      "action_label": "Open CPS Calendar",
-      "url": "https://www.cpsd.us/all-events",
+      "title": "English Conversation Practice, Intermediate (O'Neill)",
+      "date": "2026-07-01",
+      "display_date": "Wednesday, July 1, 2026",
+      "time": "1:00 PM",
+      "location": "O'Neill Branch, 70 Rindge Ave., Cambridge, MA 02140",
+      "description": "Join us for an English for Speakers of Other Languages (ESOL) Conversation Practice.",
+      "action_label": "View Program Details",
+      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=11f77e9bed2b458680f2c547ae53df28",
       "cost": "Free",
       "pathways": [
-        "students_families",
+        "education_work",
         "just_browsing"
       ],
-      "source": "CPSD All Events"
-    },
-    {
-      "title": "CRLS Graduation",
-      "date": "2026-06-04",
-      "display_date": "Thursday, June 4, 2026",
-      "time": null,
-      "location": "Cambridge Public Schools",
-      "description": "Upcoming Cambridge Rindge and Latin School or student-focused event.",
-      "action_label": "Open CPS Calendar",
-      "url": "https://www.cpsd.us/all-events",
-      "cost": "Free",
-      "pathways": [
-        "just_browsing",
-        "students_families"
-      ],
-      "source": "CRLS / CPS Calendar"
+      "source": "Cambridge Public Library"
     },
     {
       "title": "Apply to Cambridge Homeownership Resale Pool",
@@ -238,6 +143,22 @@
         "just_browsing"
       ],
       "source": "Cambridge Housing Department"
+    },
+    {
+      "title": "Browse Cambridge Arts Events",
+      "date": null,
+      "display_date": "Ongoing",
+      "time": null,
+      "location": "Cambridge",
+      "description": "Cambridge Arts publishes a local arts and culture calendar, festival information, and public art resources.",
+      "action_label": "Open Arts Calendar",
+      "url": "https://www.cambridgema.gov/arts/Calendar",
+      "cost": "Free",
+      "pathways": [
+        "arts",
+        "just_browsing"
+      ],
+      "source": "Cambridge Arts"
     },
     {
       "title": "Check Current and Upcoming Cambridge Public Meetings",
@@ -306,9 +227,10 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-05-25T13:43:18",
+    "updated_at": "2026-06-17T14:02:32",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
+      "public health: Could not find mini-grants deadline.",
       "cpp: Could not find CPP application deadline."
     ]
   }
