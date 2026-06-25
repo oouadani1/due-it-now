@@ -1,22 +1,6 @@
 {
   "items": [
     {
-      "title": "Early Release Wednesday (K-8)",
-      "date": "2026-06-24",
-      "display_date": "Wednesday, June 24, 2026",
-      "time": null,
-      "location": "Cambridge Public Schools",
-      "description": "Upcoming Cambridge Public Schools schedule change.",
-      "action_label": "Open CPS Calendar",
-      "url": "https://www.cpsd.us/all-events",
-      "cost": "Free",
-      "pathways": [
-        "students_families",
-        "just_browsing"
-      ],
-      "source": "CPSD All Events"
-    },
-    {
       "title": "Beginner ESOL (Central Square)",
       "date": "2026-07-01",
       "display_date": "Wednesday, July 1, 2026",
@@ -195,7 +179,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-06-24T12:30:03",
+    "updated_at": "2026-06-25T12:33:39",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
       "public health: Could not find mini-grants deadline.",
