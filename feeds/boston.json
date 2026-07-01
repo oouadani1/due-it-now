@@ -1,23 +1,6 @@
 {
   "items": [
     {
-      "title": "Apply for an Age Strong Rolling Grant",
-      "date": "2026-06-30",
-      "display_date": "Tuesday, June 30, 2026",
-      "time": "11:59 PM",
-      "location": "Age Strong Commission",
-      "description": "Boston nonprofits, civic associations, and senior groups can apply for small-scale funding that supports older adult programming and social connection.",
-      "action_label": "Open Age Strong Grants",
-      "url": "https://www.boston.gov/node/16395271",
-      "cost": "Free to apply",
-      "pathways": [
-        "older_adults",
-        "health",
-        "just_browsing"
-      ],
-      "source": "City of Boston Age Strong Commission"
-    },
-    {
       "title": "Apply for Boston's Older Adult Property Tax Work-Off Program",
       "date": "2026-07-10",
       "display_date": "Friday, July 10, 2026",
@@ -33,6 +16,40 @@
         "renewals"
       ],
       "source": "City of Boston Age Strong Commission"
+    },
+    {
+      "title": "Apply for an Age Strong Rolling Grant",
+      "date": "2026-07-31",
+      "display_date": "Friday, July 31, 2026",
+      "time": "11:59 PM",
+      "location": "Age Strong Commission",
+      "description": "Boston nonprofits, civic associations, and senior groups can apply for small-scale funding that supports older adult programming and social connection.",
+      "action_label": "Open Age Strong Grants",
+      "url": "https://www.boston.gov/node/16395271",
+      "cost": "Free to apply",
+      "pathways": [
+        "older_adults",
+        "health",
+        "just_browsing"
+      ],
+      "source": "City of Boston Age Strong Commission"
+    },
+    {
+      "title": "Apply for Boston Property Tax Exemptions",
+      "date": "2027-04-01",
+      "display_date": "Thursday, April 1, 2027",
+      "time": null,
+      "location": "Boston Assessing Department",
+      "description": "Eligible homeowners can file for the current fiscal year property tax exemption by the annual deadline.",
+      "action_label": "Open Tax Exemptions",
+      "url": "https://www.boston.gov/departments/assessing/filing-property-tax-exemption",
+      "cost": "Free",
+      "pathways": [
+        "renewals",
+        "housing",
+        "older_adults"
+      ],
+      "source": "City of Boston Assessing"
     },
     {
       "title": "Check Boston Public Schools Enrollment",
@@ -102,7 +119,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-06-30T12:25:06",
+    "updated_at": "2026-07-01T12:49:25",
     "source_errors": []
   }
 }
