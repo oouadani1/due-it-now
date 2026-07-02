@@ -1,30 +1,29 @@
 {
   "items": [
     {
-      "title": "Beginner ESOL (Central Square)",
-      "date": "2026-07-01",
-      "display_date": "Wednesday, July 1, 2026",
-      "time": "10:30 AM",
-      "location": "Central Square Branch, 45 Pearl St., Cambridge, MA 02139",
-      "description": "Join us for an English for Speakers of Other Languages (ESOL) class.",
+      "title": "Summer Fitness: Move Better As You Age: Strength, Balance & Confidence (Main)",
+      "date": "2026-08-01",
+      "display_date": "Saturday, August 1, 2026",
+      "time": "2:00 PM",
+      "location": "Main Library, Community Room, 449 Broadway, Cambridge, MA 02138",
+      "description": "This engaging and educational program is led by master fitness trainer, author, and motivational speaker Shaun Zetlin.",
       "action_label": "View Program Details",
-      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=db1644260bfc488ea7e1b429dc7d3694",
+      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=aa0884e68b3e41d591138ff3fc7eb893",
       "cost": "Free",
       "pathways": [
-        "education_work",
         "just_browsing"
       ],
       "source": "Cambridge Public Library"
     },
     {
-      "title": "High Beginner ESOL (Central Square)",
-      "date": "2026-07-01",
-      "display_date": "Wednesday, July 1, 2026",
+      "title": "High Beginner ESOL Class (Central Square)",
+      "date": "2026-08-03",
+      "display_date": "Monday, August 3, 2026",
       "time": "10:30 AM",
       "location": "Central Square Branch, 45 Pearl St., Cambridge, MA 02139",
       "description": "Join us for an English for Speakers of Other Languages (ESOL) Class.",
       "action_label": "View Program Details",
-      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=2b282dfcbcdf4958a535ca50a3adc2c0",
+      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=8e43ea0e5f844757b268e7e2da57d513",
       "cost": "Free",
       "pathways": [
         "education_work",
@@ -33,30 +32,30 @@
       "source": "Cambridge Public Library"
     },
     {
-      "title": "Fiber Crafts Group - Drop-In (O'Connell)",
-      "date": "2026-07-01",
-      "display_date": "Wednesday, July 1, 2026",
-      "time": "11:00 AM",
-      "location": "O'Connell Branch, 48 Sixth St., Cambridge, MA 02141",
-      "description": "Bring your project and enjoy the company of other fiber crafters Drop-in with this informal group to work on your craft, get inspired, pick up skills and socialize.",
+      "title": "Beginner ESOL Class (Central Square)",
+      "date": "2026-08-03",
+      "display_date": "Monday, August 3, 2026",
+      "time": "1:00 PM",
+      "location": "Central Square Branch, 45 Pearl St., Cambridge, MA 02139",
+      "description": "Join us for an English for Speakers of Other Languages (ESOL) Class.",
       "action_label": "View Program Details",
-      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=da7628fecced4e91af258ee05d1264f7",
+      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=9e62fd548ca94ecba3a34df4c4eccf6f",
       "cost": "Free",
       "pathways": [
-        "arts",
+        "education_work",
         "just_browsing"
       ],
       "source": "Cambridge Public Library"
     },
     {
       "title": "English Conversation Practice, Intermediate (O'Neill)",
-      "date": "2026-07-01",
-      "display_date": "Wednesday, July 1, 2026",
+      "date": "2026-08-03",
+      "display_date": "Monday, August 3, 2026",
       "time": "1:00 PM",
       "location": "O'Neill Branch, 70 Rindge Ave., Cambridge, MA 02140",
-      "description": "Join us for an English for Speakers of Other Languages (ESOL) Conversation Practice.",
+      "description": "Join us for an English for Speakers of Other Languages (ESOL) Class.",
       "action_label": "View Program Details",
-      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=11f77e9bed2b458680f2c547ae53df28",
+      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=22fdb879837748409802a3403980ea38",
       "cost": "Free",
       "pathways": [
         "education_work",
@@ -179,7 +178,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-07-01T12:48:59",
+    "updated_at": "2026-07-02T12:21:36",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
       "public health: Could not find mini-grants deadline.",
