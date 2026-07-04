@@ -1,23 +1,6 @@
 {
   "items": [
     {
-      "title": "Review Boston Public Schools Enrollment Deadlines",
-      "date": "2026-07-03",
-      "display_date": "Friday, July 3, 2026",
-      "time": null,
-      "location": "Boston Public Schools",
-      "description": "Boston families can review current school enrollment dates, registration windows, and assignment steps through the BPS enrollment page.",
-      "action_label": "Open BPS Enrollment",
-      "url": "https://www.bostonpublicschools.org/enroll",
-      "cost": "Free",
-      "pathways": [
-        "students_families",
-        "education_work",
-        "just_browsing"
-      ],
-      "source": "Boston Public Schools"
-    },
-    {
       "title": "Apply for Boston's Older Adult Property Tax Work-Off Program",
       "date": "2026-07-10",
       "display_date": "Friday, July 10, 2026",
@@ -67,6 +50,23 @@
         "older_adults"
       ],
       "source": "City of Boston Assessing"
+    },
+    {
+      "title": "Check Boston Public Schools Enrollment",
+      "date": null,
+      "display_date": "Ongoing",
+      "time": null,
+      "location": "Boston Public Schools",
+      "description": "Boston families can use the BPS enrollment page to review registration steps, school assignment information, and current enrollment guidance.",
+      "action_label": "Open BPS Enrollment",
+      "url": "https://www.bostonpublicschools.org/enroll",
+      "cost": "Free",
+      "pathways": [
+        "students_families",
+        "education_work",
+        "just_browsing"
+      ],
+      "source": "Boston Public Schools"
     },
     {
       "title": "Complete Your Boston Annual Census",
@@ -119,7 +119,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-07-03T12:20:44",
+    "updated_at": "2026-07-04T11:47:26",
     "source_errors": []
   }
 }
