@@ -1,6 +1,57 @@
 {
   "items": [
     {
+      "title": "Apply for Boston's Older Adult Property Tax Work-Off Program",
+      "date": "2026-07-10",
+      "display_date": "Friday, July 10, 2026",
+      "time": null,
+      "location": "Age Strong Commission",
+      "description": "Eligible Boston older adults can apply for the annual property tax work-off program before the filing deadline.",
+      "action_label": "Open Tax Work-Off Program",
+      "url": "https://www.boston.gov/departments/age-strong-commission/senior-property-tax-work",
+      "cost": "Free",
+      "pathways": [
+        "older_adults",
+        "housing",
+        "renewals"
+      ],
+      "source": "City of Boston Age Strong Commission"
+    },
+    {
+      "title": "Apply for an Age Strong Rolling Grant",
+      "date": "2026-07-31",
+      "display_date": "Friday, July 31, 2026",
+      "time": "11:59 PM",
+      "location": "Age Strong Commission",
+      "description": "Boston nonprofits, civic associations, and senior groups can apply for small-scale funding that supports older adult programming and social connection.",
+      "action_label": "Open Age Strong Grants",
+      "url": "https://www.boston.gov/node/16395271",
+      "cost": "Free to apply",
+      "pathways": [
+        "older_adults",
+        "health",
+        "just_browsing"
+      ],
+      "source": "City of Boston Age Strong Commission"
+    },
+    {
+      "title": "Apply for Boston Property Tax Exemptions",
+      "date": "2027-04-01",
+      "display_date": "Thursday, April 1, 2027",
+      "time": null,
+      "location": "Boston Assessing Department",
+      "description": "Eligible homeowners can file for the current fiscal year property tax exemption by the annual deadline.",
+      "action_label": "Open Tax Exemptions",
+      "url": "https://www.boston.gov/departments/assessing/filing-property-tax-exemption",
+      "cost": "Free",
+      "pathways": [
+        "renewals",
+        "housing",
+        "older_adults"
+      ],
+      "source": "City of Boston Assessing"
+    },
+    {
       "title": "Check Boston Public Schools Enrollment",
       "date": null,
       "display_date": "Ongoing",
@@ -18,6 +69,23 @@
       "source": "Boston Public Schools"
     },
     {
+      "title": "Complete Your Boston Annual Census",
+      "date": null,
+      "display_date": "Return as soon as possible",
+      "time": null,
+      "location": "Online or by mail",
+      "description": "Boston residents should complete the annual census or listing to help keep voter rolls current and support city services.",
+      "action_label": "Open Elections Commission Page",
+      "url": "https://www.boston.gov/departments/elections/boston-elections-commission",
+      "cost": "Free",
+      "pathways": [
+        "voting_civics",
+        "renewals",
+        "just_browsing"
+      ],
+      "source": "Boston Elections Commission"
+    },
+    {
       "title": "Join Boston Public Library ESOL Classes",
       "date": null,
       "display_date": "Ongoing",
@@ -32,25 +100,26 @@
         "just_browsing"
       ],
       "source": "Boston Public Library"
+    },
+    {
+      "title": "Track Boston Affordable Housing Lotteries",
+      "date": null,
+      "display_date": "Ongoing",
+      "time": null,
+      "location": "Boston",
+      "description": "Boston's Office of Housing points residents to Metrolist for income-restricted rentals, homeownership opportunities, and housing lottery listings.",
+      "action_label": "Open Boston Housing",
+      "url": "https://www.boston.gov/departments/housing",
+      "cost": "Free",
+      "pathways": [
+        "housing",
+        "just_browsing"
+      ],
+      "source": "City of Boston Housing"
     }
   ],
   "metadata": {
-    "updated_at": "2026-07-06T14:06:34",
-    "source_errors": [
-      "boston dog license: HTTP Error 503: Service Unavailable",
-      "boston tax exemptions: HTTP Error 503: Service Unavailable",
-      "boston elections: HTTP Error 503: Service Unavailable",
-      "boston voter registration: HTTP Error 503: Service Unavailable",
-      "boston vote by mail: HTTP Error 503: Service Unavailable",
-      "boston housing: HTTP Error 503: Service Unavailable",
-      "boston age strong: HTTP Error 503: Service Unavailable",
-      "boston tax work-off: HTTP Error 503: Service Unavailable",
-      "boston digital equity: HTTP Error 503: Service Unavailable",
-      "boston small community grants: HTTP Error 503: Service Unavailable",
-      "boston annual enrollment: HTTP Error 503: Service Unavailable",
-      "boston small business activation: HTTP Error 503: Service Unavailable",
-      "boston bizunlocked: HTTP Error 503: Service Unavailable",
-      "boston community health certificate: HTTP Error 503: Service Unavailable"
-    ]
+    "updated_at": "2026-07-07T12:39:54",
+    "source_errors": []
   }
 }
