@@ -32,22 +32,6 @@
       "source": "Cambridge Public Library"
     },
     {
-      "title": "High Beginner ESOL Class (Central Square)",
-      "date": "2026-08-03",
-      "display_date": "Monday, August 3, 2026",
-      "time": "10:30 AM",
-      "location": "Central Square Branch, 45 Pearl St., Cambridge, MA 02139",
-      "description": "Join us for an English for Speakers of Other Languages (ESOL) Class.",
-      "action_label": "View Program Details",
-      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=8e43ea0e5f844757b268e7e2da57d513",
-      "cost": "Free",
-      "pathways": [
-        "education_work",
-        "just_browsing"
-      ],
-      "source": "Cambridge Public Library"
-    },
-    {
       "title": "Wellness for Older Adults: Let Your Yoga Dance (Virtual)",
       "date": "2026-08-03",
       "display_date": "Monday, August 3, 2026",
@@ -61,6 +45,22 @@
         "arts",
         "just_browsing",
         "older_adults"
+      ],
+      "source": "Cambridge Public Library"
+    },
+    {
+      "title": "Beginner ESOL Class (Central Square)",
+      "date": "2026-08-03",
+      "display_date": "Monday, August 3, 2026",
+      "time": "1:00 PM",
+      "location": "Central Square Branch, 45 Pearl St., Cambridge, MA 02139",
+      "description": "Join us for an English for Speakers of Other Languages (ESOL) Class.",
+      "action_label": "View Program Details",
+      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=9e62fd548ca94ecba3a34df4c4eccf6f",
+      "cost": "Free",
+      "pathways": [
+        "education_work",
+        "just_browsing"
       ],
       "source": "Cambridge Public Library"
     },
@@ -179,7 +179,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-07-21T12:01:25",
+    "updated_at": "2026-07-22T12:04:30",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
       "public health: Could not find mini-grants deadline.",
