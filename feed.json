@@ -21,7 +21,7 @@
       "date": "2026-08-01",
       "display_date": "Saturday, August 1, 2026",
       "time": "2:00 PM",
-      "location": "Main Library, Community Room, 449 Broadway, Cambridge, MA 02138",
+      "location": "Main Library, 449 Broadway, Cambridge, MA 02138",
       "description": "This engaging and educational program is led by master fitness trainer, author, and motivational speaker Shaun Zetlin.",
       "action_label": "View Program Details",
       "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=aa0884e68b3e41d591138ff3fc7eb893",
@@ -179,7 +179,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-07-22T12:04:30",
+    "updated_at": "2026-07-23T12:03:50",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
       "public health: Could not find mini-grants deadline.",
