@@ -32,6 +32,23 @@
       "source": "Cambridge Public Library"
     },
     {
+      "title": "STEAM Academy: iFp Studio (Main)",
+      "date": "2026-08-03",
+      "display_date": "Monday, August 3, 2026",
+      "time": "9:00 AM",
+      "location": "Main Library, Community Room, 449 Broadway, Cambridge, MA 02138",
+      "description": "Innovators for Purpose (iFp) Studio is a youth-powered design and innovation program where teens channel their energy and creative vision to imagine and build a better world.",
+      "action_label": "View Program Details",
+      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=66f9019c64a443dbaba9f1c911400206",
+      "cost": "Free",
+      "pathways": [
+        "arts",
+        "just_browsing",
+        "students_families"
+      ],
+      "source": "Cambridge Public Library"
+    },
+    {
       "title": "Wellness for Older Adults: Let Your Yoga Dance (Virtual)",
       "date": "2026-08-03",
       "display_date": "Monday, August 3, 2026",
@@ -45,22 +62,6 @@
         "arts",
         "just_browsing",
         "older_adults"
-      ],
-      "source": "Cambridge Public Library"
-    },
-    {
-      "title": "Beginner ESOL Class (Central Square)",
-      "date": "2026-08-03",
-      "display_date": "Monday, August 3, 2026",
-      "time": "1:00 PM",
-      "location": "Central Square Branch, 45 Pearl St., Cambridge, MA 02139",
-      "description": "Join us for an English for Speakers of Other Languages (ESOL) Class.",
-      "action_label": "View Program Details",
-      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=9e62fd548ca94ecba3a34df4c4eccf6f",
-      "cost": "Free",
-      "pathways": [
-        "education_work",
-        "just_browsing"
       ],
       "source": "Cambridge Public Library"
     },
@@ -179,7 +180,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-07-27T13:22:08",
+    "updated_at": "2026-07-28T12:15:10",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
       "public health: Could not find mini-grants deadline.",
