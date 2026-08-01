@@ -18,23 +18,6 @@
       "source": "City of Boston Age Strong Commission"
     },
     {
-      "title": "Apply for an Age Strong Rolling Grant",
-      "date": "2026-07-31",
-      "display_date": "Friday, July 31, 2026",
-      "time": "11:59 PM",
-      "location": "Age Strong Commission",
-      "description": "Boston nonprofits, civic associations, and senior groups can apply for small-scale funding that supports older adult programming and social connection.",
-      "action_label": "Open Age Strong Grants",
-      "url": "https://www.boston.gov/node/16395271",
-      "cost": "Free to apply",
-      "pathways": [
-        "older_adults",
-        "health",
-        "just_browsing"
-      ],
-      "source": "City of Boston Age Strong Commission"
-    },
-    {
       "title": "Apply for Boston Property Tax Exemptions",
       "date": "2027-04-01",
       "display_date": "Thursday, April 1, 2027",
@@ -86,6 +69,23 @@
       "source": "Boston Elections Commission"
     },
     {
+      "title": "Explore Age Strong Grant Opportunities",
+      "date": null,
+      "display_date": "Ongoing",
+      "time": null,
+      "location": "Boston",
+      "description": "Age Strong offers grant opportunities for organizations serving older adults in Boston, including small-scale rolling support.",
+      "action_label": "Open Age Strong Grants",
+      "url": "https://www.boston.gov/node/16395271",
+      "cost": "Free to apply",
+      "pathways": [
+        "older_adults",
+        "health",
+        "just_browsing"
+      ],
+      "source": "City of Boston Age Strong Commission"
+    },
+    {
       "title": "Join Boston Public Library ESOL Classes",
       "date": null,
       "display_date": "Ongoing",
@@ -119,7 +119,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-07-31T12:19:29",
+    "updated_at": "2026-08-01T11:35:57",
     "source_errors": []
   }
 }
