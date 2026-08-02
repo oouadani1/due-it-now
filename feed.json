@@ -1,37 +1,6 @@
 {
   "items": [
     {
-      "title": "Hive Safety Training (Main)",
-      "date": "2026-08-01",
-      "display_date": "Saturday, August 1, 2026",
-      "time": "12:00 PM",
-      "location": "Main Library, 449 Broadway, Cambridge, MA 02138",
-      "description": "Are you interested in using The Hive?",
-      "action_label": "View Program Details",
-      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=aa4ea462a0c04e7eae58359ef65f7265",
-      "cost": "Free",
-      "pathways": [
-        "arts",
-        "just_browsing"
-      ],
-      "source": "Cambridge Public Library"
-    },
-    {
-      "title": "Summer Fitness: Move Better As You Age: Strength, Balance & Confidence (Main)",
-      "date": "2026-08-01",
-      "display_date": "Saturday, August 1, 2026",
-      "time": "2:00 PM",
-      "location": "Main Library, Community Room, 449 Broadway, Cambridge, MA 02138",
-      "description": "This engaging and educational program is led by master fitness trainer, author, and motivational speaker Shaun Zetlin.",
-      "action_label": "View Program Details",
-      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=aa0884e68b3e41d591138ff3fc7eb893",
-      "cost": "Free",
-      "pathways": [
-        "just_browsing"
-      ],
-      "source": "Cambridge Public Library"
-    },
-    {
       "title": "STEAM Academy: iFp Studio (Main)",
       "date": "2026-08-03",
       "display_date": "Monday, August 3, 2026",
@@ -66,6 +35,22 @@
       "source": "Cambridge Public Library"
     },
     {
+      "title": "Beginner ESOL Class (Central Square)",
+      "date": "2026-08-03",
+      "display_date": "Monday, August 3, 2026",
+      "time": "1:00 PM",
+      "location": "Central Square Branch, 45 Pearl St., Cambridge, MA 02139",
+      "description": "Join us for an English for Speakers of Other Languages (ESOL) Class.",
+      "action_label": "View Program Details",
+      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=9e62fd548ca94ecba3a34df4c4eccf6f",
+      "cost": "Free",
+      "pathways": [
+        "education_work",
+        "just_browsing"
+      ],
+      "source": "Cambridge Public Library"
+    },
+    {
       "title": "School Committee Summer Meeting (Virtual)",
       "date": "2026-08-04",
       "display_date": "Tuesday, August 4, 2026",
@@ -96,6 +81,22 @@
         "just_browsing"
       ],
       "source": "CPSD All Events"
+    },
+    {
+      "title": "Songs and Stories (Collins)",
+      "date": "2026-09-01",
+      "display_date": "Tuesday, September 1, 2026",
+      "time": "10:30 AM",
+      "location": "Collins Branch, 64 Aberdeen Ave., Cambridge, MA 02138",
+      "description": "Join us for songs, stories and rhymes.",
+      "action_label": "View Program Details",
+      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=6c205ae821a141b8951b08784754f731",
+      "cost": "Free",
+      "pathways": [
+        "just_browsing",
+        "students_families"
+      ],
+      "source": "Cambridge Public Library"
     },
     {
       "title": "Early Release Wednesday (K-8)",
@@ -228,7 +229,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-08-01T11:35:33",
+    "updated_at": "2026-08-02T11:35:17",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
       "public health: Could not find mini-grants deadline.",
