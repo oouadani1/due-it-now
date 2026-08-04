@@ -1,56 +1,6 @@
 {
   "items": [
     {
-      "title": "STEAM Academy: iFp Studio (Main)",
-      "date": "2026-08-03",
-      "display_date": "Monday, August 3, 2026",
-      "time": "9:00 AM",
-      "location": "Main Library, Community Room, 449 Broadway, Cambridge, MA 02138",
-      "description": "Innovators for Purpose (iFp) Studio is a youth-powered design and innovation program where teens channel their energy and creative vision to imagine and build a better world.",
-      "action_label": "View Program Details",
-      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=66f9019c64a443dbaba9f1c911400206",
-      "cost": "Free",
-      "pathways": [
-        "arts",
-        "just_browsing",
-        "students_families"
-      ],
-      "source": "Cambridge Public Library"
-    },
-    {
-      "title": "Wellness for Older Adults: Let Your Yoga Dance (Virtual)",
-      "date": "2026-08-03",
-      "display_date": "Monday, August 3, 2026",
-      "time": "11:45 AM",
-      "location": "Cambridge Public Library",
-      "description": "A fun, dynamic, and ultimately blissful class.",
-      "action_label": "View Program Details",
-      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=32f743a692a547c1b1889e5c9710624f",
-      "cost": "Free",
-      "pathways": [
-        "arts",
-        "just_browsing",
-        "older_adults"
-      ],
-      "source": "Cambridge Public Library"
-    },
-    {
-      "title": "Beginner ESOL Class (Central Square)",
-      "date": "2026-08-03",
-      "display_date": "Monday, August 3, 2026",
-      "time": "1:00 PM",
-      "location": "Central Square Branch, 45 Pearl St., Cambridge, MA 02139",
-      "description": "Join us for an English for Speakers of Other Languages (ESOL) Class.",
-      "action_label": "View Program Details",
-      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=9e62fd548ca94ecba3a34df4c4eccf6f",
-      "cost": "Free",
-      "pathways": [
-        "education_work",
-        "just_browsing"
-      ],
-      "source": "Cambridge Public Library"
-    },
-    {
       "title": "School Committee Summer Meeting (Virtual)",
       "date": "2026-08-04",
       "display_date": "Tuesday, August 4, 2026",
@@ -95,6 +45,54 @@
       "pathways": [
         "just_browsing",
         "students_families"
+      ],
+      "source": "Cambridge Public Library"
+    },
+    {
+      "title": "Intermediate ESOL (Central Square)",
+      "date": "2026-09-01",
+      "display_date": "Tuesday, September 1, 2026",
+      "time": "11:00 AM",
+      "location": "Central Square Branch, 45 Pearl St., Cambridge, MA 02139",
+      "description": "Join us for an English for Speakers of Other Languages (ESOL) Class.",
+      "action_label": "View Program Details",
+      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=25551a9646da4598b657b2d30d5dab93",
+      "cost": "Free",
+      "pathways": [
+        "education_work",
+        "just_browsing"
+      ],
+      "source": "Cambridge Public Library"
+    },
+    {
+      "title": "High Beginner ESOL (Central Square)",
+      "date": "2026-09-01",
+      "display_date": "Tuesday, September 1, 2026",
+      "time": "1:00 PM",
+      "location": "Central Square Branch, 45 Pearl St., Cambridge, MA 02139",
+      "description": "Join us for an English for Speakers of Other Languages (ESOL) Class.",
+      "action_label": "View Program Details",
+      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=ad912cc13d92416cb0a724922fdec5a8",
+      "cost": "Free",
+      "pathways": [
+        "education_work",
+        "just_browsing"
+      ],
+      "source": "Cambridge Public Library"
+    },
+    {
+      "title": "Sit 'n' Knit (Main)",
+      "date": "2026-09-01",
+      "display_date": "Tuesday, September 1, 2026",
+      "time": "2:30 PM",
+      "location": "Main Library, 449 Broadway, Cambridge, MA 02138",
+      "description": "Bring your project and enjoy the company of other fiber crafters.",
+      "action_label": "View Program Details",
+      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=a200eedd581e4df9abcc39c0defa9c1b",
+      "cost": "Free",
+      "pathways": [
+        "arts",
+        "just_browsing"
       ],
       "source": "Cambridge Public Library"
     },
@@ -229,7 +227,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-08-03T13:21:25",
+    "updated_at": "2026-08-04T12:19:51",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
       "public health: Could not find mini-grants deadline.",
