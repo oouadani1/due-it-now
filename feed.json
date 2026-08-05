@@ -1,22 +1,6 @@
 {
   "items": [
     {
-      "title": "School Committee Summer Meeting (Virtual)",
-      "date": "2026-08-04",
-      "display_date": "Tuesday, August 4, 2026",
-      "time": "5:00 PM",
-      "location": "Cambridge Public Schools",
-      "description": "Upcoming Cambridge Public Schools committee meeting or workshop.",
-      "action_label": "Open CPS Calendar",
-      "url": "https://www.cpsd.us/all-events",
-      "cost": "Free",
-      "pathways": [
-        "students_families",
-        "just_browsing"
-      ],
-      "source": "CPSD All Events"
-    },
-    {
       "title": "School Committee Meeting",
       "date": "2026-09-01",
       "display_date": "Tuesday, September 1, 2026",
@@ -227,7 +211,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-08-04T12:19:51",
+    "updated_at": "2026-08-05T12:18:09",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
       "public health: Could not find mini-grants deadline.",
