@@ -86,6 +86,22 @@
       "source": "City of Boston Age Strong Commission"
     },
     {
+      "title": "Join Boston Public Library ESOL Classes",
+      "date": null,
+      "display_date": "Ongoing",
+      "time": null,
+      "location": "Boston Public Library",
+      "description": "Boston Public Library offers free English-language learning classes and conversation groups for adult learners living in Massachusetts.",
+      "action_label": "Open BPL ESOL",
+      "url": "https://www.bpl.org/esol/",
+      "cost": "Free",
+      "pathways": [
+        "education_work",
+        "just_browsing"
+      ],
+      "source": "Boston Public Library"
+    },
+    {
       "title": "Track Boston Affordable Housing Lotteries",
       "date": null,
       "display_date": "Ongoing",
@@ -103,7 +119,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-08-21T10:49:56",
+    "updated_at": "2026-08-22T10:42:54",
     "source_errors": []
   }
 }

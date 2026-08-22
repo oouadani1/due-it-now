@@ -161,6 +161,22 @@
       "source": "Cambridge Arts"
     },
     {
+      "title": "Check Current and Upcoming Cambridge Public Meetings",
+      "date": null,
+      "display_date": "Ongoing",
+      "time": null,
+      "location": "Online",
+      "description": "PrimeGov lists current and upcoming Cambridge public meetings, agendas, and documents.",
+      "action_label": "Open Public Meetings Portal",
+      "url": "https://cambridgema.primegov.com/public/portal",
+      "cost": "Free",
+      "pathways": [
+        "voting_civics",
+        "just_browsing"
+      ],
+      "source": "PrimeGov Public Portal"
+    },
+    {
       "title": "Join Cambridge Middle-Income Rental Waiting Pool",
       "date": null,
       "display_date": "Applications accepted on a rolling basis",
@@ -211,12 +227,11 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-08-21T10:49:34",
+    "updated_at": "2026-08-22T10:42:28",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
       "public health: Could not find mini-grants deadline.",
-      "cpp: Could not find CPP application deadline.",
-      "primegov portal: HTTP Error 403: Forbidden"
+      "cpp: Could not find CPP application deadline."
     ]
   }
 }
