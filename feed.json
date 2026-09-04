@@ -17,6 +17,22 @@
       "source": "CPSD All Events"
     },
     {
+      "title": "School Committee Virtual Special Meeting/Executive Session",
+      "date": "2026-09-08",
+      "display_date": "Tuesday, September 8, 2026",
+      "time": "4:00 PM",
+      "location": "Cambridge Public Schools",
+      "description": "Upcoming Cambridge Public Schools committee meeting or workshop.",
+      "action_label": "Open CPS Calendar",
+      "url": "https://www.cpsd.us/all-events",
+      "cost": "Free",
+      "pathways": [
+        "students_families",
+        "just_browsing"
+      ],
+      "source": "CPSD All Events"
+    },
+    {
       "title": "Early Release Wednesday (K-8)",
       "date": "2026-09-09",
       "display_date": "Wednesday, September 9, 2026",
@@ -68,22 +84,6 @@
       "title": "No School & CPS Offices Closed: Yom Kippur",
       "date": "2026-09-21",
       "display_date": "Monday, September 21, 2026",
-      "time": null,
-      "location": "Cambridge Public Schools",
-      "description": "Upcoming Cambridge Public Schools schedule change.",
-      "action_label": "Open CPS Calendar",
-      "url": "https://www.cpsd.us/all-events",
-      "cost": "Free",
-      "pathways": [
-        "students_families",
-        "just_browsing"
-      ],
-      "source": "CPSD All Events"
-    },
-    {
-      "title": "Early Release Wednesday (K-8)",
-      "date": "2026-09-23",
-      "display_date": "Wednesday, September 23, 2026",
       "time": null,
       "location": "Cambridge Public Schools",
       "description": "Upcoming Cambridge Public Schools schedule change.",
@@ -275,7 +275,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-09-03T14:36:06",
+    "updated_at": "2026-09-04T14:23:40",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
       "public health: Could not find mini-grants deadline.",
