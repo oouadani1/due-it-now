@@ -1,23 +1,6 @@
 {
   "items": [
     {
-      "title": "Apply for Boston's Older Adult Property Tax Work-Off Program",
-      "date": "2026-07-10",
-      "display_date": "Friday, July 10, 2026",
-      "time": null,
-      "location": "Age Strong Commission",
-      "description": "Eligible Boston older adults can apply for the annual property tax work-off program before the filing deadline.",
-      "action_label": "Open Tax Work-Off Program",
-      "url": "https://www.boston.gov/departments/age-strong-commission/senior-property-tax-work",
-      "cost": "Free",
-      "pathways": [
-        "older_adults",
-        "housing",
-        "renewals"
-      ],
-      "source": "City of Boston Age Strong Commission"
-    },
-    {
       "title": "Apply for Boston Property Tax Exemptions",
       "date": "2027-04-01",
       "display_date": "Thursday, April 1, 2027",
@@ -119,7 +102,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-09-08T14:35:20",
+    "updated_at": "2026-09-09T14:38:55",
     "source_errors": []
   }
 }

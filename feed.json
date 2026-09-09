@@ -1,12 +1,12 @@
 {
   "items": [
     {
-      "title": "School Committee Virtual Special Meeting/Executive Session",
-      "date": "2026-09-08",
-      "display_date": "Tuesday, September 8, 2026",
-      "time": "4:00 PM",
+      "title": "Early Release Wednesday (K-8)",
+      "date": "2026-09-09",
+      "display_date": "Wednesday, September 9, 2026",
+      "time": null,
       "location": "Cambridge Public Schools",
-      "description": "Upcoming Cambridge Public Schools committee meeting or workshop.",
+      "description": "Upcoming Cambridge Public Schools schedule change.",
       "action_label": "Open CPS Calendar",
       "url": "https://www.cpsd.us/all-events",
       "cost": "Free",
@@ -17,12 +17,12 @@
       "source": "CPSD All Events"
     },
     {
-      "title": "Early Release Wednesday (K-8)",
-      "date": "2026-09-09",
-      "display_date": "Wednesday, September 9, 2026",
-      "time": null,
+      "title": "Virtual Governance Subcommittee",
+      "date": "2026-09-10",
+      "display_date": "Thursday, September 10, 2026",
+      "time": "4:00 PM",
       "location": "Cambridge Public Schools",
-      "description": "Upcoming Cambridge Public Schools schedule change.",
+      "description": "Upcoming Cambridge Public Schools committee meeting or workshop.",
       "action_label": "Open CPS Calendar",
       "url": "https://www.cpsd.us/all-events",
       "cost": "Free",
@@ -275,7 +275,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-09-08T14:34:58",
+    "updated_at": "2026-09-09T14:38:33",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
       "public health: Could not find mini-grants deadline.",
