@@ -1,22 +1,6 @@
 {
   "items": [
     {
-      "title": "Virtual Governance Subcommittee",
-      "date": "2026-09-10",
-      "display_date": "Thursday, September 10, 2026",
-      "time": "4:00 PM",
-      "location": "Cambridge Public Schools",
-      "description": "Upcoming Cambridge Public Schools committee meeting or workshop.",
-      "action_label": "Open CPS Calendar",
-      "url": "https://www.cpsd.us/all-events",
-      "cost": "Free",
-      "pathways": [
-        "students_families",
-        "just_browsing"
-      ],
-      "source": "CPSD All Events"
-    },
-    {
       "title": "School Committee Meeting",
       "date": "2026-09-15",
       "display_date": "Tuesday, September 15, 2026",
@@ -275,7 +259,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-09-10T14:28:54",
+    "updated_at": "2026-09-11T14:28:02",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
       "public health: Could not find mini-grants deadline.",
