@@ -1,6 +1,22 @@
 {
   "items": [
     {
+      "title": "58 Spring St. Community Forum",
+      "date": "2026-09-29",
+      "display_date": "Tuesday, September 29, 2026",
+      "time": "6:00 PM",
+      "location": "CRLS Media Cafe, 459 Broadway",
+      "description": "Upcoming Cambridge Rindge and Latin School or student-focused event.",
+      "action_label": "Open CPS Calendar",
+      "url": "https://www.cpsd.us/all-events",
+      "cost": "Free",
+      "pathways": [
+        "just_browsing",
+        "students_families"
+      ],
+      "source": "CRLS / CPS Calendar"
+    },
+    {
       "title": "Early Release Wednesday (K-8)",
       "date": "2026-09-30",
       "display_date": "Wednesday, September 30, 2026",
@@ -195,7 +211,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-09-24T15:09:35",
+    "updated_at": "2026-09-25T15:17:59",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
       "public health: Could not find mini-grants deadline.",

@@ -1,40 +1,6 @@
 {
   "items": [
     {
-      "title": "Apply for an Age Strong Rolling Grant",
-      "date": "2026-09-25",
-      "display_date": "Friday, September 25, 2026",
-      "time": "11:59 PM",
-      "location": "Age Strong Commission",
-      "description": "Boston nonprofits, civic associations, and senior groups can apply for small-scale funding that supports older adult programming and social connection.",
-      "action_label": "Open Age Strong Grants",
-      "url": "https://www.boston.gov/node/16395271",
-      "cost": "Free to apply",
-      "pathways": [
-        "older_adults",
-        "health",
-        "just_browsing"
-      ],
-      "source": "City of Boston Age Strong Commission"
-    },
-    {
-      "title": "Apply for Boston Property Tax Exemptions",
-      "date": "2027-04-01",
-      "display_date": "Thursday, April 1, 2027",
-      "time": null,
-      "location": "Boston Assessing Department",
-      "description": "Eligible homeowners can file for the current fiscal year property tax exemption by the annual deadline.",
-      "action_label": "Open Tax Exemptions",
-      "url": "https://www.boston.gov/departments/assessing/filing-property-tax-exemption",
-      "cost": "Free",
-      "pathways": [
-        "renewals",
-        "housing",
-        "older_adults"
-      ],
-      "source": "City of Boston Assessing"
-    },
-    {
       "title": "Check Boston Public Schools Enrollment",
       "date": null,
       "display_date": "Ongoing",
@@ -52,23 +18,6 @@
       "source": "Boston Public Schools"
     },
     {
-      "title": "Complete Your Boston Annual Census",
-      "date": null,
-      "display_date": "Return as soon as possible",
-      "time": null,
-      "location": "Online or by mail",
-      "description": "Boston residents should complete the annual census or listing to help keep voter rolls current and support city services.",
-      "action_label": "Open Elections Commission Page",
-      "url": "https://www.boston.gov/departments/elections/boston-elections-commission",
-      "cost": "Free",
-      "pathways": [
-        "voting_civics",
-        "renewals",
-        "just_browsing"
-      ],
-      "source": "Boston Elections Commission"
-    },
-    {
       "title": "Join Boston Public Library ESOL Classes",
       "date": null,
       "display_date": "Ongoing",
@@ -83,26 +32,10 @@
         "just_browsing"
       ],
       "source": "Boston Public Library"
-    },
-    {
-      "title": "Track Boston Affordable Housing Lotteries",
-      "date": null,
-      "display_date": "Ongoing",
-      "time": null,
-      "location": "Boston",
-      "description": "Boston's Office of Housing points residents to Metrolist for income-restricted rentals, homeownership opportunities, and housing lottery listings.",
-      "action_label": "Open Boston Housing",
-      "url": "https://www.boston.gov/departments/housing",
-      "cost": "Free",
-      "pathways": [
-        "housing",
-        "just_browsing"
-      ],
-      "source": "City of Boston Housing"
     }
   ],
   "metadata": {
-    "updated_at": "2026-09-24T15:09:49",
+    "updated_at": "2026-09-25T15:18:04",
     "source_errors": []
   }
 }
