@@ -1,7 +1,7 @@
 {
   "items": [
     {
-      "title": "58 Spring St. Community Forum",
+      "title": "158 Spring St. Community Forum",
       "date": "2026-09-29",
       "display_date": "Tuesday, September 29, 2026",
       "time": "6:00 PM",
@@ -145,22 +145,6 @@
       "source": "Cambridge Arts"
     },
     {
-      "title": "Check Current and Upcoming Cambridge Public Meetings",
-      "date": null,
-      "display_date": "Ongoing",
-      "time": null,
-      "location": "Online",
-      "description": "PrimeGov lists current and upcoming Cambridge public meetings, agendas, and documents.",
-      "action_label": "Open Public Meetings Portal",
-      "url": "https://cambridgema.primegov.com/public/portal",
-      "cost": "Free",
-      "pathways": [
-        "voting_civics",
-        "just_browsing"
-      ],
-      "source": "PrimeGov Public Portal"
-    },
-    {
       "title": "Join Cambridge Middle-Income Rental Waiting Pool",
       "date": null,
       "display_date": "Applications accepted on a rolling basis",
@@ -211,11 +195,12 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-09-28T18:10:45",
+    "updated_at": "2026-09-29T16:32:26",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
       "public health: Could not find mini-grants deadline.",
-      "cpp: Could not find CPP application deadline."
+      "cpp: Could not find CPP application deadline.",
+      "primegov portal: The read operation timed out"
     ]
   }
 }
