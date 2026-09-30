@@ -1,22 +1,6 @@
 {
   "items": [
     {
-      "title": "158 Spring St. Community Forum",
-      "date": "2026-09-29",
-      "display_date": "Tuesday, September 29, 2026",
-      "time": "6:00 PM",
-      "location": "CRLS Media Cafe, 459 Broadway",
-      "description": "Upcoming Cambridge Rindge and Latin School or student-focused event.",
-      "action_label": "Open CPS Calendar",
-      "url": "https://www.cpsd.us/all-events",
-      "cost": "Free",
-      "pathways": [
-        "just_browsing",
-        "students_families"
-      ],
-      "source": "CRLS / CPS Calendar"
-    },
-    {
       "title": "Early Release Wednesday (K-8)",
       "date": "2026-09-30",
       "display_date": "Wednesday, September 30, 2026",
@@ -145,6 +129,22 @@
       "source": "Cambridge Arts"
     },
     {
+      "title": "Check Current and Upcoming Cambridge Public Meetings",
+      "date": null,
+      "display_date": "Ongoing",
+      "time": null,
+      "location": "Online",
+      "description": "PrimeGov lists current and upcoming Cambridge public meetings, agendas, and documents.",
+      "action_label": "Open Public Meetings Portal",
+      "url": "https://cambridgema.primegov.com/public/portal",
+      "cost": "Free",
+      "pathways": [
+        "voting_civics",
+        "just_browsing"
+      ],
+      "source": "PrimeGov Public Portal"
+    },
+    {
       "title": "Join Cambridge Middle-Income Rental Waiting Pool",
       "date": null,
       "display_date": "Applications accepted on a rolling basis",
@@ -195,12 +195,11 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-09-29T16:32:26",
+    "updated_at": "2026-09-30T16:25:30",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
       "public health: Could not find mini-grants deadline.",
-      "cpp: Could not find CPP application deadline.",
-      "primegov portal: The read operation timed out"
+      "cpp: Could not find CPP application deadline."
     ]
   }
 }
