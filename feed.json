@@ -1,22 +1,6 @@
 {
   "items": [
     {
-      "title": "Early Release Wednesday (K-8)",
-      "date": "2026-09-30",
-      "display_date": "Wednesday, September 30, 2026",
-      "time": null,
-      "location": "Cambridge Public Schools",
-      "description": "Upcoming Cambridge Public Schools schedule change.",
-      "action_label": "Open CPS Calendar",
-      "url": "https://www.cpsd.us/all-events",
-      "cost": "Free",
-      "pathways": [
-        "students_families",
-        "just_browsing"
-      ],
-      "source": "CPSD All Events"
-    },
-    {
       "title": "Intermediate ESOL (Central Square)",
       "date": "2026-10-01",
       "display_date": "Thursday, October 1, 2026",
@@ -25,22 +9,6 @@
       "description": "Join us for an English for Speakers of Other Languages (ESOL) Class.",
       "action_label": "View Program Details",
       "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=c7e1adc707084ad39f5190f357095433",
-      "cost": "Free",
-      "pathways": [
-        "education_work",
-        "just_browsing"
-      ],
-      "source": "Cambridge Public Library"
-    },
-    {
-      "title": "One-on-One Tech Help at Main Library",
-      "date": "2026-10-01",
-      "display_date": "Thursday, October 1, 2026",
-      "time": "11:00 AM",
-      "location": "Main Library, 449 Broadway, Cambridge, MA 02138",
-      "description": "Looking for some basic computer or mobile device guidance?",
-      "action_label": "View Program Details",
-      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=77da3ea855214f8593c13ecca5f3825d",
       "cost": "Free",
       "pathways": [
         "education_work",
@@ -65,20 +33,147 @@
       "source": "Cambridge Public Library"
     },
     {
-      "title": "Aging with Mindfulness (Virtual)",
-      "date": "2026-11-02",
-      "display_date": "Monday, November 2, 2026",
-      "time": "9:00 AM",
-      "location": "Cambridge Public Library",
-      "description": "This program, led by Zeenat Potia, will introduce and utilize mindfulness techniques to help us examine and regulate everyday life changes with a focus on aging.",
+      "title": "Advanced ESOL (Central Square)",
+      "date": "2026-10-01",
+      "display_date": "Thursday, October 1, 2026",
+      "time": "3:00 PM",
+      "location": "Central Square Branch, 45 Pearl St., Cambridge, MA 02139",
+      "description": "Join us for an English for Speakers of Other Languages (ESOL) class.",
       "action_label": "View Program Details",
-      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=ce700f078d2a42cea7295845a739bf62",
+      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=92c59807ce3b410faaf057f298e75289",
+      "cost": "Free",
+      "pathways": [
+        "education_work",
+        "just_browsing"
+      ],
+      "source": "Cambridge Public Library"
+    },
+    {
+      "title": "Sewing 101 (Main)",
+      "date": "2026-10-01",
+      "display_date": "Thursday, October 1, 2026",
+      "time": "3:00 PM",
+      "location": "Main Library, 449 Broadway, Cambridge, MA 02138",
+      "description": "In this 90-minute workshop, you\u2019ll learn the basics of sewing machine operation and safety.",
+      "action_label": "View Program Details",
+      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=87cd4250af904f5a966b1cb5b25c09f9",
+      "cost": "Free",
+      "pathways": [
+        "just_browsing"
+      ],
+      "source": "Cambridge Public Library"
+    },
+    {
+      "title": "Communications & Community Relations Subcommittee",
+      "date": "2026-10-05",
+      "display_date": "Monday, October 5, 2026",
+      "time": "5:00 PM",
+      "location": "Cambridge Public Schools",
+      "description": "Upcoming Cambridge Public Schools committee meeting or workshop.",
+      "action_label": "Open CPS Calendar",
+      "url": "https://www.cpsd.us/all-events",
+      "cost": "Free",
+      "pathways": [
+        "students_families",
+        "just_browsing"
+      ],
+      "source": "CPSD All Events"
+    },
+    {
+      "title": "School Committee Meeting",
+      "date": "2026-10-06",
+      "display_date": "Tuesday, October 6, 2026",
+      "time": "6:00 PM",
+      "location": "Dr. Henrietta Attles Meeting Room at CRLS, 459 Broadway, Cambridge",
+      "description": "Upcoming Cambridge Public Schools committee meeting or workshop.",
+      "action_label": "Open CPS Calendar",
+      "url": "https://www.cpsd.us/all-events",
+      "cost": "Free",
+      "pathways": [
+        "students_families",
+        "just_browsing"
+      ],
+      "source": "CPSD All Events"
+    },
+    {
+      "title": "Early Release Wednesday (K-8)",
+      "date": "2026-10-07",
+      "display_date": "Wednesday, October 7, 2026",
+      "time": null,
+      "location": "Cambridge Public Schools",
+      "description": "Upcoming Cambridge Public Schools schedule change.",
+      "action_label": "Open CPS Calendar",
+      "url": "https://www.cpsd.us/all-events",
+      "cost": "Free",
+      "pathways": [
+        "students_families",
+        "just_browsing"
+      ],
+      "source": "CPSD All Events"
+    },
+    {
+      "title": "No School & CPS Offices Closed: Indigenous Peoples Day",
+      "date": "2026-10-12",
+      "display_date": "Monday, October 12, 2026",
+      "time": null,
+      "location": "Cambridge Public Schools",
+      "description": "Upcoming Cambridge Public Schools schedule change.",
+      "action_label": "Open CPS Calendar",
+      "url": "https://www.cpsd.us/all-events",
+      "cost": "Free",
+      "pathways": [
+        "students_families",
+        "just_browsing"
+      ],
+      "source": "CPSD All Events"
+    },
+    {
+      "title": "Early Release Wednesday (K-8)",
+      "date": "2026-10-14",
+      "display_date": "Wednesday, October 14, 2026",
+      "time": null,
+      "location": "Cambridge Public Schools",
+      "description": "Upcoming Cambridge Public Schools schedule change.",
+      "action_label": "Open CPS Calendar",
+      "url": "https://www.cpsd.us/all-events",
+      "cost": "Free",
+      "pathways": [
+        "students_families",
+        "just_browsing"
+      ],
+      "source": "CPSD All Events"
+    },
+    {
+      "title": "School Committee Meeting",
+      "date": "2026-10-20",
+      "display_date": "Tuesday, October 20, 2026",
+      "time": "6:00 PM",
+      "location": "Dr. Henrietta Attles Meeting Room at CRLS, 459 Broadway, Cambridge",
+      "description": "Upcoming Cambridge Public Schools committee meeting or workshop.",
+      "action_label": "Open CPS Calendar",
+      "url": "https://www.cpsd.us/all-events",
+      "cost": "Free",
+      "pathways": [
+        "students_families",
+        "just_browsing"
+      ],
+      "source": "CPSD All Events"
+    },
+    {
+      "title": "Back-to-School Vaccination Clinic",
+      "date": "2026-10-26",
+      "display_date": "Monday, October 26, 2026",
+      "time": "4:00 PM",
+      "location": "Teen Health Center, Cambridge Rindge and Latin School 459 Broadway",
+      "description": "Upcoming Cambridge Rindge and Latin School or student-focused event.",
+      "action_label": "Open CPS Calendar",
+      "url": "https://www.cpsd.us/all-events",
       "cost": "Free",
       "pathways": [
         "just_browsing",
-        "older_adults"
+        "students_families"
       ],
-      "source": "Cambridge Public Library"
+      "source": "CRLS / CPS Calendar"
     },
     {
       "title": "Apply to Cambridge Homeownership Resale Pool",
@@ -195,7 +290,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-09-30T16:25:30",
+    "updated_at": "2026-10-01T17:02:34",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
       "public health: Could not find mini-grants deadline.",
