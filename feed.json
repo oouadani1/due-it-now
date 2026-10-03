@@ -49,6 +49,22 @@
       "source": "CPSD All Events"
     },
     {
+      "title": "Buildings and Grounds Subcommittee",
+      "date": "2026-10-08",
+      "display_date": "Thursday, October 8, 2026",
+      "time": "5:00 PM",
+      "location": "Cambridge Public Schools",
+      "description": "Upcoming Cambridge Public Schools committee meeting or workshop.",
+      "action_label": "Open CPS Calendar",
+      "url": "https://www.cpsd.us/all-events",
+      "cost": "Free",
+      "pathways": [
+        "students_families",
+        "just_browsing"
+      ],
+      "source": "CPSD All Events"
+    },
+    {
       "title": "No School & CPS Offices Closed: Indigenous Peoples Day",
       "date": "2026-10-12",
       "display_date": "Monday, October 12, 2026",
@@ -86,15 +102,15 @@
       "display_date": "Tuesday, October 20, 2026",
       "time": "6:00 PM",
       "location": "Dr. Henrietta Attles Meeting Room at CRLS, 459 Broadway, Cambridge",
-      "description": "Upcoming Cambridge Public Schools committee meeting or workshop.",
+      "description": "Upcoming Cambridge Rindge and Latin School or student-focused event.",
       "action_label": "Open CPS Calendar",
       "url": "https://www.cpsd.us/all-events",
       "cost": "Free",
       "pathways": [
-        "students_families",
-        "just_browsing"
+        "just_browsing",
+        "students_families"
       ],
-      "source": "CPSD All Events"
+      "source": "CRLS / CPS Calendar"
     },
     {
       "title": "Back-to-School Vaccination Clinic",
@@ -291,7 +307,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-10-02T16:16:56",
+    "updated_at": "2026-10-03T14:44:37",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
       "public health: Could not find mini-grants deadline.",
