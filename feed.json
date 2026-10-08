@@ -1,22 +1,6 @@
 {
   "items": [
     {
-      "title": "Early Release Wednesday (K-8)",
-      "date": "2026-10-07",
-      "display_date": "Wednesday, October 7, 2026",
-      "time": null,
-      "location": "Cambridge Public Schools",
-      "description": "Upcoming Cambridge Public Schools schedule change.",
-      "action_label": "Open CPS Calendar",
-      "url": "https://www.cpsd.us/all-events",
-      "cost": "Free",
-      "pathways": [
-        "students_families",
-        "just_browsing"
-      ],
-      "source": "CPSD All Events"
-    },
-    {
       "title": "Buildings and Grounds Subcommittee",
       "date": "2026-10-08",
       "display_date": "Thursday, October 8, 2026",
@@ -113,6 +97,22 @@
       "source": "CRLS / CPS Calendar"
     },
     {
+      "title": "Early Release Wednesday (K-8)",
+      "date": "2026-10-28",
+      "display_date": "Wednesday, October 28, 2026",
+      "time": null,
+      "location": "Cambridge Public Schools",
+      "description": "Upcoming Cambridge Public Schools schedule change.",
+      "action_label": "Open CPS Calendar",
+      "url": "https://www.cpsd.us/all-events",
+      "cost": "Free",
+      "pathways": [
+        "students_families",
+        "just_browsing"
+      ],
+      "source": "CPSD All Events"
+    },
+    {
       "title": "Aging with Mindfulness (Virtual)",
       "date": "2026-11-02",
       "display_date": "Monday, November 2, 2026",
@@ -145,6 +145,21 @@
       "source": "Cambridge Public Library"
     },
     {
+      "title": "Tech for All: Meet Your Device Workshop",
+      "date": "2026-11-02",
+      "display_date": "Monday, November 2, 2026",
+      "time": "11:00 AM",
+      "location": "Main Library, 449 Broadway, Cambridge, MA 02138",
+      "description": "Received an acceptance email for a free laptop and/or hotspot?",
+      "action_label": "View Program Details",
+      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=a247463d3008456e8f4464f657d8a214",
+      "cost": "Free",
+      "pathways": [
+        "just_browsing"
+      ],
+      "source": "Cambridge Public Library"
+    },
+    {
       "title": "Beginner ESOL Class (Central Square)",
       "date": "2026-11-02",
       "display_date": "Monday, November 2, 2026",
@@ -153,22 +168,6 @@
       "description": "Join us for an English for Speakers of Other Languages (ESOL) Class.",
       "action_label": "View Program Details",
       "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=01cc0d1c713a41d6badeef9c2ef06e02",
-      "cost": "Free",
-      "pathways": [
-        "education_work",
-        "just_browsing"
-      ],
-      "source": "Cambridge Public Library"
-    },
-    {
-      "title": "English Conversation Practice, Intermediate (O'Neill)",
-      "date": "2026-11-02",
-      "display_date": "Monday, November 2, 2026",
-      "time": "1:00 PM",
-      "location": "O'Neill Branch, 70 Rindge Ave., Cambridge, MA 02140",
-      "description": "Join us for an English for Speakers of Other Languages (ESOL) Class.",
-      "action_label": "View Program Details",
-      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=44dd6ef425d94a1488f230573c63c336",
       "cost": "Free",
       "pathways": [
         "education_work",
@@ -291,7 +290,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-10-07T17:26:32",
+    "updated_at": "2026-10-08T17:24:47",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
       "public health: Could not find mini-grants deadline.",
