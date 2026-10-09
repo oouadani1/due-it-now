@@ -1,12 +1,12 @@
 {
   "items": [
     {
-      "title": "Buildings and Grounds Subcommittee",
-      "date": "2026-10-08",
-      "display_date": "Thursday, October 8, 2026",
-      "time": "5:00 PM",
+      "title": "No School & CPS Offices Closed: Indigenous Peoples Day",
+      "date": "2026-10-12",
+      "display_date": "Monday, October 12, 2026",
+      "time": null,
       "location": "Cambridge Public Schools",
-      "description": "Upcoming Cambridge Public Schools committee meeting or workshop.",
+      "description": "Upcoming Cambridge Public Schools schedule change.",
       "action_label": "Open CPS Calendar",
       "url": "https://www.cpsd.us/all-events",
       "cost": "Free",
@@ -17,12 +17,12 @@
       "source": "CPSD All Events"
     },
     {
-      "title": "No School & CPS Offices Closed: Indigenous Peoples Day",
-      "date": "2026-10-12",
-      "display_date": "Monday, October 12, 2026",
-      "time": null,
+      "title": "School Committee Virtual Special Meeting",
+      "date": "2026-10-13",
+      "display_date": "Tuesday, October 13, 2026",
+      "time": "4:00 PM",
       "location": "Cambridge Public Schools",
-      "description": "Upcoming Cambridge Public Schools schedule change.",
+      "description": "Upcoming Cambridge Public Schools committee meeting or workshop.",
       "action_label": "Open CPS Calendar",
       "url": "https://www.cpsd.us/all-events",
       "cost": "Free",
@@ -49,11 +49,11 @@
       "source": "CPSD All Events"
     },
     {
-      "title": "School Committee Meeting",
-      "date": "2026-10-20",
-      "display_date": "Tuesday, October 20, 2026",
-      "time": "6:00 PM",
-      "location": "Dr. Henrietta Attles Meeting Room at CRLS, 459 Broadway, Cambridge",
+      "title": "School Climate Subcommittee Meeting",
+      "date": "2026-10-14",
+      "display_date": "Wednesday, October 14, 2026",
+      "time": "5:00 PM",
+      "location": "Cambridge Public Schools",
       "description": "Upcoming Cambridge Public Schools committee meeting or workshop.",
       "action_label": "Open CPS Calendar",
       "url": "https://www.cpsd.us/all-events",
@@ -65,12 +65,28 @@
       "source": "CPSD All Events"
     },
     {
-      "title": "Early Release Wednesday (K-8)",
-      "date": "2026-10-21",
-      "display_date": "Wednesday, October 21, 2026",
-      "time": null,
+      "title": "School Committee Special Meeting",
+      "date": "2026-10-15",
+      "display_date": "Thursday, October 15, 2026",
+      "time": "6:00 PM",
       "location": "Cambridge Public Schools",
-      "description": "Upcoming Cambridge Public Schools schedule change.",
+      "description": "Upcoming Cambridge Public Schools committee meeting or workshop.",
+      "action_label": "Open CPS Calendar",
+      "url": "https://www.cpsd.us/all-events",
+      "cost": "Free",
+      "pathways": [
+        "students_families",
+        "just_browsing"
+      ],
+      "source": "CPSD All Events"
+    },
+    {
+      "title": "School Committee Meeting",
+      "date": "2026-10-20",
+      "display_date": "Tuesday, October 20, 2026",
+      "time": "6:00 PM",
+      "location": "Dr. Henrietta Attles Meeting Room at CRLS, 459 Broadway, Cambridge",
+      "description": "Upcoming Cambridge Public Schools committee meeting or workshop.",
       "action_label": "Open CPS Calendar",
       "url": "https://www.cpsd.us/all-events",
       "cost": "Free",
@@ -95,22 +111,6 @@
         "students_families"
       ],
       "source": "CRLS / CPS Calendar"
-    },
-    {
-      "title": "Early Release Wednesday (K-8)",
-      "date": "2026-10-28",
-      "display_date": "Wednesday, October 28, 2026",
-      "time": null,
-      "location": "Cambridge Public Schools",
-      "description": "Upcoming Cambridge Public Schools schedule change.",
-      "action_label": "Open CPS Calendar",
-      "url": "https://www.cpsd.us/all-events",
-      "cost": "Free",
-      "pathways": [
-        "students_families",
-        "just_browsing"
-      ],
-      "source": "CPSD All Events"
     },
     {
       "title": "Aging with Mindfulness (Virtual)",
@@ -290,7 +290,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-10-08T17:24:47",
+    "updated_at": "2026-10-09T17:00:36",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
       "public health: Could not find mini-grants deadline.",
