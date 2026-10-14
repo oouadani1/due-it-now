@@ -1,22 +1,6 @@
 {
   "items": [
     {
-      "title": "School Committee Virtual Special Meeting",
-      "date": "2026-10-13",
-      "display_date": "Tuesday, October 13, 2026",
-      "time": "4:00 PM",
-      "location": "Cambridge Public Schools",
-      "description": "Upcoming Cambridge Public Schools committee meeting or workshop.",
-      "action_label": "Open CPS Calendar",
-      "url": "https://www.cpsd.us/all-events",
-      "cost": "Free",
-      "pathways": [
-        "students_families",
-        "just_browsing"
-      ],
-      "source": "CPSD All Events"
-    },
-    {
       "title": "Early Release Wednesday (K-8)",
       "date": "2026-10-14",
       "display_date": "Wednesday, October 14, 2026",
@@ -111,6 +95,22 @@
         "students_families"
       ],
       "source": "CRLS / CPS Calendar"
+    },
+    {
+      "title": "Early Release Wednesday (K-8)",
+      "date": "2026-10-28",
+      "display_date": "Wednesday, October 28, 2026",
+      "time": null,
+      "location": "Cambridge Public Schools",
+      "description": "Upcoming Cambridge Public Schools schedule change.",
+      "action_label": "Open CPS Calendar",
+      "url": "https://www.cpsd.us/all-events",
+      "cost": "Free",
+      "pathways": [
+        "students_families",
+        "just_browsing"
+      ],
+      "source": "CPSD All Events"
     },
     {
       "title": "Aging with Mindfulness (Virtual)",
@@ -290,7 +290,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-10-13T17:36:53",
+    "updated_at": "2026-10-14T15:10:51",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
       "public health: Could not find mini-grants deadline.",
