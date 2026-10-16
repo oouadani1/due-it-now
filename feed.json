@@ -1,10 +1,10 @@
 {
   "items": [
     {
-      "title": "School Committee Special Meeting",
-      "date": "2026-10-15",
-      "display_date": "Thursday, October 15, 2026",
-      "time": "6:00 PM",
+      "title": "Curriculum & Achievement Subcommittee",
+      "date": "2026-10-19",
+      "display_date": "Monday, October 19, 2026",
+      "time": "4:30 PM",
       "location": "Cambridge Public Schools",
       "description": "Upcoming Cambridge Public Schools committee meeting or workshop.",
       "action_label": "Open CPS Calendar",
@@ -258,7 +258,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-10-15T15:04:19",
+    "updated_at": "2026-10-16T14:53:40",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
       "public health: Could not find mini-grants deadline.",
