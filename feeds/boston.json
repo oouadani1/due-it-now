@@ -19,8 +19,8 @@
     },
     {
       "title": "Apply for Boston Property Tax Exemptions",
-      "date": "2027-04-01",
-      "display_date": "Thursday, April 1, 2027",
+      "date": "2026-11-03",
+      "display_date": "Tuesday, November 3, 2026",
       "time": null,
       "location": "Boston Assessing Department",
       "description": "Eligible homeowners can file for the current fiscal year property tax exemption by the annual deadline.",
@@ -102,7 +102,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-10-19T16:59:59",
+    "updated_at": "2026-10-20T15:08:15",
     "source_errors": []
   }
 }
