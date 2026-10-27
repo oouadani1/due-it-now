@@ -1,38 +1,6 @@
 {
   "items": [
     {
-      "title": "Joint Roundtable Meeting of the Cambridge City Council and School Committee",
-      "date": "2026-10-26",
-      "display_date": "Monday, October 26, 2026",
-      "time": "4:00 PM",
-      "location": "Sullivan Chamber (795 Massachusetts Ave, Cambridge, MA 02139)",
-      "description": "Upcoming Cambridge Public Schools committee meeting or workshop.",
-      "action_label": "Open CPS Calendar",
-      "url": "https://www.cpsd.us/all-events",
-      "cost": "Free",
-      "pathways": [
-        "students_families",
-        "just_browsing"
-      ],
-      "source": "CPSD All Events"
-    },
-    {
-      "title": "Back-to-School Vaccination Clinic",
-      "date": "2026-10-26",
-      "display_date": "Monday, October 26, 2026",
-      "time": "4:00 PM",
-      "location": "Teen Health Center, Cambridge Rindge and Latin School 459 Broadway",
-      "description": "Upcoming Cambridge Rindge and Latin School or student-focused event.",
-      "action_label": "Open CPS Calendar",
-      "url": "https://www.cpsd.us/all-events",
-      "cost": "Free",
-      "pathways": [
-        "just_browsing",
-        "students_families"
-      ],
-      "source": "CRLS / CPS Calendar"
-    },
-    {
       "title": "Early Release Wednesday (K-8)",
       "date": "2026-10-28",
       "display_date": "Wednesday, October 28, 2026",
@@ -54,6 +22,22 @@
       "display_date": "Wednesday, October 28, 2026",
       "time": "7:00 PM",
       "location": "Virtual",
+      "description": "Upcoming Cambridge Public Schools event.",
+      "action_label": "Open CPS Calendar",
+      "url": "https://www.cpsd.us/all-events",
+      "cost": "Free",
+      "pathways": [
+        "students_families",
+        "just_browsing"
+      ],
+      "source": "CPSD All Events"
+    },
+    {
+      "title": "English Learner Parent Advisory Council (ELPAC) Meeting",
+      "date": "2026-10-28",
+      "display_date": "Wednesday, October 28, 2026",
+      "time": "7:00 PM",
+      "location": "Virtual via Zoom",
       "description": "Upcoming Cambridge Public Schools event.",
       "action_label": "Open CPS Calendar",
       "url": "https://www.cpsd.us/all-events",
@@ -242,7 +226,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-10-26T16:48:21",
+    "updated_at": "2026-10-27T15:53:35",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
       "public health: Could not find mini-grants deadline.",
