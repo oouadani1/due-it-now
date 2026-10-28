@@ -17,11 +17,11 @@
       "source": "CPSD All Events"
     },
     {
-      "title": "LatinX Caregiver Affinity Group Meeting",
+      "title": "English Learner Parent Advisory Council (ELPAC) Meeting",
       "date": "2026-10-28",
       "display_date": "Wednesday, October 28, 2026",
       "time": "7:00 PM",
-      "location": "Virtual",
+      "location": "Virtual via Zoom",
       "description": "Upcoming Cambridge Public Schools event.",
       "action_label": "Open CPS Calendar",
       "url": "https://www.cpsd.us/all-events",
@@ -33,11 +33,11 @@
       "source": "CPSD All Events"
     },
     {
-      "title": "English Learner Parent Advisory Council (ELPAC) Meeting",
+      "title": "LatinX Caregiver Affinity Group Meeting",
       "date": "2026-10-28",
       "display_date": "Wednesday, October 28, 2026",
       "time": "7:00 PM",
-      "location": "Virtual via Zoom",
+      "location": "Virtual",
       "description": "Upcoming Cambridge Public Schools event.",
       "action_label": "Open CPS Calendar",
       "url": "https://www.cpsd.us/all-events",
@@ -226,7 +226,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-10-27T15:53:35",
+    "updated_at": "2026-10-28T16:40:17",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
       "public health: Could not find mini-grants deadline.",
