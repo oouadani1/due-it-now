@@ -1,54 +1,6 @@
 {
   "items": [
     {
-      "title": "Early Release Wednesday (K-8)",
-      "date": "2026-10-28",
-      "display_date": "Wednesday, October 28, 2026",
-      "time": null,
-      "location": "Cambridge Public Schools",
-      "description": "Upcoming Cambridge Public Schools schedule change.",
-      "action_label": "Open CPS Calendar",
-      "url": "https://www.cpsd.us/all-events",
-      "cost": "Free",
-      "pathways": [
-        "students_families",
-        "just_browsing"
-      ],
-      "source": "CPSD All Events"
-    },
-    {
-      "title": "English Learner Parent Advisory Council (ELPAC) Meeting",
-      "date": "2026-10-28",
-      "display_date": "Wednesday, October 28, 2026",
-      "time": "7:00 PM",
-      "location": "Virtual via Zoom",
-      "description": "Upcoming Cambridge Public Schools event.",
-      "action_label": "Open CPS Calendar",
-      "url": "https://www.cpsd.us/all-events",
-      "cost": "Free",
-      "pathways": [
-        "students_families",
-        "just_browsing"
-      ],
-      "source": "CPSD All Events"
-    },
-    {
-      "title": "LatinX Caregiver Affinity Group Meeting",
-      "date": "2026-10-28",
-      "display_date": "Wednesday, October 28, 2026",
-      "time": "7:00 PM",
-      "location": "Virtual",
-      "description": "Upcoming Cambridge Public Schools event.",
-      "action_label": "Open CPS Calendar",
-      "url": "https://www.cpsd.us/all-events",
-      "cost": "Free",
-      "pathways": [
-        "students_families",
-        "just_browsing"
-      ],
-      "source": "CPSD All Events"
-    },
-    {
       "title": "Aging with Mindfulness (Virtual)",
       "date": "2026-11-02",
       "display_date": "Monday, November 2, 2026",
@@ -226,7 +178,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-10-28T16:40:17",
+    "updated_at": "2026-10-29T16:56:28",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
       "public health: Could not find mini-grants deadline.",
