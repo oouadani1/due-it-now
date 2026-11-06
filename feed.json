@@ -17,12 +17,44 @@
       "source": "CPSD All Events"
     },
     {
+      "title": "School Committee Virtual Special Meeting",
+      "date": "2026-11-10",
+      "display_date": "Tuesday, November 10, 2026",
+      "time": "5:00 PM",
+      "location": "Cambridge Public Schools",
+      "description": "Upcoming Cambridge Public Schools committee meeting or workshop.",
+      "action_label": "Open CPS Calendar",
+      "url": "https://www.cpsd.us/all-events",
+      "cost": "Free",
+      "pathways": [
+        "students_families",
+        "just_browsing"
+      ],
+      "source": "CPSD All Events"
+    },
+    {
       "title": "No School & CPS Offices Closed: Veterans Day",
       "date": "2026-11-11",
       "display_date": "Wednesday, November 11, 2026",
       "time": null,
       "location": "Cambridge Public Schools",
       "description": "Upcoming Cambridge Public Schools schedule change.",
+      "action_label": "Open CPS Calendar",
+      "url": "https://www.cpsd.us/all-events",
+      "cost": "Free",
+      "pathways": [
+        "students_families",
+        "just_browsing"
+      ],
+      "source": "CPSD All Events"
+    },
+    {
+      "title": "Family Preparedness Workshop",
+      "date": "2026-11-12",
+      "display_date": "Thursday, November 12, 2026",
+      "time": "5:30 PM",
+      "location": "Cambridge Street Upper School, 850 Cambridge St, Cambridge, MA 02141, USA",
+      "description": "Upcoming Cambridge Public Schools event.",
       "action_label": "Open CPS Calendar",
       "url": "https://www.cpsd.us/all-events",
       "cost": "Free",
@@ -52,38 +84,6 @@
       "title": "Early Release Wednesday (K-8)",
       "date": "2026-11-18",
       "display_date": "Wednesday, November 18, 2026",
-      "time": null,
-      "location": "Cambridge Public Schools",
-      "description": "Upcoming Cambridge Public Schools schedule change.",
-      "action_label": "Open CPS Calendar",
-      "url": "https://www.cpsd.us/all-events",
-      "cost": "Free",
-      "pathways": [
-        "students_families",
-        "just_browsing"
-      ],
-      "source": "CPSD All Events"
-    },
-    {
-      "title": "No School & CPS Offices Closed: Thanksgiving Break",
-      "date": "2026-11-26",
-      "display_date": "Thursday, November 26, 2026",
-      "time": null,
-      "location": "Cambridge Public Schools",
-      "description": "Upcoming Cambridge Public Schools schedule change.",
-      "action_label": "Open CPS Calendar",
-      "url": "https://www.cpsd.us/all-events",
-      "cost": "Free",
-      "pathways": [
-        "students_families",
-        "just_browsing"
-      ],
-      "source": "CPSD All Events"
-    },
-    {
-      "title": "No School & CPS Offices Closed: Thanksgiving Break",
-      "date": "2026-11-27",
-      "display_date": "Friday, November 27, 2026",
       "time": null,
       "location": "Cambridge Public Schools",
       "description": "Upcoming Cambridge Public Schools schedule change.",
@@ -291,7 +291,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-11-05T18:04:00",
+    "updated_at": "2026-11-06T17:31:00",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
       "public health: Could not find mini-grants deadline.",
