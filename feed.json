@@ -1,22 +1,6 @@
 {
   "items": [
     {
-      "title": "School Committee Virtual Special Meeting",
-      "date": "2026-11-10",
-      "display_date": "Tuesday, November 10, 2026",
-      "time": "5:00 PM",
-      "location": "Cambridge Public Schools",
-      "description": "Upcoming Cambridge Public Schools committee meeting or workshop.",
-      "action_label": "Open CPS Calendar",
-      "url": "https://www.cpsd.us/all-events",
-      "cost": "Free",
-      "pathways": [
-        "students_families",
-        "just_browsing"
-      ],
-      "source": "CPSD All Events"
-    },
-    {
       "title": "No School & CPS Offices Closed: Veterans Day",
       "date": "2026-11-11",
       "display_date": "Wednesday, November 11, 2026",
@@ -84,6 +68,22 @@
       "title": "No School & CPS Offices Closed: Thanksgiving Break",
       "date": "2026-11-26",
       "display_date": "Thursday, November 26, 2026",
+      "time": null,
+      "location": "Cambridge Public Schools",
+      "description": "Upcoming Cambridge Public Schools schedule change.",
+      "action_label": "Open CPS Calendar",
+      "url": "https://www.cpsd.us/all-events",
+      "cost": "Free",
+      "pathways": [
+        "students_families",
+        "just_browsing"
+      ],
+      "source": "CPSD All Events"
+    },
+    {
+      "title": "No School & CPS Offices Closed: Thanksgiving Break",
+      "date": "2026-11-27",
+      "display_date": "Friday, November 27, 2026",
       "time": null,
       "location": "Cambridge Public Schools",
       "description": "Upcoming Cambridge Public Schools schedule change.",
@@ -291,7 +291,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-11-10T17:53:32",
+    "updated_at": "2026-11-11T17:54:39",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
       "public health: Could not find mini-grants deadline.",
