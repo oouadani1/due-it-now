@@ -1,22 +1,6 @@
 {
   "items": [
     {
-      "title": "No School & CPS Offices Closed: Veterans Day",
-      "date": "2026-11-11",
-      "display_date": "Wednesday, November 11, 2026",
-      "time": null,
-      "location": "Cambridge Public Schools",
-      "description": "Upcoming Cambridge Public Schools schedule change.",
-      "action_label": "Open CPS Calendar",
-      "url": "https://www.cpsd.us/all-events",
-      "cost": "Free",
-      "pathways": [
-        "students_families",
-        "just_browsing"
-      ],
-      "source": "CPSD All Events"
-    },
-    {
       "title": "Family Preparedness Workshop",
       "date": "2026-11-12",
       "display_date": "Thursday, November 12, 2026",
@@ -102,15 +86,15 @@
       "display_date": "Tuesday, December 1, 2026",
       "time": "6:00 PM",
       "location": "Dr. Henrietta Attles Meeting Room at CRLS, 459 Broadway, Cambridge",
-      "description": "Upcoming Cambridge Rindge and Latin School or student-focused event.",
+      "description": "Upcoming Cambridge Public Schools committee meeting or workshop.",
       "action_label": "Open CPS Calendar",
       "url": "https://www.cpsd.us/all-events",
       "cost": "Free",
       "pathways": [
-        "just_browsing",
-        "students_families"
+        "students_families",
+        "just_browsing"
       ],
-      "source": "CRLS / CPS Calendar"
+      "source": "CPSD All Events"
     },
     {
       "title": "Songs and Stories (Collins)",
@@ -291,7 +275,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-11-11T17:54:39",
+    "updated_at": "2026-11-12T18:21:04",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
       "public health: Could not find mini-grants deadline.",
