@@ -1,22 +1,6 @@
 {
   "items": [
     {
-      "title": "Family Preparedness Workshop",
-      "date": "2026-11-12",
-      "display_date": "Thursday, November 12, 2026",
-      "time": "5:30 PM",
-      "location": "Cambridge Street Upper School, 850 Cambridge St, Cambridge, MA 02141, USA",
-      "description": "Upcoming Cambridge Public Schools event.",
-      "action_label": "Open CPS Calendar",
-      "url": "https://www.cpsd.us/all-events",
-      "cost": "Free",
-      "pathways": [
-        "students_families",
-        "just_browsing"
-      ],
-      "source": "CPSD All Events"
-    },
-    {
       "title": "School Committee Meeting",
       "date": "2026-11-17",
       "display_date": "Tuesday, November 17, 2026",
@@ -161,6 +145,22 @@
       "source": "Cambridge Public Library"
     },
     {
+      "title": "Early Release Wednesday (K-8)",
+      "date": "2026-12-02",
+      "display_date": "Wednesday, December 2, 2026",
+      "time": null,
+      "location": "Cambridge Public Schools",
+      "description": "Upcoming Cambridge Public Schools schedule change.",
+      "action_label": "Open CPS Calendar",
+      "url": "https://www.cpsd.us/all-events",
+      "cost": "Free",
+      "pathways": [
+        "students_families",
+        "just_browsing"
+      ],
+      "source": "CPSD All Events"
+    },
+    {
       "title": "Apply to Cambridge Homeownership Resale Pool",
       "date": null,
       "display_date": "Applications accepted on a rolling basis",
@@ -275,7 +275,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-11-12T18:21:04",
+    "updated_at": "2026-11-13T17:46:35",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
       "public health: Could not find mini-grants deadline.",
