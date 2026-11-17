@@ -246,7 +246,7 @@
       "display_date": "Return as soon as possible",
       "time": null,
       "location": "Online, mail, or drop box",
-      "description": "Cambridge residents should return the 2026 annual city census to protect voting rights and support municipal services.",
+      "description": "Cambridge residents should return the current annual city census to protect voting rights and support municipal services.",
       "action_label": "Open Census Form",
       "url": "https://www.cambridgema.gov/Departments/electioncommission/census/form",
       "cost": "Free",
@@ -255,7 +255,7 @@
         "renewals",
         "just_browsing"
       ],
-      "source": "Cambridge Election Commission (Complete and Return Your 2026 Annual City Census)"
+      "source": "Cambridge Election Commission (Annual City Census)"
     },
     {
       "title": "Track Cambridge Affordable Homeownership Lotteries",
@@ -275,7 +275,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-11-16T20:30:47",
+    "updated_at": "2026-11-17T19:11:48",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
       "public health: Could not find mini-grants deadline.",
