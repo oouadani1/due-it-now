@@ -97,18 +97,18 @@
       "source": "Cambridge Public Library"
     },
     {
-      "title": "Sit 'n' Knit (Main)",
+      "title": "Wellness for Older Adults: Chair Yoga (Central)",
       "date": "2026-12-01",
       "display_date": "Tuesday, December 1, 2026",
-      "time": "2:30 PM",
-      "location": "Main Library, 449 Broadway, Cambridge, MA 02138",
-      "description": "Bring your project and enjoy the company of other fiber crafters.",
+      "time": "1:00 PM",
+      "location": "Central Square Branch, 45 Pearl St., Cambridge, MA 02139",
+      "description": "Join us each Tuesday afternoon at the Central Square Branch for Chair Yoga, led by experienced instructor Louise Parker.",
       "action_label": "View Program Details",
-      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=c145bbe9cd524ef49d1fcd5536502a8e",
+      "url": "https://www.cambridgema.gov/Departments/cambridgepubliclibrary/calendar/view.aspx?guid=815dbed142b340edb9035a149a5b2523",
       "cost": "Free",
       "pathways": [
-        "arts",
-        "just_browsing"
+        "just_browsing",
+        "older_adults"
       ],
       "source": "Cambridge Public Library"
     },
@@ -243,7 +243,7 @@
     }
   ],
   "metadata": {
-    "updated_at": "2026-11-23T22:03:30",
+    "updated_at": "2026-11-24T20:40:55",
     "source_errors": [
       "parking permits: Could not find parking permit deadline.",
       "public health: Could not find mini-grants deadline.",
